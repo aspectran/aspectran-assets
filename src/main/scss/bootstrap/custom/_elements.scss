@@ -12,7 +12,7 @@ p.gototop-anchor-wrap {
 //--------------------------
 
 #toc {
-  @include breakpoint(medium down) {
+  @include media-breakpoint-down(md) {
     padding: 0 0 1em 0;
     border-top: 2px solid $ci-1;
     border-bottom: 2px solid $ci-1;
@@ -24,7 +24,7 @@ p.gototop-anchor-wrap {
       margin: 0 .3em 1em .3em;
     }
   }
-  @include breakpoint(large) {
+  @include media-breakpoint-up(lg) {
     padding: .8em 0;
     border-left: 3px solid $ci-1;
     border-radius: 12px;
@@ -236,10 +236,10 @@ dl.tabs {
     &.is-active {
       > a {
         color: $ci-8;
-        @include breakpoint(small only) {
+        @include media-breakpoint-only(sm) {
           background: $ci-1;
         }
-        @include breakpoint(medium) {
+        @include media-breakpoint-up(md) {
           background: $ci-2;
         }
       }
@@ -255,7 +255,7 @@ dl.tabs {
 .plate #masthead dl.tabs.right {
   float: right;
 }
-@include breakpoint(small only) {
+@include media-breakpoint-only(sm) {
   dl.tabs {
     border-bottom: 0;
     border-radius: 1em;
