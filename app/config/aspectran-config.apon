@@ -1,0 +1,130 @@
+system: {
+    properties: {
+        aspectran.encryption.password: 1234
+    }
+}
+context: {
+    rules: /config/root-context.xml
+    resources: [
+        /lib/ext
+    ]
+    scan: [
+        comm.aspectran.assets
+    ]
+    profiles: {
+        default: [
+            dev
+        ]
+    }
+    autoReload: {
+        reloadMode: hard
+        scanIntervalSeconds: 5
+        enabled: false
+    }
+    singleton: true
+}
+scheduler: {
+    startDelaySeconds: 3
+    waitOnShutdown: true
+    enabled: false
+}
+shell: {
+    style: {
+         primary: GRAY
+         secondary: green
+         success: cyan
+         danger: red
+         warning: YELLOW
+         info: BLUE
+    }
+    greetings: (
+        |{{GREEN  }}              |\      _,,,--,,_
+        |{{GREEN  }}             /,`.-'`'   ._  \-;;,_
+        |{{GREEN  }}  _______ __|,4-  ) )_   .;.(__`'-'__     ___ __    _ ___ _______
+        |{{GREEN  }} |       | '---''(_/._)-'(_\_)   |   |   |   |  |  | |   |       |
+        |{{GREEN  }} |    _  |    ___|_     _|       |   |   |   |   |_| |   |       | __ _ _
+        |{{GREEN  }} |   |_| |   |___  |   | |       |   |   |   |       |   |       | \ \ \ \
+        |{{GREEN  }} |    ___|    ___| |   | |      _|   |___|   |  _    |   |      _|  \ \ \ \
+        |{{CYAN   }} |   |   |   |___  |   | |     |_|       |   | | |   |   |     |_    ) ) ) )
+        |{{CYAN   }} |___|   |_______| |___| |_______|_______|___|_|  |__|___|_______|  / / / /
+        |{{CYAN   }}==================================================================/_/_/_/
+        |{{MAGENTA}} :: Built with Aspectran :: #{class:com.aspectran.core.AboutMe^version}
+        |{{reset  }}
+        |If you want a list of all supported built-in commands, type '{{GREEN}}help{{reset}}'.
+        |To get help on a specific command, type '{{GREEN}}command_name -h{{reset}}'.
+        |If you want a list of all available translets, type '{{GREEN}}translet -l{{reset}}'.
+        |To run a translet, type '{{GREEN}}translet <translet_name>{{reset}}' or '{{GREEN}}translet_name{{reset}}'.
+    )
+    prompt: "{{green}}petclinic>{{reset}} "
+    commands: [
+        com.aspectran.undertow.shell.command.UndertowCommand
+        com.aspectran.shell.command.builtins.TransletCommand
+        com.aspectran.shell.command.builtins.AspectCommand
+        com.aspectran.shell.command.builtins.JobCommand
+        com.aspectran.shell.command.builtins.PBEncryptCommand
+        com.aspectran.shell.command.builtins.PBDecryptCommand
+        com.aspectran.shell.command.builtins.SysInfoCommand
+        com.aspectran.shell.command.builtins.EchoCommand
+        com.aspectran.shell.command.builtins.HistoryCommand
+        com.aspectran.shell.command.builtins.ClearCommand
+        com.aspectran.shell.command.builtins.VerboseCommand
+        com.aspectran.shell.command.builtins.HelpCommand
+        com.aspectran.shell.command.builtins.RestartCommand
+        com.aspectran.shell.command.builtins.QuitCommand
+    ]
+    session: {
+        workerName: shell
+        maxActiveSessions: 1
+        maxIdleSeconds: 1800
+        scavengingIntervalSeconds: 600
+        fileStore: {
+            storeDir: /work/_sessions/shell
+        }
+        enabled: true
+    }
+    historyFile: /logs/history.log
+    verbose: true
+    acceptable: {
+        -: /**
+    }
+}
+daemon: {
+    executor: {
+        maxThreads: 5
+    }
+    polling: {
+        pollingInterval: 5000
+        requeuable: true
+        incoming: /cmd/incoming
+    }
+    commands: [
+        com.aspectran.undertow.daemon.command.UndertowCommand
+        com.aspectran.daemon.command.builtins.InvokeActionCommand
+        com.aspectran.daemon.command.builtins.TransletCommand
+        com.aspectran.daemon.command.builtins.ComponentCommand
+        com.aspectran.daemon.command.builtins.SysInfoCommand
+        com.aspectran.daemon.command.builtins.PollingIntervalCommand
+        com.aspectran.daemon.command.builtins.RestartCommand
+        com.aspectran.daemon.command.builtins.QuitCommand
+    ]
+    session: {
+        workerName: daemon
+        enabled: true
+    }
+    acceptable: {
+        -: /**
+    }
+}
+web: {
+    uriDecoding: utf-8
+    defaultServletName: none
+    trailingSlashRedirect: true
+    legacyHeadHandling: true
+    acceptable: {
+        +: /**
+        -: /assets/**
+        -: /css/**
+        -: /images/**
+        -: /favicon.ico
+    }
+}
