@@ -1,0 +1,65 @@
+* {
+  display: block;
+}
+
+:root {
+  margin: 3em;
+  background: #FFFFFF;
+  color: #111111;
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+channel > title {
+  text-align: center;
+  color: rgb(144.0725806452, 160.9758064516, 169.4274193548);
+  font-weight: bolder;
+}
+channel > title::before {
+  content: "RSS Feed for ";
+  font-weight: initial;
+}
+channel > title::after {
+  content: "This RSS feed is meant to be used by RSS reader applications and websites.";
+  display: block;
+  padding: 1em;
+  background-color: #EFC94C;
+  color: #fff;
+  font-family: initial;
+  font-size: initial;
+  letter-spacing: initial;
+}
+channel > description,
+channel > link {
+  display: none;
+}
+
+item {
+  padding: 1em 0;
+  border-bottom: 1px solid black;
+}
+item:last-child {
+  border-bottom: none;
+}
+item > title {
+  color: #F97D37;
+  margin-bottom: 0.5em;
+}
+item > link {
+  color: #516169;
+}
+item > pubDate {
+  color: #A4A4A4;
+  font-size: small;
+}
+item > description {
+  margin-top: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+item > guid,
+item > category {
+  display: none;
+}
+
+/*# sourceMappingURL=rss.css.map */

@@ -1,0 +1,70 @@
+* {
+  display: block;
+}
+
+:root {
+  margin: 3em;
+  background: #FFFFFF;
+  color: #111111;
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+feed > title {
+  text-align: center;
+  color: rgb(144.0725806452, 160.9758064516, 169.4274193548);
+  font-weight: bolder;
+}
+feed > title::before {
+  content: "Atom Feed for ";
+  font-weight: initial;
+}
+feed > title::after {
+  content: "This Atom feed is meant to be used by RSS reader applications and websites.";
+  display: block;
+  padding: 1em;
+  background-color: #EFC94C;
+  color: #fff;
+  font-family: initial;
+  font-size: initial;
+  letter-spacing: initial;
+}
+feed > id,
+feed > updated,
+feed > subtitle,
+feed > author,
+feed > link,
+feed > generator {
+  display: none;
+}
+
+entry {
+  padding: 1em 0;
+  border-bottom: 1px solid black;
+}
+entry:last-child {
+  border-bottom: none;
+}
+entry > title {
+  color: #F97D37;
+  margin-bottom: 0.5em;
+}
+entry > link::after {
+  content: attr(href);
+  color: #516169;
+}
+entry > updated {
+  color: #A4A4A4;
+  font-size: small;
+}
+entry > summary {
+  margin-top: 1em;
+}
+entry > id,
+entry > author,
+entry > category,
+entry > published,
+entry > content {
+  display: none;
+}
+
+/*# sourceMappingURL=atom.css.map */
