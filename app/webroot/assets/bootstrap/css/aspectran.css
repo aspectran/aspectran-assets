@@ -11891,7 +11891,7 @@ textarea.form-control-lg {
   width: 37px;
   height: 37px;
   margin: rem-calc(5 12 0 12);
-  background: url("/assets/img/aspectran-site-logo.png") no-repeat;
+  background: url("../../img/aspectran-site-logo.png") no-repeat;
   background-size: cover;
   -webkit-transition: width 0.5s, height 0.5s, background-color 1s, -webkit-transform 1s;
   transition: width 0.5s, height 0.5s, background-color 1s, transform 1s;
@@ -12011,7 +12011,7 @@ textarea.form-control-lg {
     width: 74px;
     height: 74px;
     display: block;
-    background: url("/assets/img/aspectran-site-logo.png") no-repeat;
+    background: url("../../img/aspectran-site-logo.png") no-repeat;
     background-size: cover;
     -webkit-transition: width 0.5s, height 0.5s, background-color 1s, -webkit-transform 1s;
     transition: width 0.5s, height 0.5s, background-color 1s, transform 1s;
@@ -12220,7 +12220,7 @@ textarea.form-control-lg {
   width: 37px;
   height: 37px;
   display: block;
-  background: url("/assets/img/aspectran-site-logo.png") no-repeat;
+  background: url("../../img/aspectran-site-logo.png") no-repeat;
   background-size: cover;
 }
 #navigation.fixed .top-bar .top-bar-logo .circle a.logo img {
@@ -12647,7 +12647,7 @@ body.plate .fluid .contour {
   margin: auto;
   width: 90px;
   height: 90px;
-  background: url("/assets/img/aspectran-site-logo.png") no-repeat;
+  background: url("../../img/aspectran-site-logo.png") no-repeat;
   background-size: cover;
   -webkit-transition: width 0.1s, height 0.1s, background-color 1s, -webkit-transform 1.3s;
   transition: width 0.1s, height 0.1s, background-color 1s, transform 1.3s;
