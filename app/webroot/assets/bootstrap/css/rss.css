@@ -22,7 +22,7 @@ channel > title::after {
   content: "This RSS feed is meant to be used by RSS reader applications and websites.";
   display: block;
   padding: 1em;
-  background-color: #EFC94C;
+  background-color: #0DCAF0;
   color: #fff;
   font-family: initial;
   font-size: initial;
@@ -41,7 +41,7 @@ item:last-child {
   border-bottom: none;
 }
 item > title {
-  color: #F97D37;
+  color: #EFC94C;
   margin-bottom: 0.5em;
 }
 item > link {

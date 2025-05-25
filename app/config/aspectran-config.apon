@@ -9,7 +9,7 @@ context: {
         /lib/ext
     ]
     scan: [
-        comm.aspectran.assets
+        com.aspectran.assets
     ]
     profiles: {
         default: [

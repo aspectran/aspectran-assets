@@ -21,11 +21,19 @@
 // Navigation
 //-----------
 
+.container {
+  max-width: rem-calc(1320) !important;
+}
+
 #navigation {
-  z-index: 100;
+  padding: 0;
+  z-index: 200;
   text-shadow: rgba(0, 0, 0, .498039) 0 1px 2px;
   text-transform: uppercase;
   .title-bar {
+    @include media-breakpoint-up(lg) {
+      display: none;
+    }
     line-height: 46px;
     background-color: $ci-0;
     padding: 0;
@@ -35,11 +43,10 @@
       float: left;
       a.logo {
         position: absolute;
-        top: 0;
+        top: 5px;
         display: block;
         width: 37px;
         height: 37px;
-        margin: rem-calc(5 12 0 12);
         background: url('../../img/aspectran-site-logo.png') no-repeat;
         background-size: cover;
         -webkit-transition: width .5s, height .5s, background-color 1s, -webkit-transform 1s;
@@ -71,23 +78,20 @@
     .title-bar-right {
       cursor: pointer;
       float: right;
-      padding: rem-calc(0 15);
-      .menu-icon {
-        width: 22px;
-        height: 20px;
+      button {
+        border: 0;
+        padding-right: 3px;
+        &:focus {
+          box-shadow: none;
+        }
       }
     }
   }
   .top-bar {
     width: 100%;
-    padding: 0;
+    min-height: 57px;
     z-index: 101;
     opacity: .975;
-    display: block;
-    .grid-container {
-      position: relative;
-      padding: 0;
-    }
     .settings {
       float: right;
       padding: rem-calc(6.6 15 7.6 3.4);
@@ -98,18 +102,20 @@
     }
     .quick-search-box {
       .input-group {
-        margin: 0;
         input {
-          max-width: none;
           background-color: lighten($head-color, 30%);
         }
         button {
           background-color: darken($head-color, 5%);
+          color: $ci-9;
         }
       }
     }
-    @include media-breakpoint-down(md) {
-      position: relative;
+    @include media-breakpoint-down(lg) {
+      > .container {
+        padding: 0;
+        max-width: none;
+      }
       background-color: darken($ci-1, 3%);
       .top-bar-logo {
         display: none;
@@ -119,14 +125,6 @@
       }
       .top-bar-right {
         width: 100%;
-        .lang-options,
-        .quick-search-box {
-          padding: 0 .8rem .8rem;
-        }
-      }
-    }
-    @include media-breakpoint-only(sm) {
-      .top-bar-right {
         .lang-options,
         .quick-search-box {
           padding: .8rem 1rem;
@@ -144,15 +142,11 @@
         }
       }
       .top-bar-logo {
-        float: left;
-        border-top: 2px solid transparent;
         .circle {
           position: absolute;
-          top: 0;
-          left: 0;
-          margin: rem-calc(10 20 0 15);
+          top: 10px;
           width: 74px;
-          height: 48px;
+          height: 47px;
           border-radius: 74px 74px 0 0;
           a.logo {
             position: absolute;
@@ -179,17 +173,15 @@
         }
       }
       .top-bar-left {
-        float: left;
         margin-left: 108px;
       }
       .top-bar-right {
-        float: right;
-        .menu {
-          float: left;
+        .navbar-nav {
+          display: inline-block;
         }
         .lang-options,
         .quick-search-box {
-          float: right;
+          display: inline-block;
           max-width: 220px;
           border-top: 2px solid transparent;
           @include media-breakpoint-down(md) {
@@ -201,13 +193,14 @@
         }
       }
     }
-    ul.dropdown {
+    ul.navbar-nav {
       background: none;
-      @include media-breakpoint-down(md) {
+      @include media-breakpoint-down(lg) {
         display: block;
+        border-radius: 0;
       }
       @include media-breakpoint-only(md) {
-        padding: .8rem;
+        padding: .8rem .8rem 0;
         &.left {
           padding-bottom: .35rem;
         }
@@ -218,11 +211,12 @@
       }
       li {
         > a {
-          color: #fff;
+          position: relative;
+          color: $ci-9;
           background: none;
-          padding: .93rem 1.5rem .93rem 1rem;
-          @include media-breakpoint-down(md) {
-            margin-right: .9rem;
+          padding: 0 1.5rem 0 1rem;
+          &.disabled {
+            color: darken($ci-9, 40%);
           }
         }
         &.active {
@@ -232,87 +226,97 @@
         }
       }
       > li {
-        @include media-breakpoint-down(md) {
-          display: block;
-          border-bottom: 1px solid darken($ci-1, 3%);
-          background-color: $ci-1;
-          &.is-active,
-          &:hover {
-            background-color: darken($ci-1, 9%);
-          }
+        align-content: center;
+        border-top: 2px solid transparent;
+        > a {
+          align-content: center;
         }
-        @include media-breakpoint-only(md) {
-          &:first-child {
-            border-top-left-radius: 7px;
-            border-top-right-radius: 7px;
+        @include media-breakpoint-down(lg) {
+          border-top: 0;
+          background-color: $ci-1;
+          border-bottom: 1px solid darken($ci-1, 3%);
+          > a {
+            height: 47px;
           }
-          &:last-child {
-            border-bottom-left-radius: 7px;
-            border-bottom-right-radius: 7px;
+          &:hover {
+            background-color: darken($ci-1, 12%);
+          }
+          @include media-breakpoint-only(md) {
+            &:first-child {
+              border-top-left-radius: 7px;
+              border-top-right-radius: 7px;
+            }
+            &:last-child {
+              border-bottom-left-radius: 7px;
+              border-bottom-right-radius: 7px;
+            }
+          }
+          .dropdown-toggle::after {
+            position: absolute;
+            top: 50%;
           }
         }
         @include media-breakpoint-up(lg) {
           border-top: 2px solid transparent;
           a {
-            padding: 1.15rem 1.3rem 1.3rem 1.3rem;
+            height: 57px;
+            padding: 0 1.3rem 0 1.3rem;
           }
           &.active {
             border-top: 2px solid lighten($ci-1, 10%);
           }
           &:hover {
             background-color: $ci-0;
-            border-top: 2px solid $ci-5;
-          }
-          &.is-dropdown-submenu-parent {
-            a {
-              padding-right: 2rem;
-            }
+            border-top: 2px solid $ci-6;
           }
         }
-        &.is-dropdown-submenu-parent > a::after {
+        > a.dropdown-toggle::after {
           border-color: lighten($ci-1, 20%) transparent transparent;
-          right: .8rem;
+          right: 1rem;
         }
-        &.is-dropdown-submenu-parent.is-active > a::after {
-          border-color: $ci-5 transparent transparent;
+        > a.dropdown-toggle.show::after {
+          border-color: $ci-6 transparent transparent;
         }
       }
-      ul.submenu {
+      ul.dropdown-menu {
+        margin: 0;
+        padding: 0;
         border: 0;
-        border-radius: 0 0 10px 10px;
+        background-color: $ci-0;
         text-transform: none;
-        @include media-breakpoint-down(md) {
-          left: auto;
-          right: 3.1rem;
+        @include media-breakpoint-only(md) {
+          margin: 0 10px 10px;
         }
-        li {
+        > li {
           min-width: 300px;
           > a {
-            padding: .8rem 1.5rem .8rem 1rem;
-            line-height: 130%; 
+            height: 40px;
+            align-content: center;
           }
-          @include media-breakpoint-down(md) {
-            background-color: darken($ci-1, 9%);
-            &:hover {
-              background-color: darken($ci-1, 12%);
-            }
-            &.submenu-closer {
-              display: block;
-            }          }
-          @include media-breakpoint-up(lg) {
-            background-color: $ci-0;
-            &.active {
-              background-color: darken($ci-0, 5%);
-            }
-            &:hover {
-              background-color: darken($ci-0, 3%);
-            }
-            &.submenu-closer {
-              display: none;
+          .dropdown-divider {
+            margin: 0;
+            border-top: 1px solid darken($ci-1, 3%);
+          }
+          background-color: $ci-0;
+          &.active {
+            background-color: darken($ci-0, 5%);
+          }
+          &:hover {
+            background-color: darken($ci-0, 3%);
+          }
+          &.submenu-closer {
+            display: none;
+          }
+          @include media-breakpoint-only(md) {
+            &:first-child {
+              border-top-left-radius: 7px;
+              border-top-right-radius: 7px;
             }
           }
-          &:last-child {
-            border-radius: 0 0 7px 7px;
+          @include media-breakpoint-up(md) {
+            &:last-child {
+              border-radius: 0 0 10px 10px;
+            }
           }
         }
       }
@@ -468,7 +472,7 @@ body.plate {
     background-color: $ci-2;
     #up-to-top {
       a {
-        color: $ci-8;
+        color: $ci-9;
       }
     }
     @include media-breakpoint-up(lg) {
@@ -516,13 +520,13 @@ body.plate {
 #masthead {
   position: relative;
   min-width: 320px;
-  color: $ci-8;
+  color: $ci-9;
   background-color: $head-color;
   text-shadow: rgba(0, 0, 0, .498039) 0 1px 2px;
   -webkit-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
   -moz-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
   box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
-  > .grid-container {
+  > .container {
     position: relative;
   }
   a {
@@ -532,20 +536,20 @@ body.plate {
   header {
     position: relative;
     z-index: 100;
-    @include media-breakpoint-only(sm) {
-      margin-top: 40px;
-      min-height: 180px;
+    @include media-breakpoint-down(md) {
+      padding-top: 40px;
+      min-height: 220px;
     }
     @include media-breakpoint-up(md) {
-      margin-top: 50px;
-      min-height: 170px;
+      padding-top: 50px;
+      min-height: 220px;
     }
     @include media-breakpoint-up(lg) {
-      margin-top: 120px;
+      padding-top: 120px;
       min-height: 170px;
     }
     h1 {
-      color: $ci-8;
+      color: $ci-9;
     }
     .teaser {
       @include media-breakpoint-only(sm) {
@@ -573,18 +577,18 @@ body.plate {
   }
   .breadcrumbs-bar {
     background-color: $ci-2;
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(xxl) {
       border-radius: 10px 10px 0 0;
     }
     .breadcrumbs {
-      color: $ci-8;
+      color: $ci-9;
       border: 0;
       a {
-        color: $ci-8;
+        color: $ci-9;
         font-weight: normal;
       }
       .current {
-        color: $ci-8;
+        color: $ci-9;
         font-weight: bold;
       }
     }
@@ -672,36 +676,34 @@ body.plate {
 .breadcrumbs-bar {
   font-size: 90%;
   background: scale-color($grey-1, $lightness: 50%);
-  .breadcrumbs {
+  .breadcrumb {
     font-size: 90%;
     background: none;
     padding: .25em .2em .25em;
     margin: 0;
+    li::before {
+      color: $grey-5;
+      font-weight: normal;
+    }
     a {
       color: $grey-8;
-      &:hover {
-        text-decoration: none;
-      }
     }
-    .current {
+    .active {
       color: $grey-8;
       font-weight: bold;
-    }
-    li::after {
-      margin: 0.6rem;
     }
   }
   @include media-breakpoint-down(md) {
     background-color: $ci-2;
-    .breadcrumbs {
-      color: $ci-8;
+    .breadcrumb {
+      color: $ci-9;
       border: 0;
       a {
-        color: $ci-8;
+        color: $ci-9;
         font-weight: normal;
       }
-      .current {
-        color: $ci-8;
+      .active {
+        color: $ci-9;
         font-weight: bold;
       }
     }
@@ -778,7 +780,12 @@ body.plate {
       color: $footer-link-hover-color;
     }
     &.logo {
-      display: block;
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+      @include media-breakpoint-up(md) {
+        display: block;
+      }
       margin: auto;
       width: 90px;
       height: 90px;
@@ -865,7 +872,7 @@ body.plate {
       }
       &.active {
         a {
-          color: $ci-5;
+          color: $ci-6;
         }
       }
     }
@@ -999,7 +1006,7 @@ body.frontpage {
   }
   &.hex1 {
     top: 20px;
-    left: 0px;
+    left: 0;
   }
   &.hex2 {
     top: 20px;
@@ -1026,7 +1033,7 @@ body.frontpage {
   position: absolute;
   z-index: 1;
   right: 390px;
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     top: 18px;
   }
   @include media-breakpoint-up(lg) {
