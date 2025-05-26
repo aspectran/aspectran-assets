@@ -80,13 +80,13 @@ a {
     border-bottom: $grey-2;
   }
   &:hover {
-    color: lighten($anchor-color, 10%);
+    color: lighten($link-color, 10%);
   }
   &:focus {
-    color: lighten($anchor-color, 20%);
+    color: lighten($link-color, 20%);
   }
   &:active {
-    color: darken($anchor-color, 5%);
+    color: darken($link-color, 5%);
   }
 }
 

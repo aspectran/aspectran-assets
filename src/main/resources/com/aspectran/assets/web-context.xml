@@ -49,11 +49,9 @@
     </bean>
 
     <aspect id="jspTransletSettings">
-        <description>
-            This aspect is for injecting default settings into translets running in the web environment.
-        </description>
         <joinpoint>
             pointcut: {
+                +: /
                 +: /jsp/**
             }
         </joinpoint>
