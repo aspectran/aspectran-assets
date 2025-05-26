@@ -239,6 +239,7 @@ body.fluid {
           display: inline-block;
           max-width: 220px;
           border-top: 2px solid transparent;
+          margin-left: 5px;
           @include media-breakpoint-down(md) {
             padding: rem-calc(7.6 15 7.6 3.4);
           }

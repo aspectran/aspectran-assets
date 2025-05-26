@@ -90,7 +90,7 @@
             <div class="top-bar-right">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a href="<aspectran:url value="/monitoring/"/>">Monitoring</a>
+                        <a class="nav-link" href="<aspectran:url value="/monitoring/"/>">Monitoring</a>
                     </li>
                 </ul>
                 <div class="quick-search-box">

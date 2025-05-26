@@ -11924,6 +11924,7 @@ body.fluid #subfooter > .container {
   background-color: #445259;
   padding: 0;
   width: 100%;
+  overflow: auto;
 }
 @media (min-width: 992px) {
   #navigation .title-bar {
@@ -12068,6 +12069,7 @@ body.fluid #subfooter > .container {
     display: inline-block;
     max-width: 220px;
     border-top: 2px solid transparent;
+    margin-left: 5px;
   }
 }
 @media (min-width: 992px) and (max-width: 767.98px) {
