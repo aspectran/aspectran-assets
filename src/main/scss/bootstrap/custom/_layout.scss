@@ -1,6 +1,7 @@
 // TOC
 // - Navigation
-// - Plate Format
+// - Plate Style
+// - Fluid Style
 // - Masthead
 // - Masthead › small-only
 // - Masthead › medium-only
@@ -89,7 +90,7 @@
   }
   .top-bar {
     width: 100%;
-    min-height: 57px;
+    min-height: 55px;
     z-index: 101;
     opacity: .975;
     .settings {
@@ -219,47 +220,44 @@
             color: darken($ci-9, 40%);
           }
         }
-        &.active {
-          a {
-            background: none;
-          }
-        }
+        //&.active {
+        //  a {
+        //    background: none;
+        //  }
+        //}
       }
       > li {
         align-content: center;
-        border-top: 2px solid transparent;
         > a {
           align-content: center;
+          &.dropdown-toggle::after {
+            border-color: lighten($ci-1, 20%) transparent transparent;
+          }
+          &.dropdown-toggle.show::after {
+            border-color: $ci-6 transparent transparent;
+          }
         }
         @include media-breakpoint-down(lg) {
           border-top: 0;
           background-color: $ci-1;
           border-bottom: 1px solid darken($ci-1, 3%);
           > a {
+            display: block;
             height: 47px;
           }
           &:hover {
             background-color: darken($ci-1, 12%);
           }
-          @include media-breakpoint-only(md) {
-            &:first-child {
-              border-top-left-radius: 7px;
-              border-top-right-radius: 7px;
-            }
-            &:last-child {
-              border-bottom-left-radius: 7px;
-              border-bottom-right-radius: 7px;
-            }
-          }
           .dropdown-toggle::after {
             position: absolute;
             top: 50%;
+            right: 1.3rem;
           }
         }
         @include media-breakpoint-up(lg) {
           border-top: 2px solid transparent;
           a {
-            height: 57px;
+            height: 55px;
             padding: 0 1.3rem 0 1.3rem;
           }
           &.active {
@@ -267,15 +265,18 @@
           }
           &:hover {
             background-color: $ci-0;
-            border-top: 2px solid $ci-6;
+            border-top: 2px solid lighten($ci-0, 10%);
           }
         }
-        > a.dropdown-toggle::after {
-          border-color: lighten($ci-1, 20%) transparent transparent;
-          right: 1rem;
-        }
-        > a.dropdown-toggle.show::after {
-          border-color: $ci-6 transparent transparent;
+        @include media-breakpoint-only(md) {
+          &:first-child {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+          }
+          &:last-child {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+          }
         }
       }
       ul.dropdown-menu {
@@ -309,8 +310,8 @@
           }
           @include media-breakpoint-only(md) {
             &:first-child {
-              border-top-left-radius: 7px;
-              border-top-right-radius: 7px;
+              border-top-left-radius: 10px;
+              border-top-right-radius: 10px;
             }
           }
           @include media-breakpoint-up(md) {
@@ -452,7 +453,7 @@
   }
 }
 
-// Plate Format
+// Plate Style
 //--------------
 
 body.plate {
@@ -460,7 +461,7 @@ body.plate {
   .contour {
     background-color: $bg-color;
     min-height: 400px;
-    padding-bottom: 1rem;
+    padding: 0 0 1rem 0;
     @include media-breakpoint-up(lg) {
       border-radius: 0 0 10px 10px;
       -webkit-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
@@ -483,24 +484,27 @@ body.plate {
       }
     }
   }
-  .fluid {
-    &.contour {
-      border-radius: 0;
-      -webkit-box-shadow: none;
-      -moz-box-shadow: none;
-      box-shadow: none;
-    }
-    .contour {
-      border-radius: 0;
-      -webkit-box-shadow: none;
-      -moz-box-shadow: none;
-      box-shadow: none;
-    }
+}
+
+// Fluid Style
+//--------------
+
+body.fluid {
+  .container {
+    width: 100%;
+    max-width: 100%;
+  }
+  .contour {
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
   }
 }
 
 // Fork- Ribbon
 //--------------
+
 #forkme-ribbon {
   position: absolute;
   z-index: 1;
@@ -546,10 +550,20 @@ body.plate {
     }
     @include media-breakpoint-up(lg) {
       padding-top: 120px;
-      min-height: 170px;
+      padding-left: 20px;
+      padding-bottom: 20px;
+      min-height: 220px;
     }
     h1 {
       color: $ci-9;
+    }
+    .subheadline {
+      margin: 0;
+      text-transform: uppercase;
+      font-size: .875rem;
+      @include media-breakpoint-down(sm) {
+        font-size: .75rem;
+      }
     }
     .teaser {
       @include media-breakpoint-only(sm) {
@@ -580,45 +594,57 @@ body.plate {
     @include media-breakpoint-up(xxl) {
       border-radius: 10px 10px 0 0;
     }
-    .breadcrumbs {
+    .breadcrumb {
       color: $ci-9;
       border: 0;
       a {
         color: $ci-9;
         font-weight: normal;
       }
-      .current {
+      .active {
         color: $ci-9;
         font-weight: bold;
       }
     }
-    &.grid-container.fluid {
+    &.fluid {
       border-radius: 0;
     }
   }
   &.masthead-compact {
-    > .grid-container {
-      position: static;
-    }
-    @include media-breakpoint-up(lg) {
-      padding-top: 86px;
-    }
     header {
-      margin-top: 20px !important;
       min-height: 0 !important;
+      @include media-breakpoint-down(lg) {
+        padding-top: 15px;
+      }
+      @include media-breakpoint-up(lg) {
+        padding-top: 90px;
+      }
     }
   }
   &.masthead-with-image-header {
-    @include media-breakpoint-only(sm) {
+    background: none;
+    .hexagons {
+      display: none;
+    }
+    @include media-breakpoint-down(sm) {
       height: 255px;
+      header {
+        min-height: 230px;
+      }
     }
     @include media-breakpoint-only(md) {
       height: 285px;
       padding-top: 50px;
+      header {
+        min-height: 210px;
+      }
     }
     @include media-breakpoint-up(lg) {
       height: 510px;
       padding-top: 150px;
+      header {
+        min-height: 335px;
+      }
     }
   }
   &.no-header {
@@ -709,7 +735,9 @@ body.plate {
     }
   }
 }
-
+body.fluid #masthead .breadcrumbs-bar {
+  border-radius: 0;
+}
 
 // Meta
 //------
@@ -1039,9 +1067,14 @@ body.frontpage {
   @include media-breakpoint-up(lg) {
     top: 30px;
   }
-}
-@include media-breakpoint-down(md) {
-  .masthead-compact .hexagons {
-    display: none;
+  @include media-breakpoint-down(sm) {
+    .hex1, .hex2 {
+      display: none;
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    &.masthead-compact .hexagons {
+      display: none;
+    }
   }
 }

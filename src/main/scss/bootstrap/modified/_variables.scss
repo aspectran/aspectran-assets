@@ -544,11 +544,12 @@ $border-color-translucent:    rgba($black, .175) !default;
 // scss-docs-end border-variables
 
 // scss-docs-start border-radius-variables
-$border-radius:               .375rem !default;
-$border-radius-sm:            .25rem !default;
-$border-radius-lg:            .5rem !default;
-$border-radius-xl:            1rem !default;
-$border-radius-xxl:           2rem !default;
+$global-radius:               3px;
+$border-radius:               $global-radius !default;
+$border-radius-sm:            $global-radius !default;
+$border-radius-lg:            $global-radius !default;
+$border-radius-xl:            $global-radius !default;
+$border-radius-xxl:           $global-radius !default;
 $border-radius-pill:          50rem !default;
 // scss-docs-end border-radius-variables
 // fusv-disable

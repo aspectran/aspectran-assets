@@ -8,6 +8,16 @@
         Note that names of translets that match the request URI always start with a forward slash (/).
     </description>
 
+    <bean id="jspViewDispatcher" class="com.aspectran.web.support.view.JspViewDispatcher">
+        <description>
+            Register a JSP View Dispatcher.
+        </description>
+        <properties>
+            <item name="prefix">/WEB-INF/jsp/</item>
+            <item name="suffix">.jsp</item>
+        </properties>
+    </bean>
+
     <bean id="thymeleaf" class="com.aspectran.thymeleaf.ThymeleafTemplateEngine">
         <arguments>
             <item>
@@ -18,9 +28,6 @@
                                 <properties>
                                     <item name="prefix">#{basePath}/webroot/WEB-INF/thymeleaf/</item>
                                     <item name="suffix">.html</item>
-<!--                                    <item name="resolvablePatterns" type="set">-->
-<!--                                        <value>*.html</value>-->
-<!--                                    </item>-->
                                     <item name="templateMode">HTML</item>
                                     <item name="cacheable" valueType="boolean">false</item>
                                 </properties>
@@ -41,13 +48,26 @@
         </arguments>
     </bean>
 
-    <aspect id="webTransletSettings">
+    <aspect id="jspTransletSettings">
         <description>
             This aspect is for injecting default settings into translets running in the web environment.
         </description>
         <joinpoint>
             pointcut: {
-                +: /**
+                +: /jsp/**
+            }
+        </joinpoint>
+        <settings>
+            <setting name="characterEncoding" value="utf-8"/>
+            <setting name="viewDispatcher" value="jspViewDispatcher"/>
+            <setting name="proxyProtocolAware" value="true"/>
+        </settings>
+    </aspect>
+
+    <aspect id="thymeleafTransletSettings">
+        <joinpoint>
+            pointcut: {
+                +: /thymeleaf/**
             }
         </joinpoint>
         <settings>

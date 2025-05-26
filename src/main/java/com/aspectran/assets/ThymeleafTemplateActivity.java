@@ -7,10 +7,10 @@ import com.aspectran.core.component.bean.annotation.Request;
 /**
  * <p>Created: 2025. 5. 24.</p>
  */
-@Component
+@Component("thymeleaf")
 public class ThymeleafTemplateActivity {
 
-    @Request("/thymeleaf/")
+    @Request("/")
     @Dispatch("index")
     public void thymeleaf() {
     }
