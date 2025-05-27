@@ -217,6 +217,17 @@ article {
   -moz-box-shadow: none;
   box-shadow: none;
   margin-bottom: 0;
+  @include media-breakpoint-down(md) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 1em;
+  }
+  @include media-breakpoint-only(md) {
+    padding-top: 10px;
+  }
+  @include media-breakpoint-up(lg) {
+    padding-top: 30px;
+  }
   > .tabs-title {
     > a {
       font-size: 1em;
@@ -231,10 +242,10 @@ article {
     &.active {
       > a {
         color: $ci-9;
-        @include media-breakpoint-down(sm) {
+        @include media-breakpoint-down(md) {
           background: $ci-1;
         }
-        @include media-breakpoint-up(sm) {
+        @include media-breakpoint-up(md) {
           background: $ci-2;
         }
       }
@@ -245,16 +256,7 @@ article {
     .bullet {
       color: darken($head-color, 15%);
     }
-  }
-}
-.plate #masthead .tabs.right {
-  float: right;
-}
-@include media-breakpoint-down(sm) {
-  .tabs {
-    border-bottom: 0;
-    border-radius: 1em;
-    > .tabs-title {
+    @include media-breakpoint-down(md) {
       clear: both;
       margin-bottom: 3px;
       width: 100%;
@@ -264,16 +266,14 @@ article {
       .indicator {
         float: right;
       }
-    }
-  }
-  #masthead .tabs {
-    margin-bottom: .5rem;
-    > .tabs-title {
-      > a {
-        border-radius: $global-radius;
+      &:last-child {
+        margin-bottom: 0;
       }
     }
   }
+}
+.plate #masthead .tabs.right {
+  float: right;
 }
 .tabs-content {
   border: 0;

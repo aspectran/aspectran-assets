@@ -9,7 +9,7 @@
 
     <environment>
         <properties>
-            <item name="tow.server.listener.http.port" valueType="int">8081</item>
+            <item name="tow.server.listener.http.port" valueType="int">8090</item>
             <item name="tow.server.listener.http.host">0.0.0.0</item>
         </properties>
     </environment>

@@ -36,7 +36,7 @@
     <div class="title-bar">
         <div class="container-fluid">
             <div class="title-bar-left">
-                <a class="logo" th:href="@{/}" title="Aspectran"><img src="https://assets.aspectran.com/img/aspectran-site-logo.png" alt="Aspectran"/></a>
+                <a class="navbar-brand logo" th:href="@{/}" title="Aspectran"><img src="https://assets.aspectran.com/img/aspectran-site-logo.png" alt="Aspectran"/></a>
             </div>
             <div class="title-bar-center me-auto mb-2 mb-lg-0">
                 <a href="#top-of-page">Aspectran</a>
@@ -48,7 +48,7 @@
             </div>
         </div>
     </div>
-    <div class="top-bar navbar-collapse collapse" id="navbarSupportedContent">
+    <div class="top-bar" id="navbarSupportedContent">
         <div class="container navbar-collapse">
             <div class="top-bar-logo">
                 <div class="circle">
@@ -107,7 +107,7 @@
             </div>
         </div>
     </div>
-    <div class="breadcrumbs-bar" style="display:none" data-hide-for="medium down">
+    <div class="breadcrumb-bar" style="display:none" data-hide-for="medium down">
         <div class="container">
             <nav aria-label="You are here:">
                 <ol class="breadcrumb" itemprop="breadcrumb">
@@ -118,10 +118,9 @@
 </nav>
 <section itemscope itemtype="https://schema.org/Article">
     <div id="masthead"
-         th:class="${pageStyle eq 'compact' ? 'masthead-compact' : ''}"
-         th:classappend="${!#strings.isEmpty(page.headimageinclude) ? 'masthead-compact' : ''}">
+         th:class="${!#strings.isEmpty(page.headimageinclude) ? 'masthead-with-image' : ''}">
         <div class="container" th:classappend="${pageStyle}">
-            <header>
+            <header th:if="${!#strings.isEmpty(page.headline)}">
                 <p th:if="${!#strings.isEmpty(page.subheadline)}" class="subheadline" itemprop="alternativeHeadline" th:text="${page.subheadline}">subheadline</p>
                 <h1 th:if="${!#strings.isEmpty(page.headline)}" itemprop="headline" th:text="${page.headline}">headline</h1>
                 <p th:if="${!#strings.isEmpty(page.teaser)}" class="teaser" itemprop="description" th:text="${page.teaser}">teaser</p>
@@ -129,7 +128,7 @@
             <th:block th:unless="${#strings.isEmpty(insertFragmentInMasthead)}">
                 <th:block th:insert="~{${insertFragmentInMasthead}}"/>
             </th:block>
-            <div class="hexagons" th:if="${!#strings.contains(pageStyle, 'compact') and !#strings.isEmpty(page.headline)}">
+            <div class="hexagons" th:if="${!#strings.isEmpty(page.headline)}">
                 <div class="hexagon hex1"></div>
                 <div class="hexagon hex2"></div>
                 <div class="hexagon hex3"></div>
@@ -140,7 +139,7 @@
         <th:block th:unless="${#strings.isEmpty(insertFragmentInMastheadWithImage)}">
             <th:block th:insert="~{${page.insertFragmentInMastheadWithImage}}"/>
         </th:block>
-        <div class="container breadcrumbs-bar">
+        <div class="container breadcrumb-bar">
             <nav role="navigation" aria-label="You are here:">
                 <ol class="breadcrumb" itemprop="breadcrumb">
                 </ol>
@@ -202,7 +201,7 @@
     $(function() {
         let $win = $(window);
         let $nav = $("#navigation");
-        let navHeight = $("#masthead").height() - $nav.height();
+        let navHeight = Math.abs($("#masthead").height() - $nav.height());
         let lastScrollTop = 0;
         let scrolled;
         let navFixed;
@@ -392,6 +391,9 @@
                 }
                 li.appendTo(".breadcrumb");
             }
+        }
+        if (!$(".breadcrumb li").length) {
+            $(".breadcrumb").hide();
         }
     });
 </script>

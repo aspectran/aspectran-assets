@@ -109,7 +109,7 @@
             </div>
         </div>
     </div>
-    <div class="breadcrumbs-bar" style="display:none" data-hide-for="medium down">
+    <div class="breadcrumb-bar" style="display:none" data-hide-for="medium down">
         <div class="container">
             <nav aria-label="You are here:">
                 <ol class="breadcrumb" itemprop="breadcrumb">
@@ -119,7 +119,7 @@
     </div>
 </nav>
 <section itemscope itemtype="https://schema.org/Article">
-    <div id="masthead" class="<c:if test="${fn:contains(page.style, 'compact')}">masthead-compact</c:if><c:if test="${not empty page.headimageinclude}">masthead-with-image-header</c:if>">
+    <div id="masthead" class="<c:if test="${fn:contains(page.style, 'compact')}">masthead-compact</c:if><c:if test="${not empty page.headimageinclude}">masthead-with-image</c:if>">
         <div class="container ${page.style}">
             <header>
                 <c:if test="${not empty page.subheadline}">
@@ -148,7 +148,7 @@
         <c:if test="${not empty page.headimageinclude}">
             <jsp:include page="/WEB-INF/jsp/${page.headimageinclude}.jsp"/>
         </c:if>
-        <div class="container breadcrumbs-bar">
+        <div class="container breadcrumb-bar">
             <nav role="navigation" aria-label="You are here:">
                 <ol class="breadcrumb" itemprop="breadcrumb">
                 </ol>
@@ -212,7 +212,7 @@
     $(function() {
         let $win = $(window);
         let $nav = $("#navigation");
-        let navHeight = $("#masthead").height() - $nav.height();
+        let navHeight = Math.abs($("#masthead").height() - $nav.height());
         let lastScrollTop = 0;
         let scrolled;
         let navFixed;
@@ -402,6 +402,9 @@
                 }
                 li.appendTo(".breadcrumb");
             }
+        }
+        if (!$(".breadcrumb li").length) {
+            $(".breadcrumb").hide();
         }
     });
 </script>

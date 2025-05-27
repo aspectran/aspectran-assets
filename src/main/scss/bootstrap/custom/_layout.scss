@@ -91,6 +91,14 @@ body.fluid {
   z-index: 200;
   text-shadow: rgba(0, 0, 0, .498039) 0 1px 2px;
   text-transform: uppercase;
+  border: none !important;
+  a.logo {
+    margin: 0;
+    background: url('../../img/aspectran-site-logo.png') no-repeat;
+    background-size: cover;
+    -webkit-transition: width .5s, height .5s, background-color 1s, -webkit-transform 1s;
+    transition: width .5s, height .5s, background-color 1s, transform 1s;
+  }
   .title-bar {
     @include media-breakpoint-up(lg) {
       display: none;
@@ -108,10 +116,6 @@ body.fluid {
         display: block;
         width: 37px;
         height: 37px;
-        background: url('../../img/aspectran-site-logo.png') no-repeat;
-        background-size: cover;
-        -webkit-transition: width .5s, height .5s, background-color 1s, -webkit-transform 1s;
-        transition: width .5s, height .5s, background-color 1s, transform 1s;
         img {
           display: none;
         }
@@ -155,7 +159,7 @@ body.fluid {
     opacity: .975;
     .settings {
       float: right;
-      padding: rem-calc(6.6 15 7.6 3.4);
+      //padding: rem-calc(6.6 15 7.6 3.4);
       select {
         margin: 0;
         background-color: lighten($head-color, 30%);
@@ -163,6 +167,7 @@ body.fluid {
     }
     .quick-search-box {
       .input-group {
+        margin: 0;
         input {
           background-color: lighten($head-color, 30%);
         }
@@ -193,7 +198,6 @@ body.fluid {
       }
     }
     @include media-breakpoint-up(lg) {
-      position: absolute;
       top: 0;
       background-color: $ci-0;
       &:hover {
@@ -216,10 +220,6 @@ body.fluid {
             width: 74px;
             height: 74px;
             display: block;
-            background: url('../../img/aspectran-site-logo.png') no-repeat;
-            background-size: cover;
-            -webkit-transition: width .5s, height .5s, background-color 1s, -webkit-transform 1s;
-            transition: width .5s, height .5s, background-color 1s, transform 1s;
           }
         }
         img {
@@ -246,12 +246,12 @@ body.fluid {
           max-width: 220px;
           border-top: 2px solid transparent;
           margin-left: 5px;
-          @include media-breakpoint-down(md) {
-            padding: rem-calc(7.6 15 7.6 3.4);
-          }
-          @include media-breakpoint-up(lg) {
-            padding: rem-calc(6.5 15 7.6 3.4);
-          }
+          //@include media-breakpoint-down(md) {
+          //  padding: rem-calc(7.6 15 7.6 3.4);
+          //}
+          //@include media-breakpoint-up(lg) {
+          //  padding: rem-calc(6.5 15 7.6 3.4);
+          //}
         }
       }
     }
@@ -281,11 +281,6 @@ body.fluid {
             color: darken($ci-9, 40%);
           }
         }
-        //&.active {
-        //  a {
-        //    background: none;
-        //  }
-        //}
       }
       > li {
         > a {
@@ -384,11 +379,11 @@ body.fluid {
         }
       }
     }
-    .breadcrumbs-bar {
+    .breadcrumb-bar {
       display: none;
     }
   }
-  .breadcrumbs-bar {
+  .breadcrumb-bar {
     @include media-breakpoint-up(lg) {
       margin-top: 57px;
     }
@@ -424,8 +419,6 @@ body.fluid {
             width: 37px;
             height: 37px;
             display: block;
-            background: url('../../img/aspectran-site-logo.png') no-repeat;
-            background-size: cover;
             img {
               display: none;
             }
@@ -494,13 +487,13 @@ body.fluid {
             }
           }
         }
-        .breadcrumbs-bar {
+        .breadcrumb-bar {
           display: block;
         }
       }
     }
     @include media-breakpoint-up(lg) {
-      .breadcrumbs-bar {
+      .breadcrumb-bar {
         margin-top: 48px;
       }
     }
@@ -535,6 +528,9 @@ body.fluid {
   -webkit-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
   -moz-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
   box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+  //@include media-breakpoint-up(lg) {
+  //  margin-top: 57px;
+  //}
   > .container {
     position: relative;
   }
@@ -545,15 +541,14 @@ body.fluid {
   header {
     position: relative;
     z-index: 100;
+    min-height: 220px;
     @include media-breakpoint-down(lg) {
       padding-top: 50px;
-      min-height: 220px;
     }
     @include media-breakpoint-up(lg) {
-      padding-top: 120px;
+      padding-top: 63px;
       padding-left: 20px;
       padding-bottom: 20px;
-      min-height: 220px;
     }
     h1 {
       color: $ci-9;
@@ -590,7 +585,7 @@ body.fluid {
   img {
     border-radius: 0;
   }
-  .breadcrumbs-bar {
+  .breadcrumb-bar {
     background-color: $ci-2;
     @include media-breakpoint-up(xxl) {
       border-radius: 10px 10px 0 0;
@@ -622,10 +617,7 @@ body.fluid {
       }
     }
   }
-  &.masthead-with-image-header {
-    .hexagons {
-      display: none;
-    }
+  &.masthead-with-image {
     @include media-breakpoint-down(lg) {
       height: 285px;
       padding-top: 50px;
@@ -649,6 +641,18 @@ body.fluid {
     @include media-breakpoint-up(lg) {
       padding-top: 57px;
       background: none;
+    }
+  }
+}
+body.compact #masthead {
+  header {
+    min-height: 0;
+    @include media-breakpoint-down(lg) {
+      padding-top: 10px;
+    }
+    @include media-breakpoint-up(lg) {
+      padding-top: 40px;
+      padding-bottom: 10px;
     }
   }
 }
@@ -693,7 +697,7 @@ body.fluid {
 // Breadcrumb
 //------------
 
-.breadcrumbs-bar {
+.breadcrumb-bar {
   font-size: 90%;
   background: scale-color($grey-1, $lightness: 50%);
   .breadcrumb {
@@ -729,7 +733,7 @@ body.fluid {
     }
   }
 }
-body.fluid #masthead .breadcrumbs-bar {
+body.fluid #masthead .breadcrumb-bar {
   border-radius: 0;
 }
 
@@ -1059,16 +1063,15 @@ body.frontpage {
     top: 18px;
   }
   @include media-breakpoint-up(lg) {
-    top: 30px;
+    top: 20px;
   }
   @include media-breakpoint-down(sm) {
     .hex1, .hex2 {
       display: none;
     }
   }
-  @include media-breakpoint-down(lg) {
-    &.masthead-compact .hexagons {
-      display: none;
-    }
-  }
+}
+body.compact #masthead .hexagons,
+#masthead.masthead-with-image .hexagons{
+  display: none;
 }
