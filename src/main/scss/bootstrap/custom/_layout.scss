@@ -105,7 +105,7 @@ body.fluid {
     }
     line-height: 46px;
     background-color: $ci-0;
-    padding: 0;
+    padding: 0 0 0 12px;
     width: 100%;
     overflow: auto;
     .title-bar-left {
@@ -122,20 +122,20 @@ body.fluid {
       }
       &:hover {
         a.logo {
-          -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
+          -webkit-transform: rotate(360deg);
         }
       }
     }
     .title-bar-center {
       position: absolute;
-      left: 20%;
-      right: 20%;
+      left: 60px;
+      right: 60px;
       padding: 0;
       text-align: center;
       text-shadow: rgba(0, 0, 0, .498039) 0 1px 2px;
       a {
-        color: #fff;
+        color: $ci-9;
         letter-spacing: 5px;
         font-size: 115%;
       }
@@ -145,7 +145,6 @@ body.fluid {
       float: right;
       button {
         border: 0;
-        padding-right: 3px;
         &:focus {
           box-shadow: none;
         }
@@ -154,7 +153,6 @@ body.fluid {
   }
   .top-bar {
     width: 100%;
-    min-height: 55px;
     z-index: 101;
     opacity: .975;
     .settings {
@@ -198,7 +196,7 @@ body.fluid {
       }
     }
     @include media-breakpoint-up(lg) {
-      top: 0;
+      min-height: 55px;
       background-color: $ci-0;
       &:hover {
         background-color: darken($ci-0, 2.5%);
@@ -283,23 +281,10 @@ body.fluid {
         }
       }
       > li {
-        > a {
-          align-content: center;
-          &.dropdown-toggle::after {
-            border-color: lighten($ci-1, 20%) transparent transparent;
-          }
-          &.dropdown-toggle.show::after {
-            border-color: $ci-6 transparent transparent;
-          }
-        }
         @include media-breakpoint-down(lg) {
           border-top: 0;
           background-color: $ci-1;
           border-bottom: 1px solid darken($ci-1, 3%);
-          > a {
-            display: block;
-            height: 47px;
-          }
           &:hover {
             background-color: darken($ci-1, 12%);
           }
@@ -311,10 +296,6 @@ body.fluid {
         }
         @include media-breakpoint-up(lg) {
           border-top: 2px solid transparent;
-          a {
-            height: 55px;
-            padding: 0 1.3rem 0 1.3rem;
-          }
           &.active {
             border-top: 2px solid lighten($ci-1, 10%);
           }
@@ -329,6 +310,24 @@ body.fluid {
           }
           &:last-child {
             border-radius: 0 0 7px 7px;
+          }
+        }
+        > a {
+          align-content: center;
+          &.dropdown-toggle::after {
+            border-color: lighten($ci-1, 20%) transparent transparent;
+          }
+          &.dropdown-toggle.show::after {
+            border-color: $ci-6 transparent transparent;
+          }
+          @include media-breakpoint-down(lg) {
+            display: block;
+            height: 47px;
+          }
+          @include media-breakpoint-up(lg) {
+            height: 55px;
+            padding: 0 .7rem 0 .7rem;
+            font-size: .9rem;
           }
         }
       }
@@ -346,25 +345,14 @@ body.fluid {
           border-radius: 0 0 7px 7px;
         }
         > li {
-          min-width: 300px;
+          min-width: 230px;
           align-content: center;
-          > a {
-            height: 40px;
-            align-content: center;
-          }
-          .dropdown-divider {
-            margin: 0;
-            border-top: 1px solid darken($ci-1, 3%);
-          }
           background-color: $ci-0;
           &.active {
             background-color: darken($ci-0, 5%);
           }
           &:hover {
             background-color: darken($ci-0, 3%);
-          }
-          &.submenu-closer {
-            display: none;
           }
           @include media-breakpoint-only(md) {
             &:first-child {
@@ -375,6 +363,18 @@ body.fluid {
             &:last-child {
               border-radius: 0 0 7px 7px;
             }
+          }
+          > a {
+            height: 40px;
+            align-content: center;
+            @include media-breakpoint-up(lg) {
+              padding: 0 .7rem 0 .7rem;
+              font-size: .9rem;
+            }
+          }
+          .dropdown-divider {
+            margin: 0;
+            border-top: 1px solid darken($ci-1, 3%);
           }
         }
       }
@@ -700,6 +700,7 @@ body.compact #masthead {
 .breadcrumb-bar {
   font-size: 90%;
   background: scale-color($grey-1, $lightness: 50%);
+  min-height: 26px;
   .breadcrumb {
     font-size: 90%;
     background: none;

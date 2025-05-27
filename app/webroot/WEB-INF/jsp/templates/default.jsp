@@ -36,22 +36,20 @@
 <body id="top-of-page" class="${page.style}" itemscope itemtype="https://schema.org/WebPage">
 <nav id="navigation" class="navbar navbar-expand-lg navbar-dark">
     <div class="title-bar">
-        <div class="container-fluid">
-            <div class="title-bar-left">
-                <a class="logo" href="<aspectran:url value="/"/>" title="Aspectran"><img src="https://assets.aspectran.com/img/aspectran-site-logo.png" alt="Aspectran"/></a>
-            </div>
-            <div class="title-bar-center me-auto mb-2 mb-lg-0">
-                <a href="#top-of-page">Aspectran</a>
-            </div>
-            <div class="title-bar-right">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
+        <div class="title-bar-left">
+            <a class="logo" href="<aspectran:url value="/"/>" title="Aspectran"><img src="https://assets.aspectran.com/img/aspectran-site-logo.png" alt="Aspectran"/></a>
+        </div>
+        <div class="title-bar-center">
+            <a href="#top-of-page">Aspectran</a>
+        </div>
+        <div class="title-bar-right">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
     </div>
-    <div class="top-bar navbar-collapse collapse" id="navbarSupportedContent">
-        <div class="container navbar-collapse">
+    <div class="top-bar">
+        <div class="container collapse navbar-collapse" id="navbarSupportedContent">
             <div class="top-bar-logo">
                 <div class="circle">
                     <a class="navbar-brand logo" href="<aspectran:url value="/"/>" title="Aspectran"><img src="https://assets.aspectran.com/img/aspectran-site-logo.png" alt="Aspectran"/></a>
@@ -404,7 +402,7 @@
             }
         }
         if (!$(".breadcrumb li").length) {
-            $(".breadcrumb").hide();
+            $(".breadcrumb-bar").addClass("invisible");
         }
     });
 </script>
