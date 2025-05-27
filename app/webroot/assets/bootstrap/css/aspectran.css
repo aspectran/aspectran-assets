@@ -11863,6 +11863,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+body .container.contour {
+  padding: 0 0 1rem 0;
+}
+
 body.plate {
   background-color: #E4E4E4;
 }
@@ -11872,7 +11876,6 @@ body.plate .container {
 body.plate .contour {
   background-color: #FFFFFF;
   min-height: 400px;
-  padding: 0 0 1rem 0;
 }
 @media (min-width: 992px) {
   body.plate .contour {
@@ -11902,7 +11905,6 @@ body.fluid .container {
 }
 body.fluid .contour {
   min-height: 400px;
-  padding: 0 0 1rem 0;
   border-radius: 0;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;

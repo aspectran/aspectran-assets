@@ -8,8 +8,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google" content="notranslate">
-    <title>Aspectran :: CSS</title>
-    <meta name="description" content="PetClinic is a full web application built on top of Aspectran 8."/>
+    <title>Aspectran Assets</title>
+    <meta name="description" content="Aspectran Assets is for building and deploying CSS, JS, Fonts, and Images commonly used in Aspectran's demo applications."/>
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap/css/aspectran.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap">
     <script src="https://assets.aspectran.com/js/modernizr-custom.js"></script>
@@ -38,7 +38,7 @@
     <div class="title-bar">
         <div class="container-fluid">
             <div class="title-bar-left">
-                <a class="logo" th:href="@{/../}" title="Aspectran"><img src="https://assets.aspectran.com/img/aspectran-site-logo.png" alt="Aspectran"/></a>
+                <a class="logo" href="<aspectran:url value="/"/>" title="Aspectran"><img src="https://assets.aspectran.com/img/aspectran-site-logo.png" alt="Aspectran"/></a>
             </div>
             <div class="title-bar-center me-auto mb-2 mb-lg-0">
                 <a href="#top-of-page">Aspectran</a>
@@ -54,27 +54,34 @@
         <div class="container navbar-collapse">
             <div class="top-bar-logo">
                 <div class="circle">
-                    <a class="navbar-brand logo" th:href="@{/../}" title="Aspectran"><img src="https://assets.aspectran.com/img/aspectran-site-logo.png" alt="Aspectran"/></a>
+                    <a class="navbar-brand logo" href="<aspectran:url value="/"/>" title="Aspectran"><img src="https://assets.aspectran.com/img/aspectran-site-logo.png" alt="Aspectran"/></a>
                 </div>
             </div>
             <div class="top-bar-left me-auto">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"
-                            href="<aspectran:url value="/jsp/templates/default/"/>" title="Sample applications built on Aspectran">JSP Templates</a>
+                            href="<aspectran:url value="/jsp/templates/default/"/>" title="JSP Templates">JSP Templates</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="<aspectran:url value="/jsp/templates/default/"/>">Default</a></li>
                             <li><a class="dropdown-item" href="<aspectran:url value="/jsp/templates/default/plate"/>">Plate</a></li>
                             <li><a class="dropdown-item" href="<aspectran:url value="/jsp/templates/default/plate solid"/>">Plate Solid</a></li>
                             <li><a class="dropdown-item" href="<aspectran:url value="/jsp/templates/default/fluid"/>">Fluid</a></li>
                             <li><a class="dropdown-item" href="<aspectran:url value="/jsp/templates/default/fluid compact"/>">Fluid Compact</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="<aspectran:url value="/jsp/samples/mastheadimage"/>">MastHeadImage</a></li>
+                            <li><a class="dropdown-item" href="<aspectran:url value="/jsp/samples/appmon"/>">AppMon</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"
-                            href="" title="Sample applications built on Aspectran">Sample Pages</a>
+                            href="<aspectran:url value="/thymeleaf/templates/default/"/>" title="Thymeleaf Templates">Thymeleaf Templates</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="<aspectran:url value="/jsp/samples/mastheadimage"/>">MastHeadImage</a></li>
+                            <li><a class="dropdown-item" href="<aspectran:url value="/thymeleaf/templates/default/"/>">Default</a></li>
+                            <li><a class="dropdown-item" href="<aspectran:url value="/thymeleaf/templates/default/plate"/>">Plate</a></li>
+                            <li><a class="dropdown-item" href="<aspectran:url value="/thymeleaf/templates/default/plate solid"/>">Plate Solid</a></li>
+                            <li><a class="dropdown-item" href="<aspectran:url value="/thymeleaf/templates/default/fluid"/>">Fluid</a></li>
+                            <li><a class="dropdown-item" href="<aspectran:url value="/thymeleaf/templates/default/fluid compact"/>">Fluid Compact</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="<aspectran:url value="/jsp/samples/appmon"/>">AppMon</a></li>
                         </ul>
@@ -82,7 +89,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="https://github.com/aspectran/aspectran-assets">Get Involved</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="https://github.com/aspectran/aspectow-demo">GitHub</a></li>
+                            <li><a class="dropdown-item" href="https://github.com/aspectran/aspectow-assets">GitHub</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -90,7 +97,7 @@
             <div class="top-bar-right">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="<aspectran:url value="/monitoring/"/>">Monitoring</a>
+                        <a class="nav-link" href="<aspectran:url value="/jsp/samples/appmon"/>">Monitoring</a>
                     </li>
                 </ul>
                 <div class="quick-search-box">
@@ -374,7 +381,6 @@
 </script>
 <script>
     $(function() {
-        console.log(location.pathname);
         let menuitem = $("#navbarSupportedContent .navbar-nav a[href='" + decodeURI(location.pathname) + "']").last();
         if (menuitem.length > 0) {
             let arr = [];

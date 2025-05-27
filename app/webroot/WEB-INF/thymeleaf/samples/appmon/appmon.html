@@ -1,11 +1,13 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" session="false" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://aspectran.com/tags" prefix="aspectran" %>
-<link rel="stylesheet" href="<aspectran:url value="/assets/appmon/css/appmon.css?20250418"/>">
-<script src="<aspectran:url value="/assets/appmon/js/front-builder.js?20250418"/>"></script>
-<script src="<aspectran:url value="/assets/appmon/js/front-viewer.js?20250418"/>"></script>
-<script src="<aspectran:url value="/assets/appmon/js/websocket-client.js?20250418"/>"></script>
-<script src="<aspectran:url value="/assets/appmon/js/polling-client.js?20250418"/>"></script>
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{templates/default :: template(${page.style}, ~{::body}, 'samples/appmon', ${page.headinclude}, ${page.headimageinclude})}">
+<body>
+
+<link rel="stylesheet" th:href="@{/assets/appmon/css/appmon.css?v20250418}">
+<script th:src="@{/assets/appmon/js/front-builder.js?v20250418}"></script>
+<script th:src="@{/assets/appmon/js/front-viewer.js?v20250418}"></script>
+<script th:src="@{/assets/appmon/js/websocket-client.js?v20250418}"></script>
+<script th:src="@{/assets/appmon/js/polling-client.js?v20250418}"></script>
 <div class="container">
     <ul class="instance tabs nav nav-tabs mt-3">
         <li class="tabs-title nav-item active">
@@ -110,3 +112,6 @@
         </div>
     </div>
 </div>
+
+</body>
+</html>
