@@ -157,7 +157,6 @@ body.fluid {
     opacity: .975;
     .settings {
       float: right;
-      //padding: rem-calc(6.6 15 7.6 3.4);
       select {
         margin: 0;
         background-color: lighten($head-color, 30%);
@@ -244,12 +243,6 @@ body.fluid {
           max-width: 220px;
           border-top: 2px solid transparent;
           margin-left: 5px;
-          //@include media-breakpoint-down(md) {
-          //  padding: rem-calc(7.6 15 7.6 3.4);
-          //}
-          //@include media-breakpoint-up(lg) {
-          //  padding: rem-calc(6.5 15 7.6 3.4);
-          //}
         }
       }
     }
