@@ -11877,7 +11877,7 @@ body.plate .contour {
   background-color: #FFFFFF;
   min-height: 400px;
 }
-@media (min-width: 992px) {
+@media (min-width: 1400px) {
   body.plate .contour {
     border-radius: 0 0 10px 10px;
     -webkit-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
@@ -11891,7 +11891,7 @@ body.plate.solid {
 body.plate.solid #up-to-top a {
   color: #FFFFFF;
 }
-@media (min-width: 992px) {
+@media (min-width: 1400px) {
   body.plate.solid .contour {
     -webkit-box-shadow: -3px 0 5px -3px rgba(1, 1, 1, 0.63), 3px 0 5px -3px rgba(1, 1, 1, 0.63);
     -moz-box-shadow: -3px 0 5px -3px rgba(1, 1, 1, 0.63), 3px 0 5px -3px rgba(1, 1, 1, 0.63);
