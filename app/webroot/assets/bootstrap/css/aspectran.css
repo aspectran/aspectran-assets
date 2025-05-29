@@ -11871,7 +11871,7 @@ body.plate {
   background-color: #E4E4E4;
 }
 body.plate .container {
-  max-width: 1320px;
+  max-width: 1382px;
 }
 body.plate .contour {
   background-color: #FFFFFF;
@@ -12157,7 +12157,6 @@ body.fluid #subfooter > .container {
   #navigation .top-bar ul.navbar-nav > li > a {
     height: 55px;
     padding: 0 0.7rem 0 0.7rem;
-    font-size: 0.9rem;
   }
 }
 #navigation .top-bar ul.navbar-nav ul.dropdown-menu {
