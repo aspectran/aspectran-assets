@@ -12328,12 +12328,14 @@ body.fluid #subfooter > .container {
 #masthead > .container {
   position: relative;
 }
-#masthead > .container:first-child {
-  min-height: 40px;
+@media (min-width: 992px) {
+  #masthead > .container:first-child {
+    min-height: 40px;
+  }
 }
 #masthead a {
   border: 0;
-  color: #fff;
+  color: #FFFFFF;
 }
 #masthead header {
   position: relative;
