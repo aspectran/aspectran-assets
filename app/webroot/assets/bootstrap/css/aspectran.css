@@ -12328,6 +12328,9 @@ body.fluid #subfooter > .container {
 #masthead > .container {
   position: relative;
 }
+#masthead > .container:first-child {
+  min-height: 40px;
+}
 #masthead a {
   border: 0;
   color: #fff;

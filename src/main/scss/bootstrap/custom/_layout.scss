@@ -489,11 +489,11 @@ body.fluid {
   -webkit-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
   -moz-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
   box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
-  //@include media-breakpoint-up(lg) {
-  //  margin-top: 57px;
-  //}
   > .container {
     position: relative;
+    &:first-child {
+      min-height: 40px;
+    }
   }
   a {
     border: 0;
