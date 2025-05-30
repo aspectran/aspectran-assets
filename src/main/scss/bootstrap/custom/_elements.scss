@@ -145,6 +145,9 @@ article {
   -moz-box-shadow: 0 8px 15px -10px rgba(50, 50, 50, 0.33);
   box-shadow: 0 8px 15px -10px rgba(50, 50, 50, 0.33);
   margin: 0;
+  @include media-breakpoint-down(md) {
+    border-radius: 1em;
+  }
   > .tabs-title {
     margin: 0;
     > a {
@@ -208,6 +211,17 @@ article {
         opacity: 1;
       }
     }
+    @include media-breakpoint-down(md) {
+      clear: both;
+      margin-bottom: 3px;
+      width: 100%;
+      > a {
+        border-radius: 50px;
+      }
+      .indicator {
+        float: right;
+      }
+    }
   }
 }
 #masthead .tabs {
@@ -217,9 +231,6 @@ article {
   -moz-box-shadow: none;
   box-shadow: none;
   margin-bottom: 0;
-  @include media-breakpoint-down(md) {
-    border-radius: 1em;
-  }
   > .tabs-title {
     > a {
       font-size: 1em;
@@ -253,7 +264,7 @@ article {
       margin-bottom: 3px;
       width: 100%;
       > a {
-        border-radius: 35px;
+        border-radius: $global-radius;
       }
       .indicator {
         float: right;

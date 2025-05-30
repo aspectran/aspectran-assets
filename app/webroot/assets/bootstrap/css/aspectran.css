@@ -13568,6 +13568,11 @@ article a.toc-anchor {
   box-shadow: 0 8px 15px -10px rgba(50, 50, 50, 0.33);
   margin: 0;
 }
+@media (max-width: 767.98px) {
+  .tabs {
+    border-radius: 1em;
+  }
+}
 .tabs > .tabs-title {
   margin: 0;
 }
@@ -13632,6 +13637,19 @@ article a.toc-anchor {
     opacity: 1;
   }
 }
+@media (max-width: 767.98px) {
+  .tabs > .tabs-title {
+    clear: both;
+    margin-bottom: 3px;
+    width: 100%;
+  }
+  .tabs > .tabs-title > a {
+    border-radius: 50px;
+  }
+  .tabs > .tabs-title .indicator {
+    float: right;
+  }
+}
 
 #masthead .tabs {
   background: none;
@@ -13640,11 +13658,6 @@ article a.toc-anchor {
   -moz-box-shadow: none;
   box-shadow: none;
   margin-bottom: 0;
-}
-@media (max-width: 767.98px) {
-  #masthead .tabs {
-    border-radius: 1em;
-  }
 }
 #masthead .tabs > .tabs-title > a {
   font-size: 1em;
@@ -13682,7 +13695,7 @@ article a.toc-anchor {
     width: 100%;
   }
   #masthead .tabs > .tabs-title > a {
-    border-radius: 35px;
+    border-radius: 3px;
   }
   #masthead .tabs > .tabs-title .indicator {
     float: right;
