@@ -13580,6 +13580,7 @@ article a.toc-anchor {
   border: 0;
   color: #445259;
   background-color: #D7D7D7;
+  cursor: pointer;
 }
 .tabs > .tabs-title > a:hover {
   background-color: rgb(202.25, 202.25, 202.25);
@@ -13642,19 +13643,7 @@ article a.toc-anchor {
 }
 @media (max-width: 767.98px) {
   #masthead .tabs {
-    padding-top: 10px;
-    padding-bottom: 10px;
     border-radius: 1em;
-  }
-}
-@media (min-width: 768px) and (max-width: 991.98px) {
-  #masthead .tabs {
-    padding-top: 10px;
-  }
-}
-@media (min-width: 992px) {
-  #masthead .tabs {
-    padding-top: 30px;
   }
 }
 #masthead .tabs > .tabs-title > a {

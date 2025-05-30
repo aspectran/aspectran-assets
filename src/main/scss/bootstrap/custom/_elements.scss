@@ -156,10 +156,10 @@ article {
       border: 0;
       color: $ci-0;
       background-color: $grey-2;
-      //border-radius: $global-radius $global-radius 0 0;
       &:hover {
         background-color: darken($grey-2, 5%);
       }
+      cursor: pointer;
     }
     &.active {
       border: 0;
@@ -218,15 +218,7 @@ article {
   box-shadow: none;
   margin-bottom: 0;
   @include media-breakpoint-down(md) {
-    padding-top: 10px;
-    padding-bottom: 10px;
     border-radius: 1em;
-  }
-  @include media-breakpoint-only(md) {
-    padding-top: 10px;
-  }
-  @include media-breakpoint-up(lg) {
-    padding-top: 30px;
   }
   > .tabs-title {
     > a {

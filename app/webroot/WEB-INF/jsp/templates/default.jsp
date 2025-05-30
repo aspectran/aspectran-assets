@@ -119,6 +119,7 @@
 <section itemscope itemtype="https://schema.org/Article">
     <div id="masthead" class="<c:if test="${fn:contains(page.style, 'compact')}">masthead-compact</c:if><c:if test="${not empty page.headimageinclude}">masthead-with-image</c:if>">
         <div class="container ${page.style}">
+        <c:if test="${not empty page.headline}">
             <header>
                 <c:if test="${not empty page.subheadline}">
                     <p class="subheadline" itemprop="alternativeHeadline">${page.subheadline}</p>
@@ -130,6 +131,7 @@
                     <p class="teaser" itemprop="description">${page.teaser}</p>
                 </c:if>
             </header>
+        </c:if>
         <c:if test="${not empty page.headinclude}">
             <jsp:include page="/WEB-INF/jsp/${page.headinclude}.jsp"/>
         </c:if>
