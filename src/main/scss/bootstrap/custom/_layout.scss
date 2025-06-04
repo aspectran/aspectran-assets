@@ -274,7 +274,6 @@ body.fluid {
         }
       }
       > li {
-        display: inline-block;
         @include media-breakpoint-down(lg) {
           border-top: 0;
           background-color: $ci-1;
@@ -289,6 +288,7 @@ body.fluid {
           }
         }
         @include media-breakpoint-up(lg) {
+          display: inline-block;
           border-top: 2px solid transparent;
           &.active {
             border-top: 2px solid lighten($ci-1, 10%);
