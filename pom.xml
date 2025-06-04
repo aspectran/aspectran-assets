@@ -206,7 +206,7 @@
                             <version>1.83.0</version>
                             <inputFolder>${basedir}/src/main/scss/foundation</inputFolder>
                             <outputFolder>${basedir}/app/webroot/assets/foundation/css</outputFolder>
-                            <!--<style>COMPRESSED</style>-->
+                            <style>COMPRESSED</style>
                         </configuration>
                         <executions>
                             <execution>
@@ -234,7 +234,7 @@
                             <version>1.83.0</version>
                             <inputFolder>${basedir}/src/main/scss/bootstrap</inputFolder>
                             <outputFolder>${basedir}/app/webroot/assets/bootstrap/css</outputFolder>
-                            <!--<style>COMPRESSED</style>-->
+                            <style>COMPRESSED</style>
                         </configuration>
                         <executions>
                             <execution>
