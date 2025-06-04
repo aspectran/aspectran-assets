@@ -274,6 +274,7 @@ body.fluid {
         }
       }
       > li {
+        display: inline-block;
         @include media-breakpoint-down(lg) {
           border-top: 0;
           background-color: $ci-1;

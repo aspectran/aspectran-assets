@@ -12103,6 +12103,9 @@ body.fluid #subfooter > .container {
 #navigation .top-bar ul.navbar-nav li > a.disabled {
   color: #999999;
 }
+#navigation .top-bar ul.navbar-nav > li {
+  display: inline-block;
+}
 @media (max-width: 991.98px) {
   #navigation .top-bar ul.navbar-nav > li {
     border-top: 0;
