@@ -10,7 +10,7 @@
     <meta name="google" content="notranslate">
     <title>Aspectran Assets</title>
     <meta name="description" content="Aspectran Assets is for building and deploying CSS, JS, Fonts, and Images commonly used in Aspectran's demo applications."/>
-    <link rel="stylesheet" type="text/css" href="/assets/bootstrap/css/aspectran.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap@5.3.7/css/aspectran.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap">
     <script src="https://assets.aspectran.com/js/modernizr-custom.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
