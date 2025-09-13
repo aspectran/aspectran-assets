@@ -101,25 +101,6 @@ p {
   a {
     border-bottom: 1px dotted;
   }
-  &.subheadline {
-    @include breakpoint(medium down) {
-      font-size: rem-calc(12);
-    }
-    @include breakpoint(large) {
-      font-size: rem-calc(14);
-    }
-    margin: 0;
-    text-transform: uppercase;
-  }
-  &.teaser {
-    margin: 0;
-    padding-bottom: 1em;
-    font-size: rem-calc(18);
-  }
-  &.source {
-    margin-bottom: .5em;
-    font-size: .9em;
-  }
 }
 
 // Images

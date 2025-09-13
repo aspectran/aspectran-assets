@@ -52,7 +52,7 @@
         <maven.compiler.release>21</maven.compiler.release>
 
         <aspectran.version>9.0.0-SNAPSHOT</aspectran.version>
-        <bootstrap.version>5.3.7</bootstrap.version>
+        <bootstrap.version>5.3.8</bootstrap.version>
         <foundation.version>6.9.0</foundation.version>
     </properties>
 
