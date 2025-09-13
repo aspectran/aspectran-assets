@@ -242,13 +242,10 @@ article {
 .panel {
   padding: 1rem;
   border: 2px solid $grey-3;
-  background-color: $grey-0;
   border-radius: $global-radius;
+  background-color: darken($bg-color, 3%);
   h3, h4 {
     margin-top: 0 !important;
-  }
-  &.white {
-    background-color: #fff;
   }
 }
 
@@ -325,7 +322,6 @@ img.lazy {
 #google_translate_element {
   margin-top: 1em;
   padding: .5em 1em;
-  background-color: $bg-color;
   border: 1px solid $grey-3;
   //border-radius: $global-radius;
   min-height: 75px;

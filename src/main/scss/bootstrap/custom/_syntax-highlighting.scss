@@ -63,3 +63,26 @@
     .vi    { color: #008080 } // Name.Variable.Instance
     .il    { color: #099 } // Literal.Number.Integer.Long
 }
+
+@include color-mode(dark) {
+  .highlight {
+    .nt {
+      color: #0d6efd;
+    }
+    .nc {
+      color: #5d77c7;
+    }
+    .nf {
+      color: #a74206;
+    }
+    .s {
+      color: #de5edc;
+    }
+    .kd {
+      color: #b5b1b1;
+    }
+    .nn {
+      color: #777;
+    }
+  }
+}
