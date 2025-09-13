@@ -36,7 +36,7 @@ p.gototop-anchor-wrap {
     }
     &.left {
       border: 0;
-      border-right: 1px solid $grey-2;
+      border-right: 2px solid $ci-1;
       padding-bottom: 1.5em;
       .toc-title {
         display: none;
@@ -44,7 +44,6 @@ p.gototop-anchor-wrap {
     }
   }
   ul {
-    margin: 0 0 0 .9em;
     list-style-type: none;
     li.toc-h1 {
       font-weight: bold;
@@ -78,79 +77,22 @@ article {
   }
 }
 
-// Accordion
-//-----------
-
-.accordion {
-  border: 0;
-  border-top: 1px solid $grey-2;
-  border-radius: 0;
-  .accordion-item {
-    border-bottom: 1px solid $grey-2;
-    .accordion-title {
-      font-size: 100%;
-      line-height: 1.4;
-      border: 0;
-      background-color: transparent;
-      span.iconfont {
-        padding-right: .5rem;
-        &:before {
-          content: "\F107"
-        }
-      }
-    }
-    &.is-active {
-      .accordion-title {
-        background-color: $grey-1;
-        border-radius: 0 0 6px 6px;
-        span.iconfont:before {
-          content: "\F105"
-        }
-      }
-    }
-  }
-  .accordion-content {
-    padding: .7rem;
-    border: 0;
-    p {
-      margin: 0;
-    }
-  }
-}
-
-// Brief List
-//----------
-
-.brief-list {
-  list-style: none;
-  margin: 0;
-  border-top: 1px solid $grey-2;
-  li {
-    border-bottom: 1px solid $grey-2;
-    padding: .7rem 0;
-    &.more {
-      border-bottom: 0;
-      text-align: right;
-    }
-  }
-}
-
 // Tabs
 //------
 
 .tabs {
   position: relative;
   border: 0;
-  -webkit-box-shadow: 0 8px 15px -10px rgba(50, 50, 50, 0.33);
-  -moz-box-shadow: 0 8px 15px -10px rgba(50, 50, 50, 0.33);
-  box-shadow: 0 8px 15px -10px rgba(50, 50, 50, 0.33);
+  -webkit-box-shadow: 0 8px 10px -10px rgba(50, 50, 50, 0.33);
+  -moz-box-shadow: 0 8px 10px -10px rgba(50, 50, 50, 0.33);
+  box-shadow: 0 8px 10px -10px rgba(50, 50, 50, 0.33);
   margin: 0;
   @include media-breakpoint-down(md) {
     border-radius: 1em;
   }
   > .tabs-title {
     margin: 0;
-    > a {
+    > a, button {
       font-size: .9em;
       font-weight: bold;
       margin-right: 1px;
@@ -159,14 +101,18 @@ article {
       border: 0;
       color: $ci-0;
       background-color: $grey-2;
+      cursor: pointer;
       &:hover {
         background-color: darken($grey-2, 5%);
       }
-      cursor: pointer;
+      &.active {
+        color: $ci-9;
+        background-color: $ci-2;
+      }
     }
     &.active {
       border: 0;
-      > a {
+      > a, button {
         color: $ci-9;
         background-color: $ci-2;
       }
@@ -186,10 +132,6 @@ article {
       &.on {
         color: $ci-7;
       }
-    }
-    .count {
-      color: $ci-8;
-      padding-left: .5rem;
     }
     .blink {
       animation: blink .8s steps(4, start) infinite;
@@ -232,7 +174,7 @@ article {
   box-shadow: none;
   margin-bottom: 0;
   > .tabs-title {
-    > a {
+    > a, button {
       font-size: 1em;
       text-shadow: none;
       margin-right: 2px;
@@ -241,9 +183,18 @@ article {
       &:hover {
         background: darken($head-color, 6%);
       }
+      &.active {
+        color: $ci-9;
+        @include media-breakpoint-down(md) {
+          background: $ci-1;
+        }
+        @include media-breakpoint-up(md) {
+          background: $ci-2;
+        }
+      }
     }
     &.active {
-      > a {
+      > a, button {
         color: $ci-9;
         @include media-breakpoint-down(md) {
           background: $ci-1;
@@ -290,9 +241,9 @@ article {
 
 .panel {
   padding: 1rem;
-  border: 1px solid $grey-3;
+  border: 2px solid $grey-3;
   background-color: $grey-0;
-  //border-radius: $global-radius;
+  border-radius: $global-radius;
   h3, h4 {
     margin-top: 0 !important;
   }

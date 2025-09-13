@@ -23,9 +23,6 @@
 // Default Style
 //--------------
 
-body .container.contour {
-  padding: 0 0 1rem 0;
-}
 
 // Plate Style
 //--------------
@@ -157,7 +154,6 @@ body.fluid {
     z-index: 101;
     opacity: .975;
     .settings {
-      float: right;
       select {
         margin: 0;
         background-color: lighten($head-color, 30%);
@@ -189,9 +185,11 @@ body.fluid {
       }
       .top-bar-right {
         width: 100%;
-        .lang-options,
         .quick-search-box {
           padding: .8rem;
+        }
+        .settings {
+          display: none;
         }
       }
     }
@@ -238,10 +236,10 @@ body.fluid {
         .navbar-nav {
           display: inline-block;
         }
-        .lang-options,
+        .settings,
         .quick-search-box {
           display: inline-block;
-          max-width: 220px;
+          max-width: 200px;
           border-top: 2px solid transparent;
           margin-left: 5px;
         }
@@ -290,6 +288,9 @@ body.fluid {
           &:hover {
             background-color: $ci-0;
             border-top: 2px solid lighten($ci-0, 10%);
+            .dropdown-menu {
+              display: block;
+            }
           }
         }
         @include media-breakpoint-only(md) {
@@ -377,7 +378,6 @@ body.fluid {
       box-shadow: 0 3px 4px 0 rgba(0,0,0,0.2),0 3px 3px -2px rgba(0,0,0,0.14),0 1px 8px 0 rgba(0,0,0,0.12);
       .top-bar-logo {
         .circle {
-          margin: rem-calc(5.5 12 0 15);
           background-color: $ci-1;
           width: 37px;
           height: 37px;
@@ -392,14 +392,13 @@ body.fluid {
           }
         }
       }
-      .lang-options,
+      .settings,
       .quick-search-box {
         border: 0;
         @include media-breakpoint-down(md) {
           padding: .8rem;
         }
         @include media-breakpoint-up(lg) {
-          padding: rem-calc(4 14.5 2.9 3.4);
           input, select {
             background-color: $grey-2;
           }
@@ -423,7 +422,7 @@ body.fluid {
         background-color: $bg-color;
         opacity: .9;
         &:hover {
-          opacity: .93;
+          opacity: 1;
         }
         ul.navbar-nav {
           > li {
@@ -556,6 +555,7 @@ body.fluid {
       a {
         color: $ci-9;
         font-weight: normal;
+        text-transform: uppercase;
       }
       .active {
         color: $ci-9;
@@ -613,43 +613,6 @@ body.compact #masthead {
     @include media-breakpoint-up(lg) {
       padding-top: 40px;
       padding-bottom: 10px;
-    }
-  }
-}
-
-// Masthead for Frontpage
-//------------------------
-
-.frontpage #masthead {
-  color: #fff;
-  background-color: $head-color;
-  @include media-breakpoint-only(sm) {
-    .col {
-      padding: 0 5%;
-    }
-  }
-  @include media-breakpoint-down(md) {
-    padding: 15px 0 10px 0;
-    .badges {
-      text-align: center;
-    }
-    .thumb {
-      margin-bottom: 10px;
-    }
-  }
-  @include media-breakpoint-up(lg) {
-    padding: 110px 0 20px 0;
-  }
-  #forkme-ribbon {
-    display: block;
-  }
-  img {
-    border-radius: $border-radius;
-  }
-  .thumb {
-    margin-top: .5rem;
-    @include media-breakpoint-up(lg) {
-      margin-bottom: .5rem;
     }
   }
 }
@@ -843,8 +806,7 @@ body.fluid #masthead .breadcrumb-bar {
     list-style: none;
     float: right;
     li {
-      float: left;
-      margin-right: rem-calc(15);
+      display: inline-block;
       a {
         display: block;
         padding: 0 1rem;
