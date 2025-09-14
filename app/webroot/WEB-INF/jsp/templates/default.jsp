@@ -10,10 +10,6 @@
     <meta name="google" content="notranslate">
     <title>Aspectran Assets</title>
     <meta name="description" content="Aspectran Assets is for building and deploying CSS, JS, Fonts, and Images commonly used in Aspectran's demo applications."/>
-    <link rel="stylesheet" type="text/css" href="/assets/bootstrap@5.3.8/css/aspectran.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap">
-    <script src="https://assets.aspectran.com/js/modernizr-custom.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link rel="mask-icon" href="https://assets.aspectran.com/img/aspectran-logo.svg" color="#4B555A"/>
     <link rel="apple-touch-icon" sizes="57x57" href="https://assets.aspectran.com/img/apple-icon-57x57.png"/>
     <link rel="apple-touch-icon" sizes="60x60" href="https://assets.aspectran.com/img/apple-icon-60x60.png"/>
@@ -30,8 +26,12 @@
     <link rel="icon" type="image/png" sizes="96x96" href="https://assets.aspectran.com/img/favicon-96x96.png"/>
     <meta name="msapplication-TileImage" content="https://assets.aspectran.com/img/ms-icon-144x144.png"/>
     <meta name="msapplication-TileColor" content="#4B555A"/>
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap@5.3.8/css/aspectran.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap">
+    <script src="https://assets.aspectran.com/js/modernizr-custom.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" integrity="sha256-pdY4ejLKO67E0CM2tbPtq1DJ3VGDVVdqAR6j3ZwdiE4=" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha256-ew8UiV1pJH/YjpOEBInP1HxVvT/SfrCmwSoUzF9JIgc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </head>
 <body id="top-of-page" class="${page.style}" itemscope itemtype="https://schema.org/WebPage">
 <nav id="navigation" class="navbar navbar-expand-lg" data-bs-theme="dark">
@@ -93,17 +93,47 @@
                     </li>
                 </ul>
             </div>
-            <div class="top-bar-right">
+            <div class="top-bar-right d-lg-flex align-items-center gap-3">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="<aspectran:url value="/jsp/samples/appmon"/>">Monitoring</a>
                     </li>
                 </ul>
-                <div class="quick-search-box">
+                <div class="quick-search-box quick-search-box mx-3 my-2 m-lg-0">
                     <form class="d-flex input-group" role="search">
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn" type="submit"><i class="bi bi-search"></i></button>
+                        <input class="form-control" type="text" name="keyword" placeholder="Search" aria-label="Search" aria-describedby="top-bar-quick-search-btn">
+                        <button class="btn btn-outline-primary text-white" type="button" id="top-bar-quick-search-btn"><i class="bi bi-search"></i></button>
                     </form>
+                </div>
+                <div class="settings">
+                    <div class="theme-toggler dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="theme-toggler-btn" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle theme">
+                            <i class="bi theme-icon-active"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="theme-toggler-btn">
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
+                                    <i class="bi bi-sun-fill me-2 opacity-50"></i>
+                                    Light
+                                    <i class="bi bi-check2 ms-auto d-none"></i>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
+                                    <i class="bi bi-moon-stars-fill me-2 opacity-50"></i>
+                                    Dark
+                                    <i class="bi bi-check2 ms-auto d-none"></i>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto">
+                                    <i class="bi bi-circle-half me-2 opacity-50"></i>
+                                    Auto
+                                    <i class="bi bi-check2 ms-auto d-none"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -133,9 +163,6 @@
                 </c:if>
             </header>
         </c:if>
-        <c:if test="${not empty page.headinclude}">
-            <jsp:include page="/WEB-INF/jsp/${page.headinclude}.jsp"/>
-        </c:if>
         <c:if test="${not fn:contains(page.style, 'compact') and not empty page.headline}">
             <div class="hexagons">
                 <div class="hexagon hex1"></div>
@@ -146,6 +173,9 @@
             </div>
         </c:if>
         </div>
+        <c:if test="${not empty page.headinclude}">
+            <jsp:include page="/WEB-INF/jsp/${page.headinclude}.jsp"/>
+        </c:if>
         <c:if test="${not empty page.headimageinclude}">
             <jsp:include page="/WEB-INF/jsp/${page.headimageinclude}.jsp"/>
         </c:if>
@@ -209,6 +239,100 @@
         </div>
     </div>
 </footer>
+<script>
+    $(function () {
+        const getStoredTheme = () => localStorage.getItem('theme');
+        const setStoredTheme = theme => localStorage.setItem('theme', theme);
+
+        const getPreferredTheme = () => {
+            const storedTheme = getStoredTheme();
+            if (storedTheme) {
+                return storedTheme;
+            }
+            return 'auto';
+        };
+
+        const setTheme = theme => {
+            const newTheme = theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme;
+            $('html').attr('data-bs-theme', newTheme);
+        };
+
+        const showActiveTheme = (theme) => {
+            const $themeToggler = $('.theme-toggler');
+            if (!$themeToggler.length) {
+                return;
+            }
+
+            $themeToggler.find('.dropdown-item.active').removeClass('active');
+            $themeToggler.find('.dropdown-item .bi-check2').addClass('d-none');
+
+            const $activeItem = $themeToggler.find('[data-bs-theme-value="' + theme + '"]');
+            $activeItem.addClass('active');
+            $activeItem.find('.bi-check2').removeClass('d-none');
+
+            const iconClass = $activeItem.find('.bi:first').attr('class').match(/bi-[^\s]+/)[0];
+            $themeToggler.find('.theme-icon-active').attr('class', 'bi theme-icon-active ' + iconClass);
+        };
+
+        const preferredTheme = getPreferredTheme();
+        setTheme(preferredTheme);
+        showActiveTheme(preferredTheme);
+
+        $(window.matchMedia('(prefers-color-scheme: dark)')).on('change', () => {
+            const storedTheme = getStoredTheme();
+            if (storedTheme === 'auto' || !storedTheme) {
+                setTheme('auto');
+            }
+        });
+
+        $('.theme-toggler [data-bs-theme-value]').on('click', function() {
+            const theme = $(this).data('bs-theme-value');
+            setStoredTheme(theme);
+            setTheme(theme);
+            showActiveTheme(theme);
+        });
+    });
+</script>
+<script>
+    const supportedLanguages = ['en', 'ko'];
+    function getPreferredLangCodeFromLocalStorage() {
+        let langCode = localStorage.getItem("preferred-lang-code");
+        if (langCode && supportedLanguages.includes(langCode)) {
+            return langCode;
+        } else {
+            return null;
+        }
+    }
+    function setPreferredLangCodeToLocalStorage(langCode) {
+        localStorage.setItem("preferred-lang-code", langCode);
+    }
+    function getPreferredLangCode() {
+        let langCode = getPreferredLangCodeFromLocalStorage();
+        if (langCode) {
+            return langCode;
+        }
+        const languages = navigator.languages;
+        if (languages && languages.length) {
+            for (const lang of languages) {
+                let code = lang.substring(0, 2);
+                if (supportedLanguages.includes(code)) {
+                    return code;
+                }
+            }
+        }
+        return 'en';
+    }
+    $(function () {
+        $(".choice-preferred-lang").on("click", function (e) {
+            e.preventDefault();
+            let langCode = $(this).attr("lang");
+            if (langCode) {
+                setPreferredLangCodeToLocalStorage(langCode);
+            }
+            location.href = $(this).attr("href");
+        });
+    });
+</script>
 <script>
     $(function () {
         let $win = $(window);
