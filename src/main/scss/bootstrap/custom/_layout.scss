@@ -719,16 +719,16 @@ body.fluid #masthead .breadcrumb-bar {
     }
   }
   ul.lang-switcher {
-    font-size: 90%;
-    margin: 0 0 0 3rem;
+    font-size: .9em;
     list-style: none;
     float: right;
     li {
       display: inline-block;
       a {
         display: block;
-        padding: 0 1rem;
-        border-radius: $border-radius;
+        margin: 3px;
+        padding: .1em .6em;
+        border-radius: $global-radius;
         color: lighten($subfooter-color, 10%);
         background: $footer-bg;
         text-align: center;

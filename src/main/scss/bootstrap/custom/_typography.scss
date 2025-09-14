@@ -158,7 +158,6 @@ figcaption a:hover,
 //------
 
 code {
-  background-color: $grey-1;
   border: 0;
   border-radius: $border-radius;
   padding: rem-calc(1px 3px 1px);
@@ -171,8 +170,6 @@ pre {
   background-color: darken($bg-color, 2%);
   border: 1px solid scale-color($bg-color, $lightness: -10%);
   border-radius: $border-radius;
-}
-pre {
   pre {
     border: 0;
     margin-bottom: 0;
