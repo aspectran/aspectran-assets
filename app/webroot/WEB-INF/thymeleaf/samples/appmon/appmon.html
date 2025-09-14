@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org"
-      th:replace="~{templates/default :: template(${page.style}, ~{::body}, 'samples/appmon', ${page.headinclude}, ${page.headimageinclude})}">
+<html lang="en"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{templates/default(page=${page})}"
+      layout:fragment="content">
 <body>
 
 <link rel="stylesheet" th:href="@{/assets/appmon/css/appmon.css?v20250418}">

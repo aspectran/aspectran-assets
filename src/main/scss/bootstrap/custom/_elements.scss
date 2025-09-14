@@ -179,29 +179,17 @@ article {
       text-shadow: none;
       margin-right: 2px;
       border-radius: $global-radius $global-radius 0 0;
-      background: darken($head-color, 4%);
-      &:hover {
-        background: darken($head-color, 6%);
-      }
+      color: $grey-4;
+      background-color: $grey-12;
       &.active {
         color: $ci-9;
-        @include media-breakpoint-down(md) {
-          background: $ci-1;
-        }
-        @include media-breakpoint-up(md) {
-          background: $ci-2;
-        }
+        background-color: $ci-0;
       }
     }
     &.active {
       > a, button {
         color: $ci-9;
-        @include media-breakpoint-down(md) {
-          background: $ci-1;
-        }
-        @include media-breakpoint-up(md) {
-          background: $ci-2;
-        }
+        background-color: $ci-0;
       }
       .bullet {
         color: $ci-6;

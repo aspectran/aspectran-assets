@@ -3,11 +3,18 @@
 @include color-mode(dark) {
   body.plate {
     background-color: $grey-12;
-    &.solid {
-      background-color: lighten($dark-bg-color, 4%);
-    }
     .contour {
       background-color: $dark-bg-color;
+    }
+    &.solid {
+      background-color: lighten($dark-bg-color, 4%);
+      @include media-breakpoint-up(xxl) {
+        .container.contour {
+          -webkit-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+          -moz-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+          box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+        }
+      }
     }
   }
   #navigation.fixed .top-bar {
@@ -21,10 +28,23 @@
     -webkit-box-shadow: 0 8px 10px -10px rgba(152, 152, 152, 0.33);
     -moz-box-shadow: 0 8px 10px -10px rgba(152, 152, 152, 0.33);
     box-shadow: 0 8px 10px -10px rgba(152, 152, 152, 0.33);
+    > .tabs-title {
+      a, button {
+        color: $grey-4;
+        background-color: $grey-12;
+        &.active {
+          color: $ci-9;
+          background-color: $ci-1;
+        }
+      }
+    }
   }
   .panel {
     border-color: $grey-10;
     background-color: lighten($dark-bg-color, 3%);
+    .underline {
+      border-color: $grey-10;
+    }
   }
   code {
     background-color: darken($dark-bg-color, 1%);

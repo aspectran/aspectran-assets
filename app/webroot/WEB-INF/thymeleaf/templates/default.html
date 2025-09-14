@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en" 
-      xmlns:th="https://www.thymeleaf.org" 
-      th:fragment="template(pageStyle, pageContent, currentMenu, insertFragmentInMasthead, insertFragmentInMastheadWithImage)">
+<html lang="en" class="no-js"  data-bs-theme="dark"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google" content="notranslate">
     <title>Aspectran Assets</title>
     <meta name="description" content="Aspectran Assets is for building and deploying CSS, JS, Fonts, and Images commonly used in Aspectran's demo applications."/>
-    <link rel="stylesheet" type="text/css" href="/assets/bootstrap@5.3.7/css/aspectran.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap@5.3.8/css/aspectran.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap">
     <script src="https://assets.aspectran.com/js/modernizr-custom.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" integrity="sha256-pdY4ejLKO67E0CM2tbPtq1DJ3VGDVVdqAR6j3ZwdiE4=" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </head>
-<body id="top-of-page" th:class="${pageStyle}" itemscope itemtype="https://schema.org/WebPage">
+<body id="top-of-page" th:class="${page.style}" itemscope itemtype="https://schema.org/WebPage">
 <nav id="navigation" class="navbar navbar-expand-lg" data-bs-theme="dark">
     <div class="title-bar">
         <div class="title-bar-left">
@@ -79,6 +79,7 @@
                             <li><a class="dropdown-item" th:href="@{/thymeleaf/templates/default/fluid}">Fluid</a></li>
                             <li><a class="dropdown-item" th:href="@{/thymeleaf/templates/default/fluid compact}">Fluid Compact</a></li>
                             <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" th:href="@{/thymeleaf/samples/mastheadimage}">MastHeadImage</a></li>
                             <li><a class="dropdown-item" th:href="@{/thymeleaf/samples/appmon}">AppMon</a></li>
                         </ul>
                     </li>
@@ -97,9 +98,11 @@
                     </li>
                 </ul>
                 <div class="quick-search-box">
-                    <form class="d-flex input-group" role="search">
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn" type="submit"><i class="bi bi-search"></i></button>
+                    <form name="google_quick_search" role="search">
+                        <div class="input-group">
+                            <input class="form-control" type="text" name="keyword" placeholder="Search" aria-label="Search" aria-describedby="top-bar-quick-search-btn">
+                            <button class="btn btn-outline-primary" type="button" id="top-bar-quick-search-btn"><i class="bi bi-search"></i></button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -117,11 +120,11 @@
 <section itemscope itemtype="https://schema.org/Article">
     <div id="masthead"
          th:class="${!#strings.isEmpty(page.headimageinclude) ? 'masthead-with-image' : ''}">
-        <div class="container" th:classappend="${pageStyle}">
-            <header th:if="${!#strings.isEmpty(page.headline)}">
-                <p th:if="${!#strings.isEmpty(page.subheadline)}" class="subheadline" itemprop="alternativeHeadline" th:text="${page.subheadline}">subheadline</p>
-                <h1 th:if="${!#strings.isEmpty(page.headline)}" itemprop="headline" th:text="${page.headline}">headline</h1>
-                <p th:if="${!#strings.isEmpty(page.teaser)}" class="teaser" itemprop="description" th:text="${page.teaser}">teaser</p>
+        <div class="container" th:classappend="${page.style}">
+            <header th:unless="${#strings.isEmpty(page.headline)}">
+                <p th:unless="${#strings.isEmpty(page.subheadline)}" class="subheadline" itemprop="alternativeHeadline" th:text="${page.subheadline}">subheadline</p>
+                <h1 th:unless="${#strings.isEmpty(page.headline)}" itemprop="headline" th:text="${page.headline}">headline</h1>
+                <p th:unless="${#strings.isEmpty(page.teaser)}" class="teaser" itemprop="description" th:text="${page.teaser}">teaser</p>
             </header>
             <th:block th:unless="${#strings.isEmpty(insertFragmentInMasthead)}">
                 <th:block th:insert="~{${insertFragmentInMasthead}}"/>
@@ -130,12 +133,17 @@
                 <div class="hexagon hex1"></div>
                 <div class="hexagon hex2"></div>
                 <div class="hexagon hex3"></div>
-                <div class="hexagon hex5"></div>
-                <div class="hexagon hex6"></div>
+                <th:block th:unless="${#strings.contains(page.style, 'compact') and #strings.isEmpty(page.headline)}">
+                    <div class="hexagon hex5"></div>
+                    <div class="hexagon hex6"></div>
+                </th:block>
             </div>
         </div>
-        <th:block th:unless="${#strings.isEmpty(insertFragmentInMastheadWithImage)}">
-            <th:block th:insert="~{${page.insertFragmentInMastheadWithImage}}"/>
+        <th:block th:unless="${#strings.isEmpty(page.headinclude)}">
+            <th:block th:insert="~{${page.headinclude}}"/>
+        </th:block>
+        <th:block th:unless="${#strings.isEmpty(page.headimageinclude)}">
+            <th:block th:insert="~{${page.headimageinclude}}"/>
         </th:block>
         <div class="container breadcrumb-bar">
             <nav role="navigation" aria-label="You are here:">
@@ -144,11 +152,11 @@
             </nav>
         </div>
     </div>
-    <div class="container contour" th:classappend="${pageStyle}">
-        <th:block th:insert="${pageContent}"/>
+    <div class="container contour" th:classappend="${page.style}">
+        <th:block layout:fragment="content"/>
     </div>
 </section>
-<div class="container ${pageStyle}">
+<div class="container" th:classappend="${page.style}">
     <div id="up-to-top" class="row">
         <div class="col text-end">
             <a href="#top-of-page"><i class="bi bi-chevron-up"></i></a>
@@ -195,6 +203,9 @@
         </div>
     </div>
 </footer>
+<script>
+
+</script>
 <script>
     $(function () {
         let $win = $(window);

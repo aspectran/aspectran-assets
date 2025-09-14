@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org"
-      th:replace="~{templates/default :: template(${page.style}, ~{::body}, 'thymeleaf', '', '')}">
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{templates/default(page=${page})}"
+      layout:fragment="content">
 <body>
 
 <div class="container">

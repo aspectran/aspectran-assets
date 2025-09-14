@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE aspectran PUBLIC "-//ASPECTRAN//DTD Aspectran 8.0//EN"
-        "https://aspectran.com/dtd/aspectran-8.dtd">
+<!DOCTYPE aspectran PUBLIC "-//ASPECTRAN//DTD Aspectran 9.0//EN"
+        "https://aspectran.com/dtd/aspectran-9.dtd">
 <aspectran>
 
     <description>
@@ -12,40 +12,33 @@
         <description>
             Register a JSP View Dispatcher.
         </description>
-        <properties>
-            <item name="prefix">/WEB-INF/jsp/</item>
-            <item name="suffix">.jsp</item>
-        </properties>
+        <property name="prefix">/WEB-INF/jsp/</property>
+        <property name="suffix">.jsp</property>
     </bean>
 
     <bean id="thymeleaf" class="com.aspectran.thymeleaf.ThymeleafTemplateEngine">
-        <arguments>
-            <item>
-                <bean class="com.aspectran.thymeleaf.TemplateEngineFactoryBean">
-                    <properties>
-                        <item name="templateResolvers" type="set">
-                            <bean class="com.aspectran.thymeleaf.template.FileTemplateResolver">
-                                <properties>
-                                    <item name="prefix">#{basePath}/webroot/WEB-INF/thymeleaf/</item>
-                                    <item name="suffix">.html</item>
-                                    <item name="templateMode">HTML</item>
-                                    <item name="cacheable" valueType="boolean">false</item>
-                                </properties>
-                            </bean>
-                        </item>
-                    </properties>
-                </bean>
-            </item>
-        </arguments>
+        <argument>
+            <bean class="com.aspectran.thymeleaf.TemplateEngineFactoryBean">
+                <property name="templateResolvers" type="set">
+                    <bean class="com.aspectran.thymeleaf.template.FileTemplateResolver">
+                        <property name="prefix">#{basePath}/webroot/WEB-INF/thymeleaf/</property>
+                        <property name="suffix">.html</property>
+                        <property name="templateMode">HTML</property>
+                        <property name="cacheable" valueType="boolean">false</property>
+                    </bean>
+                </property>
+                <property type="set" name="dialects">
+                    <bean class="nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect"/>
+                </property>
+            </bean>
+        </argument>
     </bean>
 
     <bean id="thymeleafViewDispatcher" class="com.aspectran.thymeleaf.view.ThymeleafViewDispatcher">
         <description>
             Register a Thymeleaf View Dispatcher.
         </description>
-        <arguments>
-            <item>#{thymeleaf}</item>
-        </arguments>
+        <argument>#{thymeleaf}</argument>
     </bean>
 
     <aspect id="jspTransletSettings">

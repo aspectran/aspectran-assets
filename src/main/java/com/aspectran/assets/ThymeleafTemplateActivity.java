@@ -20,8 +20,8 @@ public class ThymeleafTemplateActivity {
     public Map<String, String> template(String style) {
         return Map.of(
                 "style", StringUtils.nullToEmpty(style),
-                "subheadline", (style != null ? "Thymeleaf Templates" : ""),
-                "headline", (style == null ?"Thymeleaf Templates" : StringUtils.nullToEmpty(style).toUpperCase()),
+                "subheadline", (style != null ? "JSP Templates" : ""),
+                "headline", (style == null ? "Thymeleaf Templates" : StringUtils.nullToEmpty(style).toUpperCase()),
                 "include", "index"
         );
     }
@@ -34,6 +34,20 @@ public class ThymeleafTemplateActivity {
                 "style", "fluid compact",
                 "include", "samples/appmon/appmon",
                 "headinclude", "samples/appmon/_domains"
+        );
+    }
+
+    @Request("/samples/mastheadimage")
+    @Dispatch("index")
+    @Action("page")
+    public Map<String, String> mastheadimage() {
+        return Map.of(
+                "style", "fluid",
+                "subheadline", "Aspectran based",
+                "headline", "Projects",
+                "teaser", "We are developing useful applications based on Aspectran.",
+                "include", "index",
+                "headimageinclude", "samples/masthead/_headimage"
         );
     }
 
