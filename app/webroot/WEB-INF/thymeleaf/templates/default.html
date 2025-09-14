@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js"  data-bs-theme="dark"
+<html lang="en" class="no-js"
       xmlns:th="https://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
@@ -105,6 +105,36 @@
                         </div>
                     </form>
                 </div>
+                <div class="settings">
+                    <div class="d-flex theme-toggler dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="theme-toggler-btn" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle theme">
+                            <i class="bi theme-icon-active"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="theme-toggler-btn">
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
+                                    <i class="bi bi-sun-fill me-2 opacity-50"></i>
+                                    Light
+                                    <i class="bi bi-check2 ms-auto d-none"></i>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
+                                    <i class="bi bi-moon-stars-fill me-2 opacity-50"></i>
+                                    Dark
+                                    <i class="bi bi-check2 ms-auto d-none"></i>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto">
+                                    <i class="bi bi-circle-half me-2 opacity-50"></i>
+                                    Auto
+                                    <i class="bi bi-check2 ms-auto d-none"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -197,14 +227,65 @@
                     <p>Copyright © 2018-present The Aspectran Project</p>
                 </section>
                 <section id="subfooter-right" class="col-md-6 social-icons text-end">
-                    <%= com.aspectran.core.AboutMe.POWERED_BY_LINK %>
+                    <a href="https://aspectran.com/" th:text="${@com.aspectran.core.AboutMe@getPoweredBy()}">POWERED_BY</a>
                 </section>
             </nav>
         </div>
     </div>
 </footer>
 <script>
+    $(function () {
+        const getStoredTheme = () => localStorage.getItem('theme');
+        const setStoredTheme = theme => localStorage.setItem('theme', theme);
 
+        const getPreferredTheme = () => {
+            const storedTheme = getStoredTheme();
+            if (storedTheme) {
+                return storedTheme;
+            }
+            return 'auto';
+        };
+
+        const setTheme = theme => {
+            const newTheme = theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme;
+            $('html').attr('data-bs-theme', newTheme);
+        };
+
+        const showActiveTheme = (theme) => {
+            const $themeToggler = $('.theme-toggler');
+            if (!$themeToggler.length) {
+                return;
+            }
+
+            $themeToggler.find('.dropdown-item.active').removeClass('active');
+            $themeToggler.find('.dropdown-item .bi-check2').addClass('d-none');
+
+            const $activeItem = $themeToggler.find('[data-bs-theme-value="' + theme + '"]');
+            $activeItem.addClass('active');
+            $activeItem.find('.bi-check2').removeClass('d-none');
+
+            const iconClass = $activeItem.find('.bi:first').attr('class').match(/bi-[^\s]+/)[0];
+            $themeToggler.find('.theme-icon-active').attr('class', 'bi theme-icon-active ' + iconClass);
+        };
+
+        const preferredTheme = getPreferredTheme();
+        setTheme(preferredTheme);
+        showActiveTheme(preferredTheme);
+
+        $(window.matchMedia('(prefers-color-scheme: dark)')).on('change', () => {
+            const storedTheme = getStoredTheme();
+            if (storedTheme === 'auto' || !storedTheme) {
+                setTheme('auto');
+            }
+        });
+
+        $('.theme-toggler [data-bs-theme-value]').on('click', function() {
+            const theme = $(this).data('bs-theme-value');
+            setStoredTheme(theme);
+            setTheme(theme);
+            showActiveTheme(theme);
+        });
+    });
 </script>
 <script>
     $(function () {
