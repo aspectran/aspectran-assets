@@ -1,80 +1,84 @@
-@charset 'utf-8';
+@charset "utf-8";
 
-@import 'custom/colors';
+// This scss file is for styling the atom feed in the browser.
+// It is not used when the feed is transformed by xslt.
+
+@import "custom/colors";
+@import "v5.3.8/bootstrap";
 
 * {
-	display: block;
+  display: block;
 }
 
 :root {
-	margin: 3em;
-	background: $bg-color;
-	color: $text-color;
-	font-family: "Open Sans", Arial, sans-serif;
+  margin: 3em;
+  background: $body-bg;
+  color: $body-color;
+  font-family: $font-family-sans-serif;
 }
 
 feed {
-	> title {
-		text-align: center;
-		color: lighten($ci-1, 25%);
-		font-weight: bolder;
-		&::before {
-			content: 'Atom Feed for ';
-			font-weight: initial;
-		}
-		&::after {
-			content: "This Atom feed is meant to be used by RSS reader applications and websites.";
-			display: block;
-			padding: 1em;
-			background-color: $ci-5;
-			color: #fff;
-			font-family: initial;
-			font-size: initial;
-			letter-spacing: initial;
-		}
-	}
+  > title {
+    text-align: center;
+    color: lighten($primary, 25%);
+    font-weight: $font-weight-bold;
+    &::before {
+      content: 'Atom Feed for ';
+      font-weight: $font-weight-normal;
+    }
+    &::after {
+      content: "This Atom feed is meant to be used by RSS reader applications and websites.";
+      display: block;
+      padding: 1em;
+      background-color: $primary;
+      color: $white;
+      font-family: initial;
+      font-size: initial;
+      letter-spacing: initial;
+    }
+  }
 
-	> id,
-	> updated,
-	> subtitle,
-	> author,
-	> link,
-	> generator {
-		display: none;
-	}
+  > id,
+  > updated,
+  > subtitle,
+  > author,
+  > link,
+  > generator {
+    display: none;
+  }
 }
 
 entry {
-	padding: 1em 0;
-	border-bottom: 1px solid invert($bg-color);
-	&:last-child {
-		border-bottom: none;
-	}
+  padding: 1em 0;
+  border-bottom: 1px solid $border-color;
+  &:last-child {
+    border-bottom: none;
+  }
 
-	> title {
-		color: $ci-6;
-		margin-bottom: 0.5em;
-	}
+  > title {
+    color: $headings-color;
+    margin-bottom: 0.5em;
+  }
 
-	> link::after {
-		content: attr(href);
-		color: $ci-1;
-	}
+  > link::after {
+    content: attr(href);
+    color: $link-color;
+  }
 
-	> updated {
-		color: $grey-5;
-		font-size: small;
-	}
+  > updated {
+    color: $text-muted;
+    font-size: $font-size-sm;
+  }
 
-	> summary {
-		margin-top: 1em;
-	}
+  > summary {
+    margin-top: 1em;
+  }
 
-	> id,
-	> author,
-	> category,
-	> published,
-	> content {
-		display: none;
-	}
+  > id,
+  > author,
+  > category,
+  > published,
+  > content {
+    display: none;
+  }
 }
