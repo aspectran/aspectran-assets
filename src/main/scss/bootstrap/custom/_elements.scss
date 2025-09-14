@@ -240,46 +240,12 @@ article {
 // Alerts
 //--------
 
-.alert-box {
-  border: 1px solid #ccc;
+.alert {
+  &.terminal {
+    font-family: $font-family-monospace;
+  }
   p {
     margin-bottom: 0;
-  }
-  a {
-    border-bottom: 1px dotted $ci-1;
-    &:hover {
-      border-bottom: 1px solid $ci-1;
-    }
-  }
-  &.info {
-    background-color: #ececec;
-  }
-  &.success a {
-    background-color: #E2F2FC;
-  }
-  &.warning {
-    color: #F02B2B;
-    a {
-      background-color: #FCE9E6;
-    }
-  }
-  &.terminal {
-    background-color: $grey-12;
-    color: #fff;
-    border-color: scale-color($grey-12, $lightness: -14%);
-    font-family: $font-family-monospace;
-    a {
-      color: #35D300;
-    }
-    &::before {
-      content: "$ ";
-      color: $ci-9;
-    }
-  }
-  &.text {
-    background-color: $grey-2;
-    border-color: scale-color($grey-2, $lightness: -14%);
-    color: $grey-12;
   }
 }
 
