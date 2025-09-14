@@ -426,6 +426,9 @@ body.fluid {
     border: 0;
     color: $ci-9;
   }
+  .text-muted {
+    color: $grey-4 !important;
+  }
   header {
     position: relative;
     z-index: 100;
