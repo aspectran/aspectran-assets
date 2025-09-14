@@ -168,7 +168,7 @@ pre {
   margin-bottom: rem-calc(20);
   padding: .6rem;
   background-color: darken($bg-color, 2%);
-  border: 1px solid scale-color($bg-color, $lightness: -10%);
+  border: 1px solid darken($bg-color, 10%);
   border-radius: $border-radius;
   pre {
     border: 0;
@@ -268,15 +268,11 @@ blockquote {
   padding: .4em .8em;
   color: $grey-8;
   background-color: $grey-0;
-  border-left: 4px solid #ddd;
+  border-left: 4px solid $grey-7;
   border-radius: $border-radius;
   p {
     font-style: italic;
-    color: $grey-9;
     margin: 0;
-  }
-  code {
-    background-color: $grey-1;
   }
   ul {
     padding-left: 1em;

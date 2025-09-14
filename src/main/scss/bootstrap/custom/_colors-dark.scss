@@ -51,6 +51,11 @@
   }
   pre {
     background-color: darken($dark-bg-color, 2%);
-    border: 1px solid scale-color($dark-bg-color, $lightness: -10%);
+    border: 1px solid lighten($dark-bg-color, 4%);
+  }
+  blockquote {
+    border-left: 4px solid $grey-10;
+    color: $grey-5;
+    background-color: darken($dark-bg-color, 2%);
   }
 }
