@@ -40,7 +40,7 @@
     }
   }
   .panel {
-    border-color: $grey-10;
+    border-color: lighten($dark-bg-color, 6%);;
     background-color: lighten($dark-bg-color, 3%);
     .underline {
       border-color: $grey-10;
