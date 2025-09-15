@@ -21,7 +21,15 @@
     background-color: darken($dark-bg-color, 1%);
     opacity: 1;
   }
+  #masthead {
+    -webkit-box-shadow: 0 2px 6px rgba(13, 13, 13, 0.25);
+    -moz-box-shadow: 0 2px 6px rgba(13, 13, 13, 0.25);
+    box-shadow: 0 2px 6px rgba(13, 13, 13, 0.25);
+  }
   body.article article h2 {
+    border-color: $grey-10;
+  }
+  .underline {
     border-color: $grey-10;
   }
   .tabs {
@@ -42,9 +50,6 @@
   .panel {
     border-color: lighten($dark-bg-color, 6%);;
     background-color: lighten($dark-bg-color, 3%);
-    .underline {
-      border-color: $grey-10;
-    }
   }
   code.language-apon {
     background-color: transparent;

@@ -12,14 +12,15 @@ p.gototop-anchor-wrap {
 //--------------------------
 
 #toc {
-  @include media-breakpoint-down(md) {
+  .toc-title {
+    opacity: .5;
+  }
+  @include media-breakpoint-down(lg) {
     padding: 0 0 1em 0;
     border-top: 2px solid $ci-1;
     border-bottom: 2px solid $ci-1;
     border-radius: 12px;
     .toc-title {
-      color: $ci-0;
-      border-bottom: 1px solid $grey-2;
       padding: .4em .5em;
       margin: 0 .3em 1em .3em;
     }
@@ -29,8 +30,6 @@ p.gototop-anchor-wrap {
     border-left: 3px solid $ci-1;
     border-radius: 12px;
     .toc-title {
-      color: $ci-0;
-      border-bottom: 1px solid $grey-2;
       padding: 0 .4em .5em .9em;
       margin-bottom: 1em;
     }
@@ -38,9 +37,6 @@ p.gototop-anchor-wrap {
       border: 0;
       border-right: 2px solid $ci-1;
       padding-bottom: 1.5em;
-      .toc-title {
-        display: none;
-      }
     }
   }
   ul {
