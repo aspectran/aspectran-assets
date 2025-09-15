@@ -77,9 +77,6 @@ article {
 
 a {
   color: $link-color;
-  &:visited {
-    border-bottom: $grey-2;
-  }
   &:hover {
     color: lighten($link-color, 10%);
   }
@@ -206,18 +203,6 @@ pre {
       overflow-x: auto;
     }
   }
-  table {
-    margin: 0;
-    border-radius: 0;
-    tbody {
-      border: none;
-      background: none;
-      td {
-        padding: 0;
-        font-size: 93%;
-      }
-    }
-  }
 }
 div.highlighter-rouge {
   pre.highlight {
@@ -275,19 +260,6 @@ blockquote {
     padding-left: 1em;
   }
 }
-
-// Tables
-//--------
-
-//thead,
-//tbody,
-//tfoot {
-//  border: 1px solid $grey-2;
-//  border-radius: $border-radius;
-//}
-//td {
-//  vertical-align: top;
-//}
 
 // ETC
 //--------
