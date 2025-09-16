@@ -153,7 +153,7 @@ body.fluid {
   .top-bar {
     width: 100%;
     z-index: 101;
-    opacity: .975;
+    background-color: $ci-0;
     .settings {
       select {
         margin: 0;
@@ -175,7 +175,6 @@ body.fluid {
       }
     }
     @include media-breakpoint-down(lg) {
-      background-color: darken($ci-1, 3%);
       > .container {
         padding: 0;
         max-width: none;
@@ -483,19 +482,12 @@ body.fluid {
     }
     .breadcrumb {
       color: $ci-9;
-      border: 0;
       a {
         color: $ci-9;
-        font-weight: normal;
-        text-transform: uppercase;
       }
       .active {
         color: $ci-9;
-        font-weight: bold;
       }
-    }
-    &.fluid {
-      border-radius: 0;
     }
   }
   &.masthead-with-image {
@@ -542,39 +534,21 @@ body.compact #masthead {
 //------------
 
 .breadcrumb-bar {
-  font-size: 90%;
-  background: scale-color($grey-1, $lightness: 50%);
+  font-size: .9em;
+  background-color: $ci-2;
   min-height: 26px;
   .breadcrumb {
-    font-size: 90%;
-    background: none;
-    padding: .25em .2em .25em;
+    font-size: .9em;
+    padding: .25em 0;
     margin: 0;
     li::before {
-      color: $grey-5;
       font-weight: normal;
     }
     a {
-      color: $grey-8;
+      text-transform: capitalize;
     }
     .active {
-      color: $grey-8;
       font-weight: bold;
-    }
-  }
-  @include media-breakpoint-down(md) {
-    background-color: $ci-2;
-    .breadcrumb {
-      color: $ci-9;
-      border: 0;
-      a {
-        color: $ci-9;
-        font-weight: normal;
-      }
-      .active {
-        color: $ci-9;
-        font-weight: bold;
-      }
     }
   }
 }
@@ -617,14 +591,8 @@ body.fluid #masthead .breadcrumb-bar {
 //-------------
 
 #up-to-top {
-  padding: 10px 0;
   a {
     font-size: 32px;
-    padding: 5px;
-    border-radius: $border-radius;
-    &:hover {
-      background: $grey-2;
-    }
   }
 }
 
@@ -632,7 +600,7 @@ body.fluid #masthead .breadcrumb-bar {
 //--------
 
 #footer {
-  font-size: 90%;
+  font-size: .9em;
   font-weight: 300;
   padding-top: 30px;
   padding-bottom: 20px;
@@ -647,9 +615,6 @@ body.fluid #masthead .breadcrumb-bar {
   a {
     color: $footer-link-color;
     border: 0;
-    &:hover {
-      color: $footer-link-hover-color;
-    }
     &.logo {
       @include media-breakpoint-down(md) {
         display: none;

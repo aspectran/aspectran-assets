@@ -12,7 +12,7 @@ $text-color: #111111;
 $dark-bg-color: #212529;
 $dark-text-color: #dae0de;
 $link-color: #0088CC;
-$head-color: #424a50;
+$head-color: #42494e;
 
 // Corporate Identity Colorpalette
 // https://color.adobe.com/de/Flat-Design-Colors-v2-color-theme-4341903/
@@ -53,10 +53,9 @@ $grey-16: #0B0B0B;
 // Footer
 //-------
 
-$footer-bg: $ci-1;
-$footer-color: #fff;
+$footer-bg: $head-color;
+$footer-color: $ci-9;
 $footer-link-color: $ci-9;
-$footer-link-hover-color: yellow;
 
 $subfooter-bg: $ci-0;
 $subfooter-color: $grey-5;

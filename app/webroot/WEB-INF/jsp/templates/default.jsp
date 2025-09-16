@@ -186,16 +186,16 @@
             </nav>
         </div>
     </div>
-    <div class="container contour ${page.style}">
+    <div class="container contour">
     <c:if test="${not empty page.include}">
         <jsp:include page="/WEB-INF/jsp/${page.include}.jsp"/>
     </c:if>
     </div>
 </section>
-<div class="container ${page.style}">
+<div class="container">
     <div id="up-to-top" class="row">
         <div class="col text-end">
-            <a href="#top-of-page"><i class="bi bi-chevron-up"></i></a>
+            <a class="btn" href="#top-of-page"><i class="bi bi-chevron-up"></i></a>
         </div>
     </div>
 </div>
