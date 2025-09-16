@@ -542,7 +542,9 @@ body.compact #masthead {
     padding: .25em 0;
     margin: 0;
     li::before {
+      color: $ci-1;
       font-weight: normal;
+      text-shadow: none;
     }
     a {
       text-transform: capitalize;
