@@ -1,3 +1,9 @@
+// Dark Theme Basics
+//------------------
+
+$dark-bg-color: #212529;
+$dark-text-color: #dae0de;
+
 // Overrides for dark mode
 //-------------------------
 @include color-mode(dark) {

@@ -7,15 +7,10 @@
 // Basics
 //-------
 
-$bg-color: 	 #FFFFFF;
-$text-color: #111111;
-$link-color: #0088CC;
-$head-color: #668395;
-
 $bg-color: #FFFFFF;
 $text-color: #111111;
 $link-color: #0088CC;
-$head-color: #424a50;
+$head-color: #42494e;
 
 // Corporate Identity Colorpalette
 // https://color.adobe.com/de/Flat-Design-Colors-v2-color-theme-4341903/
@@ -56,9 +51,9 @@ $grey-16: #0B0B0B;
 //-------
 
 $footer-bg: $ci-1;
-$footer-color: #fff;
+$footer-color: $ci-8;
 $footer-link-color: $ci-8;
-$footer-link-hover-color: yellow;
+$footer-link-hover-color: $ci-8;
 
 $subfooter-bg: $ci-0;
 $subfooter-color: $grey-5;
