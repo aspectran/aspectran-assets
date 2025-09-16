@@ -100,9 +100,11 @@
                     </li>
                 </ul>
                 <div class="quick-search-box quick-search-box mx-3 my-2 m-lg-0">
-                    <form class="d-flex input-group" role="search">
-                        <input class="form-control" type="text" name="keyword" placeholder="Search" aria-label="Search" aria-describedby="top-bar-quick-search-btn">
-                        <button class="btn btn-outline-primary text-white" type="button" id="top-bar-quick-search-btn"><i class="bi bi-search"></i></button>
+                    <form name="google_quick_search" role="search">
+                        <div class="input-group">
+                            <input class="form-control" type="text" name="keyword" placeholder="Search" aria-label="Search" aria-describedby="top-bar-quick-search-btn">
+                            <button class="btn btn-outline-primary text-white" type="button" id="top-bar-quick-search-btn"><i class="bi bi-search"></i></button>
+                        </div>
                     </form>
                 </div>
                 <div class="settings">
