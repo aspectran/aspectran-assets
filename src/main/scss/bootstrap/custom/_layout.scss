@@ -4,18 +4,11 @@
 // - Fluid Style
 // - Navigation
 // - Masthead
-// - Masthead › small-only
-// - Masthead › medium-only
-// - Masthead › large-only
-// - Masthead › xlarge-up
-// - Masthead for Frontpage
 // - Breadcrumb
 // - Meta
 // - Jump to top
 // - Footer
 // - Subfooter
-// - CSS-Classes to add margin at top or bottom
-// - Adjustments: Video Layout
 // - Hexagon shapes with pure CSS3
 
 // Default Style
@@ -306,7 +299,7 @@ body.fluid {
           }
           @include media-breakpoint-up(lg) {
             height: 55px;
-            padding: 0 .7rem 0 .7rem;
+            padding: .1rem .7rem;
           }
         }
       }
@@ -505,16 +498,6 @@ body.fluid {
       }
     }
   }
-  &.no-header {
-    @include media-breakpoint-down(md) {
-      display: none;
-      height: 0;
-    }
-    @include media-breakpoint-up(lg) {
-      padding-top: 57px;
-      background: none;
-    }
-  }
 }
 body.compact #masthead {
   header {
@@ -534,14 +517,12 @@ body.compact #masthead {
 
 .breadcrumb-bar {
   font-size: .9em;
-  background-color: $ci-2;
   min-height: 26px;
   .breadcrumb {
     font-size: .9em;
     padding: .25em 0;
     margin: 0;
     li::before {
-      color: $ci-1;
       font-weight: normal;
       text-shadow: none;
     }
@@ -715,68 +696,8 @@ body.fluid #masthead .breadcrumb-bar {
   }
 }
 
-// CSS-Classes to add margin at top or bottom
-//--------------------------------------------
-
-.t0 { margin-top: 0 !important; }
-.t5 { margin-top: 5px !important; }
-.t10 { margin-top: 10px !important; }
-.t15 { margin-top: 15px !important; }
-.t20 { margin-top: 20px !important; }
-.t30 { margin-top: 30px !important; }
-.t40 { margin-top: 40px !important; }
-.t50 { margin-top: 50px !important; }
-.t60 { margin-top: 60px !important; }
-.t70 { margin-top: 70px !important; }
-.t80 { margin-top: 80px !important; }
-.t90 { margin-top: 90px !important; }
-
-.b0 { margin-bottom: 0 !important; }
-.b5 { margin-bottom: 5px !important; }
-.b10 { margin-bottom: 10px !important; }
-.b15 { margin-bottom: 15px !important; }
-.b20 { margin-bottom: 20px !important; }
-.b30 { margin-bottom: 30px !important; }
-.b40 { margin-bottom: 40px !important; }
-.b50 { margin-bottom: 50px !important; }
-.b60 { margin-bottom: 60px !important; }
-
-.l15 { margin-left: 15px !important; }
-.r15 { margin-right: 15px !important; }
-
-.pl20 { padding-left: 20px !important; }
-.pr5  { padding-right: 5px !important; }
-.pr10 { padding-right: 10px !important; }
-.pr20 { padding-right: 20px !important; }
-
-// Adjustments: Video Layout
-//---------------------------
-
-body.video {
-  background: #000;
-  #masthead-no-image-header {
-    background: #000;
-    margin-bottom: 60px;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  a,
-  blockquote:before,
-  blockquote:after,
-  cite,
-  cite a,
-  cite a:visited {
-    color: #fff;
-  }
-}
-
 // Hexagon shapes with pure CSS3
-//---------------------------
+//------------------------------
 
 .hexagon {
   width: 100px;
@@ -850,6 +771,6 @@ body.video {
   }
 }
 body.compact #masthead .hexagons,
-#masthead.masthead-with-image .hexagons{
+#masthead.masthead-with-image .hexagons {
   display: none;
 }

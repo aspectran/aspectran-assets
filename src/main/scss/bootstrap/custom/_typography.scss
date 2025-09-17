@@ -75,16 +75,16 @@ article {
 // Links
 //-------
 
-a {
-  color: $link-color;
+a:not(.btn):not(.dropdown-item) {
+  color: $anchor-color;
   &:hover {
-    color: lighten($link-color, 10%);
+    color: lighten($anchor-color, 10%);
   }
   &:focus {
-    color: lighten($link-color, 20%);
+    color: lighten($anchor-color, 20%);
   }
   &:active {
-    color: darken($link-color, 5%);
+    color: darken($anchor-color, 5%);
   }
 }
 
@@ -121,49 +121,32 @@ img {
 }
 
 figure {
-  margin: 0 0 rem-calc(30px) 0;
+  margin: 0 0 rem-calc(1.875rem) 0;
 }
-#masthead-with-background-color figure,
-#masthead-with-pattern figure {
-  margin: 0;
-}
-figcaption,
-.masthead-caption {
+figcaption {
   color: $grey-10;
   font-size: rem-calc(13px);
   padding-top: rem-calc(2px);
-}
-figcaption a,
-.masthead-caption a {
-  border-bottom: 1px dotted $grey-4;
-  color: $grey-10;
-}
-figcaption a:hover,
-.masthead-caption a:hover {
-  border-bottom: 2px solid $primary;
-  color: $primary;
-}
-.masthead-caption {
-  padding-right: 10px;
-  text-align: right;
+  a {
+    border-bottom: 1px dotted $grey-4;
+    color: $grey-10;
+  }
+  a:hover {
+    border-bottom: 2px solid $primary;
+    color: $primary;
+  }
 }
 
 // Code
 //------
 
-code {
-  border: 0;
-  border-radius: $border-radius;
-  padding: rem-calc(1px 3px 1px);
-}
-
 pre {
   overflow-x: auto;
-  margin-bottom: rem-calc(20);
+  margin-bottom: 1rem;
   padding: .6rem;
   background-color: darken($bg-color, 2%);
   border: 1px solid darken($bg-color, 10%);
-  border-radius: $border-radius;
+  border-radius: $global-radius;
   pre {
     border: 0;
     margin-bottom: 0;
@@ -171,14 +154,6 @@ pre {
 }
 
 .highlight {
-  > pre {
-    code {
-      padding: 0;
-      border: 0;
-      border-radius: 0;
-      background-color: transparent;
-    }
-  }
   .gutter {
     border-right: 1px solid #ccc;
     padding-right: 0.6rem;
@@ -209,13 +184,6 @@ div.highlighter-rouge {
     code {
       background-color: transparent;
     }
-  }
-}
-@include media-breakpoint-up(lg) {
-  .large-9.large-order-1 pre.highlight:hover {
-    width: 126%;
-    position: relative;
-    z-index: 1;
   }
 }
 

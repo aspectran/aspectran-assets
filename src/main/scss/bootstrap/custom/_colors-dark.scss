@@ -3,6 +3,7 @@
 
 $dark-bg-color: #212529;
 $dark-text-color: #dae0de;
+$dark-anchor-color: #239edb;
 
 // Overrides for dark mode
 //-------------------------
@@ -64,5 +65,17 @@ $dark-text-color: #dae0de;
     border-left: 4px solid $grey-10;
     color: $grey-5;
     background-color: darken($dark-bg-color, 2%);
+  }
+  a:not(.btn):not(.dropdown-item) {
+    color: $dark-anchor-color;
+    &:hover {
+      color: darken($dark-anchor-color, 10%);
+    }
+    &:focus {
+      color: darken($dark-anchor-color, 20%);
+    }
+    &:active {
+      color: lighten($dark-anchor-color, 5%);
+    }
   }
 }

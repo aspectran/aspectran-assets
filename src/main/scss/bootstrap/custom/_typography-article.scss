@@ -1,4 +1,8 @@
 body.article article {
+
+  // Headlines
+  //-----------
+
   header {
     border-bottom: 1px solid $grey-1;
     margin-bottom: 1.5em;
@@ -22,6 +26,10 @@ body.article article {
   h5 {
     margin: 1em 0 .4em 0;
   }
+
+  // Lists
+  //-------
+
   dl {
     dt {
       line-height: 1.5;
@@ -31,4 +39,5 @@ body.article article {
       margin-left: 1.5rem
     }
   }
+
 }
