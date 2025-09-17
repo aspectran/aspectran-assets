@@ -74,10 +74,14 @@ article {
   box-shadow: 0 8px 10px -10px rgba(50, 50, 50, 0.33);
   margin: 0;
   @include media-breakpoint-down(md) {
-    border-radius: 1em;
+    border-radius: 50px;
   }
   > .tabs-title {
     margin: 0;
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      margin-bottom: 3px;
+    }
     > a, button {
       font-size: .9em;
       font-weight: bold;
@@ -85,6 +89,9 @@ article {
       margin-bottom: 0;
       padding: .5em 1em .5em .8em;
       border: 0;
+      @include media-breakpoint-down(md) {
+        border-radius: 50px;
+      }
       color: $grey-11 !important;
       background-color: lighten($ci-2, 26%) !important;
       cursor: pointer;
@@ -107,6 +114,9 @@ article {
       font-size: 1em;
       padding-left: .3em;
       color: darken($grey-2, 10%);
+      @include media-breakpoint-down(md) {
+        float: right;
+      }
       &.on {
         color: $ci-7;
       }
@@ -129,17 +139,6 @@ article {
       }
       to {
         opacity: 1;
-      }
-    }
-    @include media-breakpoint-down(md) {
-      clear: both;
-      margin-bottom: 3px;
-      width: 100%;
-      > a {
-        border-radius: 50px;
-      }
-      .indicator {
-        float: right;
       }
     }
   }
