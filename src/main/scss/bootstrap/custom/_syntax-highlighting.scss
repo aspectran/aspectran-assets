@@ -68,10 +68,10 @@
   .highlight {
     .na    { color: #009797; } // Name.Attribute
     .nt    { color: #368d33; } // Name.Tag
-    .nc    { color: #5d77c7; }
-    .nf    { color: #a74206; }
-    .s     { color: #b572b4; }
-    .kd    { color: #b5b1b1; }
-    .nn    { color: #777; }
+    .nc    { color: #5d77c7; } // Name.Class
+    .nf    { color: #a74206; } // Name.Function
+    .s     { color: #b572b4; } // Literal.String
+    .kd    { color: #b5b1b1; } // Keyword.Declaration
+    .nn    { color: #777; } // Name.Namespace
   }
 }
