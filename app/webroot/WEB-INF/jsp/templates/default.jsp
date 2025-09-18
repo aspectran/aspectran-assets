@@ -210,19 +210,12 @@
                 </div>
                 <div class="col-md-4 col-lg-4">
                     <a href="https://aspectran.com/aspectran/"><h5>About Aspectran</h5></a>
-                    <p><a href="https://aspectran.com/aspectran/">Aspectran is a lightweight, high‑performance framework for building both simple shell applications and large enterprise web services on the JVM. </a></p>
+                    <p><a href="https://aspectran.com/aspectran/">Aspectran is a lightweight, high‑performance framework for building both simple shell applications and large enterprise web services on the JVM.</a></p>
                 </div>
                 <div class="col-sm-6 col-md-3 col-lg-3 offset-lg-1">
                     <h5>Get Involved</h5>
                     <ul class="list-unstyled">
                         <li class="bi bi-github"> <a href="https://github.com/aspectran" target="_blank" title="" class="external">GitHub</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-6 col-md-3 col-lg-3">
-                    <h5>Support</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="https://aspectran.com/support/faq/" title="Frequently Asked Questions about Aspectran">FAQ</a></li>
-                        <li><a href="https://aspectran.com/support/contact/" title="Contact Us">Contact Us</a></li>
                     </ul>
                 </div>
             </div>

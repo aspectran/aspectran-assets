@@ -90,7 +90,9 @@ article {
       padding: .5em 1em .5em .8em;
       border: 0;
       @include media-breakpoint-down(md) {
+        width: 100%;
         border-radius: 50px;
+        text-align: left;
       }
       color: $grey-11 !important;
       background-color: lighten($ci-2, 26%) !important;
@@ -155,15 +157,12 @@ article {
       font-size: 1em;
       text-shadow: none;
       margin-right: 2px;
-      border-radius: $global-radius $global-radius 0 0;
     }
     @include media-breakpoint-down(md) {
       clear: both;
+      margin-right: 0;
       margin-bottom: 3px;
       width: 100%;
-      > a {
-        border-radius: $global-radius;
-      }
       .indicator {
         float: right;
       }

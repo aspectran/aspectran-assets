@@ -1,11 +1,11 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" session="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://aspectran.com/tags" prefix="aspectran" %>
-<link rel="stylesheet" href="<aspectran:url value="/assets/appmon/css/appmon.css?20250418"/>">
-<script src="<aspectran:url value="/assets/appmon/js/front-builder.js?20250418"/>"></script>
-<script src="<aspectran:url value="/assets/appmon/js/front-viewer.js?20250418"/>"></script>
-<script src="<aspectran:url value="/assets/appmon/js/websocket-client.js?20250418"/>"></script>
-<script src="<aspectran:url value="/assets/appmon/js/polling-client.js?20250418"/>"></script>
+<link rel="stylesheet" href="<aspectran:url value="https://appmon-assets.aspectran.com/appmon/css/appmon.css?v=20250918"/>">
+<script src="<aspectran:url value="https://appmon-assets.aspectran.com/appmon/js/front-builder.js?v=20250918"/>"></script>
+<script src="<aspectran:url value="https://appmon-assets.aspectran.com/appmon/js/front-viewer.js?v=20250918"/>"></script>
+<script src="<aspectran:url value="https://appmon-assets.aspectran.com/appmon/js/websocket-client.js?v=20250918"/>"></script>
+<script src="<aspectran:url value="https://appmon-assets.aspectran.com/appmon/js/polling-client.js?v=20250918"/>"></script>
 <div class="container">
     <ul class="instance tabs nav nav-tabs mt-3">
         <li class="tabs-title nav-item active">
@@ -17,18 +17,18 @@
     </ul>
     <div class="control-bar">
         <div class="options">
-            <div class="layout-options btn-group show-for-large" title="Layout options">
-                <i class="bi bi-layout-wtf"></i>
+            <i class="bi bi-layout-wtf d-none d-lg-inline-block"></i>
+            <div class="layout-options btn-group d-none d-lg-inline-block" title="Layout options">
                 <a class="btn compact on"> Compact</a>
             </div>
-            <div class="date-unit-options btn-group tiny" title="Date unit options">
-                <i class="bi bi-bar-chart-line"></i>
+            <i class="bi bi-bar-chart-line"></i>
+            <div class="date-unit-options btn-group" title="Date unit options">
                 <a class="btn default on">Default</a><a class="btn hour" data-unit="hour">Hour</a><a class="btn day" data-unit="day">Day</a><a class="btn month" data-unit="month">Month</a><a class="btn year" data-unit="year">Year</a>
             </div>
-            <div class="date-offset-options btn-group tiny" title="Date offset options">
-                <a class="btn previous on" data-offset="previous" title="Previous"><i class="bi bi-skip-backward-fill"></i></a><a class="btn current" data-offset="current" title="Next"><i class="bi bi-skip-forward-fill"></i></a>
+            <div class="date-offset-options btn-group" title="Date offset options">
+                <a class="btn previous on" data-offset="previous" title="Previous"><i class="bi bi-rewind-fill"></i></a><a class="btn current" data-offset="current" title="Next"><i class="bi bi-skip-forward-fill"></i></a>
             </div>
-            <div class="speed-options btn-group tiny hide" title="Speed options">
+            <div class="speed-options btn-group d-none" title="Speed options">
                 <a class="btn bi bi-fast-forward faster" title="Set to poll every second. Turn this option on only when absolutely necessary."> Faster polling interval</a>
             </div>
         </div>
