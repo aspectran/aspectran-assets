@@ -2,53 +2,65 @@
 //--------------------------
 
 #toc {
-  .toc-title {
-    opacity: .5;
-  }
+  padding-bottom: 1em;
   @include media-breakpoint-down(lg) {
-    padding: 0 0 1em 0;
-    border-top: 2px solid $ci-1;
-    border-bottom: 2px solid $ci-1;
+    padding-left: .5em;
+    padding-right: .5em;
+    border-top: 2px solid lighten($ci-2, 15%);
+    border-bottom: 2px solid lighten($ci-2, 15%);
     border-radius: 12px;
-    .toc-title {
+  }
+  @include media-breakpoint-up(lg) {
+    border-right: 2px solid lighten($ci-2, 15%);
+    border-radius: 12px;
+    &.right {
+      border: 0;
+      border-left: 2px solid lighten($ci-2, 15%);
+      ul {
+        margin-left: .5em;
+      }
+    }
+  }
+  .toc-title {
+    opacity: .7;
+    color: $ci-1;
+    @include media-breakpoint-down(lg) {
       padding: .4em .5em;
       margin: 0 .3em 1em .3em;
     }
-  }
-  @include media-breakpoint-up(lg) {
-    padding: .8em 0;
-    border-left: 3px solid $ci-1;
-    border-radius: 12px;
-    .toc-title {
+    @include media-breakpoint-up(lg) {
+      margin-top: 15px;
       padding: 0 .4em .5em .9em;
       margin-bottom: 1em;
     }
-    &.left {
-      border: 0;
-      border-right: 2px solid $ci-1;
-      padding-bottom: 1.5em;
+    &.underline {
+      border-bottom: 1px solid $ci-2;
     }
   }
   ul {
     list-style-type: none;
-    li.toc-h1 {
-      font-weight: bold;
-      margin: 0 0 .5em 0;
-    }
-    li.toc-h2 {
-      margin-left: 0;
-    }
-    li.toc-h3 {
-      margin-left: 20px;
-    }
-    li.toc-h4 {
-      margin-left: 40px;
-    }
-    li.toc-h5 {
-      margin-left: 60px;
-    }
-    li.toc-h6 {
-      margin-left: 80px;
+    margin: 0;
+    li {
+      font-size: .9em;
+      &.toc-h1 {
+        font-weight: bold;
+        margin: 0 0 .6em 0;
+      }
+      &.toc-h2 {
+        margin: .4em 0 .1em 0;
+      }
+      &.toc-h3 {
+        margin-left: 1em;
+      }
+      &.toc-h4 {
+        margin-left: 2em;
+      }
+      &.toc-h5 {
+        margin-left: 3em;
+      }
+      &.toc-h6 {
+        margin-left: 4em;
+      }
     }
   }
 }
