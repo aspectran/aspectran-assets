@@ -424,13 +424,15 @@ body.fluid {
     position: relative;
     z-index: 100;
     min-height: 225px;
-    @include media-breakpoint-down(lg) {
-      padding-top: 50px;
+    align-content: end;
+    @include media-breakpoint-down(md) {
+      padding: 0 0 10px 10px;
+    }
+    @include media-breakpoint-up(md) {
+      padding: 0 0 20px 20px;
     }
     @include media-breakpoint-up(lg) {
-      padding-top: 63px;
-      padding-left: 20px;
-      padding-bottom: 20px;
+      padding: 0 0 20px 30px;
     }
     h1, .headline {
       color: $ci-9;
@@ -483,18 +485,31 @@ body.fluid {
     }
   }
   &.masthead-with-image {
-    @include media-breakpoint-down(lg) {
-      height: 285px;
-      padding-top: 50px;
+    .teaser {
+      margin-bottom: 0;
+    }
+    @include media-breakpoint-down(sm) {
+      height: 260px;
       header {
-        min-height: 210px;
+        height: 244px;
+        padding: 100px 0 20px 20px;
+        align-content: end;
       }
     }
-    @include media-breakpoint-up(lg) {
-      height: 510px;
-      padding-top: 150px;
+    @include media-breakpoint-up(sm) {
+      height: 360px;
       header {
-        min-height: 335px;
+        height: 334px;
+        padding: 200px 0 20px 20px;
+        align-content: end;
+      }
+    }
+    @include media-breakpoint-up(md) {
+      height: 460px;
+      header {
+        height: 434px;
+        padding: 300px 0 20px 20px;
+        align-content: end;
       }
     }
   }
@@ -757,15 +772,20 @@ body.fluid #masthead .breadcrumb-bar {
 #masthead .hexagons {
   position: absolute;
   z-index: 1;
+  top: 20px;
   right: 390px;
   @include media-breakpoint-down(lg) {
-    top: 18px;
+    .hex1 {
+      display: none;
+    }
   }
-  @include media-breakpoint-up(lg) {
-    top: 20px;
+  @include media-breakpoint-down(md) {
+    .hex2 {
+      display: none;
+    }
   }
   @include media-breakpoint-down(sm) {
-    .hex1, .hex2 {
+    .hex4, .hex5 {
       display: none;
     }
   }
