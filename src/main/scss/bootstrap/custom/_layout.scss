@@ -2,6 +2,7 @@
 // - Default Style
 // - Plate Style
 // - Flush Style
+// - Article Style
 // - Fluid Style
 // - Navigation
 // - Masthead
@@ -58,7 +59,7 @@ body.plate {
 }
 
 // Flush Style
-//--------------
+//-------------
 
 body.flush {
   .page-content {
@@ -66,6 +67,16 @@ body.flush {
     @include media-breakpoint-up(xxl) {
       overflow: hidden;
     }
+  }
+}
+
+// Article Style
+//---------------
+
+body.article {
+  .page-content {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 }
 
@@ -460,11 +471,11 @@ body.fluid {
       }
       @include media-breakpoint-up(md) {
         font-size: 1.35em;
-        max-width: 70%;
+        max-width: 74%;
       }
       @include media-breakpoint-up(lg) {
         font-size: 1.5em;
-        max-width: 66%;
+        max-width: 78%;
       }
     }
   }
@@ -513,7 +524,7 @@ body.compact #masthead {
   header {
     min-height: 0;
     @include media-breakpoint-down(lg) {
-      padding-top: 10px;
+      padding: 1em 0;
     }
     @include media-breakpoint-up(lg) {
       padding-top: 40px;
