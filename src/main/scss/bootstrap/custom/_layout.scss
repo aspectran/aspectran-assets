@@ -1,6 +1,7 @@
 // TOC
 // - Default Style
 // - Plate Style
+// - Flush Style
 // - Fluid Style
 // - Navigation
 // - Masthead
@@ -14,9 +15,12 @@
 // Default Style
 //--------------
 
-.container.contour > .container {
-  padding: 0;
+.container.page-content {
+  > .container {
+    padding: 0;
+  }
 }
+
 
 // Plate Style
 //--------------
@@ -25,7 +29,7 @@ body.plate {
   background-color: $grey-1;
   .container {
     max-width: 1396px;
-    &.contour {
+    &.page-content {
       background-color: $bg-color;
       min-height: 400px;
       @include media-breakpoint-up(xxl) {
@@ -33,9 +37,6 @@ body.plate {
         -webkit-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
         -moz-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
         box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
-        > .row {
-          border-radius: 0 0 10px 10px;
-        }
       }
     }
   }
@@ -47,11 +48,23 @@ body.plate {
       }
     }
     @include media-breakpoint-up(xxl) {
-      .container.contour {
+      .container.page-content {
         -webkit-box-shadow: -3px 0 5px -3px rgba(1, 1, 1, 0.63), 3px 0 5px -3px rgba(1, 1, 1, 0.63);
         -moz-box-shadow: -3px 0 5px -3px rgba(1, 1, 1, 0.63), 3px 0 5px -3px rgba(1, 1, 1, 0.63);
         box-shadow: -3px 0 5px -3px rgba(1, 1, 1, 0.63), 3px 0 5px -3px rgba(1, 1, 1, 0.63);
       }
+    }
+  }
+}
+
+// Flush Style
+//--------------
+
+body.flush {
+  .page-content {
+    padding: 0;
+    @include media-breakpoint-up(xxl) {
+      overflow: hidden;
     }
   }
 }
@@ -63,7 +76,7 @@ body.fluid {
   .container {
     width: 100%;
     max-width: 100%;
-    &.contour {
+    &.page-content {
       min-height: 400px;
       border-radius: 0;
       -webkit-box-shadow: none;
@@ -377,22 +390,6 @@ body.fluid {
         }
       }
     }
-  }
-}
-
-// Fork- Ribbon
-//--------------
-
-#forkme-ribbon {
-  position: absolute;
-  z-index: 1;
-  right: 0;
-  width: 149px;
-  height: 149px;
-  border: 0;
-  display: none;
-  @include media-breakpoint-up(lg) {
-    display: block;
   }
 }
 
