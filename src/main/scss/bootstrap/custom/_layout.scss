@@ -2,7 +2,6 @@
 // - Default Style
 // - Plate Style
 // - Flush Style
-// - Article Style
 // - Fluid Style
 // - Navigation
 // - Masthead
@@ -21,7 +20,6 @@
     padding: 0;
   }
 }
-
 
 // Plate Style
 //--------------
@@ -66,16 +64,6 @@ body.flush {
     @include media-breakpoint-up(xxl) {
       overflow: hidden;
     }
-  }
-}
-
-// Article Style
-//---------------
-
-body.article {
-  .page-content {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
   }
 }
 
