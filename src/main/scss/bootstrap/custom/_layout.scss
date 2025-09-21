@@ -1,7 +1,7 @@
 // TOC
 // - Default Style
 // - Plate Style
-// - Flush Style
+// - Plate Console Style
 // - Fluid Style
 // - Navigation
 // - Masthead
@@ -55,14 +55,17 @@ body.plate {
   }
 }
 
-// Flush Style
-//-------------
+// Plate Console Style
+//---------------------
 
-body.flush {
+body.plate.console {
   .page-content {
-    padding: 0;
+    --bs-gutter-x: 0;
     @include media-breakpoint-up(xxl) {
       overflow: hidden;
+    }
+    .row {
+      --bs-gutter-x: 0;
     }
   }
 }
