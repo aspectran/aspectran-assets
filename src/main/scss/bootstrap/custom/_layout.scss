@@ -163,24 +163,12 @@ body.fluid {
     width: 100%;
     z-index: 101;
     background-color: $ci-0;
-    .settings {
-      select {
-        margin: 0;
-      }
-    }
-    .quick-search-box {
-      .input-group {
-        margin: 0;
-        input {
-        }
-      }
-      .form-control {
-        width: 80px;
-        transition: width .5s;
-        &:focus,
-        &:not(:placeholder-shown) {
-          width: 120px;
-        }
+    .form-control {
+      width: 80px;
+      transition: width .5s;
+      &:focus,
+      &:not(:placeholder-shown) {
+        width: 120px;
       }
     }
     @include media-breakpoint-down(lg) {
@@ -238,13 +226,7 @@ body.fluid {
         }
       }
       .top-bar-left {
-        margin-left: 108px;
-      }
-      .top-bar-right {
-        .settings,
-        .quick-search-box {
-          border-top: 2px solid transparent;
-        }
+        margin-left: 98px;
       }
     }
     ul.navbar-nav {
