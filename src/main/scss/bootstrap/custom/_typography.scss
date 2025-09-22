@@ -8,67 +8,38 @@ h2 {
   margin-top: 0;
   margin-bottom: .2em;
   &.underline {
-    padding-bottom: 3px;
-    border-bottom: 1px solid $grey-1;
+    padding-bottom: .3em;
+    border-bottom: 1px solid $grey-2;
   }
 }
 h3 {
   margin-top: 0;
   margin-bottom: .2em;
   &.underline {
-    padding-bottom: 3px;
-    border-bottom: 1px solid $grey-1;
+    padding-bottom: .3em;
+    border-bottom: 1px solid $grey-2;
   }
 }
 h4 {
   margin-top: 0;
   margin-bottom: .2em;
   &.underline {
-    padding-bottom: 3px;
-    border-bottom: 1px solid $grey-1;
+    padding-bottom: .3em;
+    border-bottom: 1px solid $grey-2;
   }
 }
 h5 {
   margin-top: 0;
   margin-bottom: .2em;
   &.underline {
-    padding-bottom: 3px;
-    border-bottom: 1px solid $grey-1;
+    padding-bottom: .3em;
+    border-bottom: 1px solid $grey-2;
   }
 }
 
 header {
   h1 {
     margin-bottom: .2em;
-  }
-}
-
-body.article article {
-  h2 {
-    margin: 1.363em 0 .7em 0;
-    &:nth-child(0),
-    &:nth-child(1),
-    &:nth-child(2) {
-      margin-top: 0.2em;
-    }
-    padding-bottom: 3px;
-    border-bottom: 1px solid $grey-2;
-  }
-  h3 {
-    margin: 1.152em 0 .6em 0;
-  }
-  h4 {
-    margin: 1.152em 0 .5em 0;
-  }
-  h5 {
-    margin: 1em 0 .4em 0;
-  }
-}
-
-article {
-  header {
-    border-bottom: 1px solid $grey-1;
-    margin-bottom: 1.5em;
   }
 }
 

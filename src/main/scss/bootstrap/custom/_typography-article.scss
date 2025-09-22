@@ -4,17 +4,21 @@ body.article article {
   //-----------
 
   header {
-    border-bottom: 1px solid $grey-1;
-    margin-bottom: 1.5em;
+    border-bottom: 1px solid $grey-2;
+    margin-bottom: 2.5em;
+    .subheadline {
+      margin-bottom: 0;
+      font-size: .9em;
+    }
   }
   h2 {
     margin: 1.363em 0 .7em 0;
     &:nth-child(0),
     &:nth-child(1),
     &:nth-child(2) {
-      margin-top: 0.2em;
+      margin-top: .2em;
     }
-    padding-bottom: 3px;
+    padding-bottom: .3em;
     border-bottom: 1px solid $grey-2;
   }
   h3 {
