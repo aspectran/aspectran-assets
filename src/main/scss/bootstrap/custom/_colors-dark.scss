@@ -69,13 +69,13 @@ $dark-anchor-color: #239edb;
   a:not(.btn):not(.dropdown-item) {
     color: $dark-anchor-color;
     &:hover {
-      color: darken($dark-anchor-color, 10%);
+      color: lighten($dark-anchor-color, 15%);
     }
     &:focus {
-      color: darken($dark-anchor-color, 20%);
+      color: lighten($dark-anchor-color, 11%);
     }
     &:active {
-      color: lighten($dark-anchor-color, 5%);
+      color: lighten($dark-anchor-color, 7%);
     }
   }
 }

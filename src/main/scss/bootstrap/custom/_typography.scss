@@ -49,13 +49,13 @@ header {
 a:not(.btn):not(.dropdown-item) {
   color: $anchor-color;
   &:hover {
-    color: lighten($anchor-color, 10%);
+    color: darken($anchor-color, 15%);
   }
   &:focus {
-    color: lighten($anchor-color, 20%);
+    color: darken($anchor-color, 11%);
   }
   &:active {
-    color: darken($anchor-color, 5%);
+    color: darken($anchor-color, 7%);
   }
 }
 
