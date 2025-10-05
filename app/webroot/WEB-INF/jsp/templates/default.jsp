@@ -61,11 +61,11 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="<aspectran:url value="/jsp/templates/default/"/>">Default</a></li>
                             <li><a class="dropdown-item" href="<aspectran:url value="/jsp/templates/default/plate"/>">Plate</a></li>
-                            <li><a class="dropdown-item" href="<aspectran:url value="/jsp/templates/default/plate solid"/>">Plate Solid</a></li>
+                            <li><a class="dropdown-itemsub-item" href="<aspectran:url value="/jsp/templates/default/plate solid"/>">Plate Solid</a></li>
                             <li><a class="dropdown-item" href="<aspectran:url value="/jsp/templates/default/fluid"/>">Fluid</a></li>
-                            <li><a class="dropdown-item" href="<aspectran:url value="/jsp/templates/default/fluid compact"/>">Fluid Compact</a></li>
-                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-itemsub-item" href="<aspectran:url value="/jsp/templates/default/fluid compact"/>">Fluid Compact</a></li>
                             <li><a class="dropdown-item" href="<aspectran:url value="/jsp/samples/mastheadimage"/>">MastHeadImage</a></li>
+                            <li><hr class="dropdown-divider"/></li>
                             <li><a class="dropdown-item" href="<aspectran:url value="/jsp/samples/appmon"/>">AppMon</a></li>
                         </ul>
                     </li>
@@ -75,11 +75,11 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="<aspectran:url value="/thymeleaf/templates/default/"/>">Default</a></li>
                             <li><a class="dropdown-item" href="<aspectran:url value="/thymeleaf/templates/default/plate"/>">Plate</a></li>
-                            <li><a class="dropdown-item" href="<aspectran:url value="/thymeleaf/templates/default/plate solid"/>">Plate Solid</a></li>
+                            <li><a class="dropdown-item sub-item" href="<aspectran:url value="/thymeleaf/templates/default/plate solid"/>">Plate Solid</a></li>
                             <li><a class="dropdown-item" href="<aspectran:url value="/thymeleaf/templates/default/fluid"/>">Fluid</a></li>
-                            <li><a class="dropdown-item" href="<aspectran:url value="/thymeleaf/templates/default/fluid compact"/>">Fluid Compact</a></li>
-                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item sub-item" href="<aspectran:url value="/thymeleaf/templates/default/fluid compact"/>">Fluid Compact</a></li>
                             <li><a class="dropdown-item" href="<aspectran:url value="/thymeleaf/samples/mastheadimage"/>">MastHeadImage</a></li>
+                            <li><hr class="dropdown-divider"/></li>
                             <li><a class="dropdown-item" href="<aspectran:url value="/thymeleaf/samples/appmon"/>">AppMon</a></li>
                         </ul>
                     </li>
