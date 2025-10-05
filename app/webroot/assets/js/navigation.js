@@ -1,4 +1,3 @@
-// Main jQuery document ready function
 $(function () {
   // Navigation, etc.
   const $win = $(window);

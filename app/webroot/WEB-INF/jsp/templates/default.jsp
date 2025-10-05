@@ -6,6 +6,25 @@
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
+    <script>
+        (() => {
+            const getStoredTheme = () => localStorage.getItem('theme');
+            const getPreferredTheme = () => {
+                const storedTheme = getStoredTheme();
+                if (storedTheme) {
+                    return storedTheme;
+                }
+                return 'auto';
+            };
+            const setTheme = theme => {
+                const newTheme = theme === 'auto'
+                    ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                    : theme;
+                document.documentElement.setAttribute('data-bs-theme', newTheme);
+            };
+            setTheme(getPreferredTheme());
+        })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google" content="notranslate">
     <title>Aspectran Assets</title>
@@ -26,11 +45,13 @@
     <link rel="icon" type="image/png" sizes="96x96" href="https://assets.aspectran.com/img/favicon-96x96.png"/>
     <meta name="msapplication-TileImage" content="https://assets.aspectran.com/img/ms-icon-144x144.png"/>
     <meta name="msapplication-TileColor" content="#4B555A"/>
-    <link rel="stylesheet" type="text/css" href="/assets/bootstrap@5.3.8/css/aspectran.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap@5.3.8/css/aspectran.css?v=20251005"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" integrity="sha256-pdY4ejLKO67E0CM2tbPtq1DJ3VGDVVdqAR6j3ZwdiE4=" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://assets.aspectran.com/js/navigation.js?v=20250923"></script>
+    <script src="https://assets.aspectran.com/js/theme-toggler.js?v=20251005"></script>
 </head>
 <body id="top-of-page" class="${page.style}" itemscope itemtype="https://schema.org/WebPage">
 <nav id="navigation" class="navbar navbar-expand-lg" data-bs-theme="dark">
@@ -61,9 +82,9 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="<aspectran:url value="/jsp/templates/default/"/>">Default</a></li>
                             <li><a class="dropdown-item" href="<aspectran:url value="/jsp/templates/default/plate"/>">Plate</a></li>
-                            <li><a class="dropdown-itemsub-item" href="<aspectran:url value="/jsp/templates/default/plate solid"/>">Plate Solid</a></li>
+                            <li><a class="dropdown-item sub-item" href="<aspectran:url value="/jsp/templates/default/plate solid"/>">Plate Solid</a></li>
                             <li><a class="dropdown-item" href="<aspectran:url value="/jsp/templates/default/fluid"/>">Fluid</a></li>
-                            <li><a class="dropdown-itemsub-item" href="<aspectran:url value="/jsp/templates/default/fluid compact"/>">Fluid Compact</a></li>
+                            <li><a class="dropdown-item sub-item" href="<aspectran:url value="/jsp/templates/default/fluid compact"/>">Fluid Compact</a></li>
                             <li><a class="dropdown-item" href="<aspectran:url value="/jsp/samples/mastheadimage"/>">MastHeadImage</a></li>
                             <li><hr class="dropdown-divider"/></li>
                             <li><a class="dropdown-item" href="<aspectran:url value="/jsp/samples/appmon"/>">AppMon</a></li>
@@ -233,60 +254,6 @@
         </div>
     </div>
 </footer>
-<script>
-    $(function () {
-        const getStoredTheme = () => localStorage.getItem('theme');
-        const setStoredTheme = theme => localStorage.setItem('theme', theme);
-
-        const getPreferredTheme = () => {
-            const storedTheme = getStoredTheme();
-            if (storedTheme) {
-                return storedTheme;
-            }
-            return 'auto';
-        };
-
-        const setTheme = theme => {
-            const newTheme = theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme;
-            $('html').attr('data-bs-theme', newTheme);
-        };
-
-        const showActiveTheme = (theme) => {
-            const $themeToggler = $('.theme-toggler');
-            if (!$themeToggler.length) {
-                return;
-            }
-
-            $themeToggler.find('.dropdown-item.active').removeClass('active');
-            $themeToggler.find('.dropdown-item .bi-check2').addClass('d-none');
-
-            const $activeItem = $themeToggler.find('[data-bs-theme-value="' + theme + '"]');
-            $activeItem.addClass('active');
-            $activeItem.find('.bi-check2').removeClass('d-none');
-
-            const iconClass = $activeItem.find('.bi:first').attr('class').match(/bi-[^\s]+/)[0];
-            $themeToggler.find('.theme-icon-active').attr('class', 'bi theme-icon-active ' + iconClass);
-        };
-
-        const preferredTheme = getPreferredTheme();
-        setTheme(preferredTheme);
-        showActiveTheme(preferredTheme);
-
-        $(window.matchMedia('(prefers-color-scheme: dark)')).on('change', () => {
-            const storedTheme = getStoredTheme();
-            if (storedTheme === 'auto' || !storedTheme) {
-                setTheme('auto');
-            }
-        });
-
-        $('.theme-toggler [data-bs-theme-value]').on('click', function() {
-            const theme = $(this).data('bs-theme-value');
-            setStoredTheme(theme);
-            setTheme(theme);
-            showActiveTheme(theme);
-        });
-    });
-</script>
 <script>
     const supportedLanguages = ['en', 'ko'];
     function getPreferredLangCodeFromLocalStorage() {
