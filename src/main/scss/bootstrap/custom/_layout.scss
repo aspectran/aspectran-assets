@@ -99,6 +99,7 @@ body.fluid {
   text-shadow: rgba(0, 0, 0, .498039) 0 1px 2px;
   text-transform: uppercase;
   border: none !important;
+  background-color: $ci-0;
   a.logo {
     margin: 0;
     background: url('../../img/aspectran-site-logo.png') no-repeat;
@@ -112,15 +113,13 @@ body.fluid {
     }
     min-height: 46px;
     line-height: 46px;
-    background-color: $ci-0;
-    padding: 0 0 0 1rem;
     width: 100%;
     overflow: auto;
     .title-bar-left {
-      float: left;
       a.logo {
         position: absolute;
         top: 5px;
+        left: .75rem;
         display: block;
         width: 37px;
         height: 37px;
@@ -139,7 +138,6 @@ body.fluid {
       position: absolute;
       left: 60px;
       right: 60px;
-      padding: 0;
       text-align: center;
       text-shadow: rgba(0, 0, 0, .498039) 0 1px 2px;
       a {
@@ -169,25 +167,6 @@ body.fluid {
       &:focus,
       &:not(:placeholder-shown) {
         width: 120px;
-      }
-    }
-    @include media-breakpoint-down(lg) {
-      > .container {
-        max-width: none;
-      }
-      .top-bar-logo {
-        display: none;
-      }
-      .top-bar-left {
-        width: 100%;
-      }
-      .top-bar-right {
-        width: 100%;
-      }
-    }
-    @include media-breakpoint-down(md) {
-      > .container {
-        padding: 0;
       }
     }
     @include media-breakpoint-up(lg) {
@@ -229,14 +208,15 @@ body.fluid {
         margin-left: 98px;
       }
     }
+    @include media-breakpoint-down(lg) {
+      .top-bar-logo {
+        display: none;
+      }
+    }
     ul.navbar-nav {
       background: none;
       @include media-breakpoint-down(md) {
-        display: block;
         border-radius: 0;
-      }
-      @include media-breakpoint-only(md) {
-        padding-bottom: .5rem;
       }
       li {
         > a {
@@ -252,19 +232,6 @@ body.fluid {
         }
       }
       > li {
-        @include media-breakpoint-down(lg) {
-          border-top: 0;
-          background-color: $ci-1;
-          border-bottom: 1px solid darken($ci-1, 3%);
-          &:hover {
-            background-color: darken($ci-1, 3%);
-          }
-          .dropdown-toggle::after {
-            position: absolute;
-            top: 50%;
-            right: 1.3rem;
-          }
-        }
         @include media-breakpoint-up(lg) {
           border-top: 2px solid transparent;
           &.active {
@@ -278,14 +245,17 @@ body.fluid {
             }
           }
         }
-        @include media-breakpoint-only(md) {
-          &:first-child {
-            border-top-left-radius: .5rem;
-            border-top-right-radius: .5rem;
+        @include media-breakpoint-down(lg) {
+          border-top: 0;
+          background-color: $ci-1;
+          border-bottom: 1px solid darken($ci-1, 3%);
+          &:hover {
+            background-color: darken($ci-1, 3%);
           }
-          &:last-child {
-            border-bottom-left-radius: .5rem;
-            border-bottom-right-radius: .5rem;
+          .dropdown-toggle::after {
+            position: absolute;
+            top: 50%;
+            right: 1.3rem;
           }
         }
         > a {
@@ -311,18 +281,22 @@ body.fluid {
         }
       }
       ul.dropdown-menu {
-        margin: 0;
         border: 0;
         background-color: $ci-0;
         text-transform: none;
+        @include media-breakpoint-up(lg) {
+          margin: 0;
+          padding: 0 0 .5rem 0;
+          border-radius: 0 0 .5rem .5rem;
+        }
         @include media-breakpoint-down(lg) {
-          margin: 0 1rem 1rem 1rem;
+          margin: 0 1rem .5rem 1rem;
           padding: .5rem 0;
           border-radius: .5rem;
         }
-        @include media-breakpoint-up(lg) {
-          padding: 0 0 .5rem 0;
-          border-radius: 0 0 .5rem .5rem;
+        @include media-breakpoint-down(md) {
+          margin: 0;
+          padding: 0;
         }
         > li {
           min-width: 230px;
@@ -417,7 +391,7 @@ body.fluid {
     align-content: end;
     @include media-breakpoint-down(sm) {
       min-height: 135px;
-      padding: .5rem 0;
+      padding: .5rem 0 .65rem;
     }
     @include media-breakpoint-up(sm) {
       min-height: 225px;
