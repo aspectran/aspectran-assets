@@ -20,7 +20,7 @@ public class ThymeleafTemplateActivity {
     public Map<String, String> template(String style) {
         return Map.of(
                 "style", StringUtils.nullToEmpty(style),
-                "subheadline", (style != null ? "JSP Templates" : ""),
+                "subheadline", (style != null ? "Thymeleaf Templates" : ""),
                 "headline", (style == null ? "Thymeleaf Templates" : StringUtils.nullToEmpty(style).toUpperCase()),
                 "include", "index"
         );
