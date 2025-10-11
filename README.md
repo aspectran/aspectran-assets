@@ -14,7 +14,7 @@ Aspectran Assets is a utility project for building and deploying CSS, JS, Fonts,
 ## Prerequisites
 
 -   Java 21 or higher
--   Maven 3.6.3 or higher
+-   Maven 3.9.4 or higher
 
 ## How to Build Assets
 
