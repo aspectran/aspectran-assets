@@ -46,16 +46,16 @@ header {
 // Links
 //-------
 
-a:not(.btn):not(.dropdown-item) {
+a:not(.btn):not(.nav-link):not(.dropdown-item):not(.list-group-item) {
   color: $anchor-color;
   &:hover {
-    color: darken($anchor-color, 15%);
+    color: lighten($anchor-color, 13%);
   }
   &:focus {
-    color: darken($anchor-color, 11%);
+    color: lighten($anchor-color, 10%);
   }
   &:active {
-    color: darken($anchor-color, 7%);
+    color: lighten($anchor-color, 7%);
   }
 }
 

@@ -3,7 +3,7 @@
 
 $dark-bg-color: #212529;
 $dark-text-color: #dae0de;
-$dark-anchor-color: #239edb;
+$dark-anchor-color: #93d2f1;
 
 // Overrides for dark mode
 //-------------------------
@@ -66,13 +66,13 @@ $dark-anchor-color: #239edb;
     color: $grey-5;
     background-color: darken($dark-bg-color, 2%);
   }
-  a:not(.btn):not(.dropdown-item) {
+  a:not(.btn):not(.nav-link):not(.dropdown-item):not(.list-group-item) {
     color: $dark-anchor-color;
     &:hover {
-      color: lighten($dark-anchor-color, 15%);
+      color: lighten($dark-anchor-color, 13%);
     }
     &:focus {
-      color: lighten($dark-anchor-color, 11%);
+      color: lighten($dark-anchor-color, 10%);
     }
     &:active {
       color: lighten($dark-anchor-color, 7%);
