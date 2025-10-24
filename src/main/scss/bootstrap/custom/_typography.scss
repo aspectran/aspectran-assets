@@ -43,22 +43,6 @@ header {
   }
 }
 
-// Links
-//-------
-
-a:not(.btn):not(.nav-link):not(.dropdown-item):not(.list-group-item) {
-  color: $anchor-color;
-  &:hover {
-    color: lighten($anchor-color, 13%);
-  }
-  &:focus {
-    color: lighten($anchor-color, 10%);
-  }
-  &:active {
-    color: lighten($anchor-color, 7%);
-  }
-}
-
 // Paragraph
 //-----------
 
