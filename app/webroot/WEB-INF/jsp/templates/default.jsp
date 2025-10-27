@@ -114,7 +114,7 @@
             </div>
             <div class="top-bar-right d-lg-flex align-items-center gap-3">
                 <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
+                    <li class="nav-item">
                         <a class="nav-link" href="<aspectran:url value="/jsp/samples/appmon"/>">Monitoring</a>
                     </li>
                 </ul>
