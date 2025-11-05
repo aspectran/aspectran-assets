@@ -84,10 +84,6 @@ body.fluid {
       box-shadow: none;
     }
   }
-  #footer > .container,
-  #subfooter > .container {
-    max-width: 1320px;
-  }
 }
 
 // Navigation
@@ -571,13 +567,6 @@ body.fluid #masthead .breadcrumb-bar {
     color: $footer-link-color;
     border: 0;
     &.logo {
-      @include media-breakpoint-down(md) {
-        display: none;
-      }
-      @include media-breakpoint-up(md) {
-        display: block;
-      }
-      margin: auto;
       width: 90px;
       height: 90px;
       background: url('../../img/aspectran-site-logo.png') no-repeat;
