@@ -76,12 +76,12 @@ img {
 }
 
 figure {
-  margin: 0 0 rem-calc(1.875rem) 0;
+  margin: 0 0 1.875rem 0;
 }
 figcaption {
   color: $grey-10;
-  font-size: rem-calc(13px);
-  padding-top: rem-calc(2px);
+  font-size: 0.8125rem;
+  padding-top: 0.125rem;
   a {
     border-bottom: 1px dotted $grey-4;
     color: $grey-10;
@@ -151,7 +151,7 @@ dl {
   }
   dt {
     font-weight: bold;
-    padding-top: rem-calc(20);
+    padding-top: 1.25rem;
   }
 }
 article dl {
@@ -160,7 +160,7 @@ article dl {
   }
   dd {
     line-height: 1.5;
-    margin-left: rem-calc(24);
+    margin-left: 1.5rem;
   }
 }
 
