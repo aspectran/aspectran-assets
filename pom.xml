@@ -214,7 +214,7 @@
                             <!-- use a fixed version of dart-saas to ensure reproducible builds -->
                             <version>1.83.0</version>
                             <inputFolder>${basedir}/src/main/scss/foundation</inputFolder>
-                            <outputFolder>${basedir}/app/webroot/assets/foundation@${foundation.version}/css</outputFolder>
+                            <outputFolder>${basedir}/assets/foundation@${foundation.version}/css</outputFolder>
                             <style>COMPRESSED</style>
                         </configuration>
                         <executions>
@@ -242,7 +242,7 @@
                             <!-- use a fixed version of dart-saas to ensure reproducible builds -->
                             <version>1.83.0</version>
                             <inputFolder>${basedir}/src/main/scss/bootstrap</inputFolder>
-                            <outputFolder>${basedir}/app/webroot/assets/bootstrap@${bootstrap.version}/css</outputFolder>
+                            <outputFolder>${basedir}/assets/bootstrap@${bootstrap.version}/css</outputFolder>
                             <style>COMPRESSED</style>
                         </configuration>
                         <executions>

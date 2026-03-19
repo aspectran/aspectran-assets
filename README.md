@@ -18,7 +18,7 @@ Aspectran Assets is a utility project for building and deploying CSS, JS, Fonts,
 
 ## How to Build Assets
 
-You can build the assets for each CSS framework by activating the corresponding Maven profile. The compiled assets will be located in the `app/webroot/assets/` directory.
+You can build the assets for each CSS framework by activating the corresponding Maven profile. The compiled assets will be located in the `assets/` directory.
 
 ### Build Bootstrap Assets
 
@@ -75,7 +75,7 @@ This project includes a runnable server to preview the compiled assets and test 
 ## Directory Structure
 
 -   `src/main/scss/`: Contains the SASS source files, organized by framework (e.g., `bootstrap`, `foundation`). This is where you should modify styles.
--   `app/webroot/assets/`: Contains the final, compiled CSS assets, organized by framework and version. This directory is the document root of the test server.
+-   `assets/`: Contains the final, compiled CSS assets, organized by framework and version. This directory is the document root of the test server.
 -   `app/`: A runnable Aspectran application distribution, containing all necessary scripts, configurations, and libraries.
 
 ## License
