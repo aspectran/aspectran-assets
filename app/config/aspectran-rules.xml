@@ -31,6 +31,6 @@
     </aspect>
 
     <append file="/config/server/server.xml"/>
-    <append resource="com/aspectran/assets/web-context.xml"/>
+    <append resource="com/aspectran/assets/web-rules.xml"/>
 
 </aspectran>
