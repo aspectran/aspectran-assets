@@ -489,6 +489,25 @@ body.fluid #masthead .breadcrumb-bar {
   border-radius: 0;
 }
 
+// Subhead
+//---------
+
+#subhead {
+  padding: 3rem 2rem;
+  background-color: var(--bs-tertiary-bg);
+  border: 1px solid var(--bs-border-color);
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  .headline {
+    font-weight: 800;
+  }
+  @include media-breakpoint-down(lg) {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+}
+
 // Meta
 //------
 
