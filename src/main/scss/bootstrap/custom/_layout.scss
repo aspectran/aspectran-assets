@@ -435,6 +435,9 @@ body.fluid {
     }
     .breadcrumb {
       color: $ci-9;
+      li::before {
+        color: #353b3e;
+      }
       a {
         color: $ci-9;
       }
