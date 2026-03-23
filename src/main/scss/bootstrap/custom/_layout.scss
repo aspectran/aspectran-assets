@@ -6,7 +6,6 @@
 // - Navigation
 // - Masthead
 // - Breadcrumb
-// - Meta
 // - Jump to top
 // - Footer
 // - Subfooter
@@ -519,37 +518,6 @@ body.fluid #masthead .breadcrumb-bar {
     border-radius: 0;
     border-left: none;
     border-right: none;
-  }
-}
-
-// Meta
-//------
-
-#page-meta, #page-meta a {
-  color: $grey-5;
-}
-#page-meta .button {
-  background: $grey-5;
-  border: 0;
-}
-#page-meta .button {
-  color: #fff;
-}
-#page-meta .button:hover {
-  background: $primary;
-}
-.meta-info {
-  p {
-    font-size: 1.3rem;
-    color: scale-color($grey-1, $lightness: 40%);
-  }
-  a {
-    text-decoration: underline;
-    color: scale-color($grey-1, $lightness: 40%);
-    &:hover {
-      text-decoration: none;
-      color: $secondary;
-    }
   }
 }
 
