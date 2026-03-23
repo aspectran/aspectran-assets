@@ -6,23 +6,23 @@
   @include media-breakpoint-down(lg) {
     padding-left: .5em;
     padding-right: .5em;
-    border-top: 2px solid lighten($ci-2, 15%);
-    border-bottom: 2px solid lighten($ci-2, 15%);
+    border-top: 2px solid lighten($ci-1, 20%);
+    border-bottom: 2px solid lighten($ci-1, 20%);
     border-radius: 12px;
   }
   @include media-breakpoint-up(lg) {
-    border-right: 2px solid lighten($ci-2, 15%);
+    border-right: 2px solid lighten($ci-1, 20%);
     border-radius: 12px;
     &.right {
       border: 0;
-      border-left: 2px solid lighten($ci-2, 15%);
+      border-left: 2px solid lighten($ci-1, 20%);
       ul {
         margin-left: .5em;
       }
     }
   }
   .toc-title {
-    color: lighten($ci-2, 15%);
+    color: lighten($ci-1, 20%);
     @include media-breakpoint-down(lg) {
       padding: .4em .5em;
       margin-bottom: 1em;
@@ -103,21 +103,21 @@ article {
         text-align: left;
       }
       color: $grey-11 !important;
-      background-color: lighten($ci-2, 26%) !important;
+      background-color: lighten($ci-1, 31%) !important;
       cursor: pointer;
       &:hover {
         color: $ci-9 !important;
-        background-color: lighten($ci-2, 10%) !important;
+        background-color: lighten($ci-1, 15%) !important;
       }
       &.active {
         color: $ci-9 !important;
-        background-color: $ci-2 !important;
+        background-color: $ci-1 !important;
       }
     }
     &.active {
       > a, button {
         color: $ci-9 !important;
-        background-color: $ci-2 !important;
+        background-color: lighten($ci-1, 5%) !important;
       }
     }
     .indicator {
