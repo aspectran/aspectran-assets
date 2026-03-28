@@ -11,16 +11,17 @@ import java.util.Map;
  * <p>Created: 2025. 5. 24.</p>
  */
 @Component("/")
-public class MainActivity {
+public class HomeActivity {
 
     @Request("/")
-    @Dispatch("templates/default")
+    @Dispatch("index")
     @Action("page")
     public Map<String, String> template() {
         return Map.of(
+                "subheadline", "Frontend Asset Hub",
                 "headline", "Aspectran Assets",
-                "include", "index"
-                );
+                "teaser", "Modern and reusable web components, templates, and styles for building high-performance Aspectran applications."
+        );
     }
 
 }

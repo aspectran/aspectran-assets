@@ -51,4 +51,14 @@ public class ThymeleafTemplateActivity {
         );
     }
 
+    @Request("/samples/elements")
+    @Dispatch("samples/elements")
+    @Action("page")
+    public Map<String, String> sampleElements() {
+        return Map.of(
+                "subheadline", "Bootstrap based",
+                "headline", "Sample Elements"
+        );
+    }
+
 }

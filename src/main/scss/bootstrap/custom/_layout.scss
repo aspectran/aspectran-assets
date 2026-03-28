@@ -29,7 +29,7 @@ body.plate {
     max-width: 1396px;
     &.page-content {
       background-color: $bg-color;
-      @include media-breakpoint-up(lg) {
+      @include media-breakpoint-up(xxl) {
         border-radius: 0 0 10px 10px;
       }
     }

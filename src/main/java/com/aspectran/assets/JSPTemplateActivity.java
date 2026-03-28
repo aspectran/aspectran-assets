@@ -23,7 +23,7 @@ public class JSPTemplateActivity {
                 "subheadline", (style != null ? "JSP Templates" : ""),
                 "headline", (style == null ?"JSP Templates" : StringUtils.nullToEmpty(style).toUpperCase()),
                 "include", "index"
-                );
+        );
     }
 
     @Request("/samples/appmon")
@@ -34,7 +34,7 @@ public class JSPTemplateActivity {
                 "style", "fluid compact",
                 "include", "samples/appmon/appmon",
                 "headinclude", "samples/appmon/_domains"
-                );
+        );
     }
 
     @Request("/samples/mastheadimage")
@@ -48,7 +48,17 @@ public class JSPTemplateActivity {
                 "teaser", "We are developing useful applications based on Aspectran.",
                 "include", "index",
                 "headimageinclude", "samples/masthead/_headimage"
-                );
+        );
+    }
+
+    @Request("/samples/elements")
+    @Dispatch("samples/elements")
+    @Action("page")
+    public Map<String, String> sampleElements() {
+        return Map.of(
+                "subheadline", "Bootstrap based",
+                "headline", "Sample Elements"
+        );
     }
 
 }
