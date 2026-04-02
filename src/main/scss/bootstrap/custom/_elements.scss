@@ -111,7 +111,7 @@ article {
       }
       &.active {
         color: $ci-9 !important;
-        background-color: $ci-1 !important;
+        background-color: lighten($ci-1, 3%) !important;
       }
     }
     &.active {
