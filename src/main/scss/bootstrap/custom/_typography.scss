@@ -95,20 +95,19 @@ figcaption {
 // Code
 //------
 
-pre {
-  overflow-x: auto;
-  margin-bottom: 1rem;
-  padding: .6rem;
-  background-color: darken($bg-color, 2%);
-  border: 1px solid darken($bg-color, 10%);
-  border-radius: $global-radius;
-  pre {
-    border: 0;
-    margin-bottom: 0;
-  }
-}
-
 .highlight {
+  pre {
+    overflow-x: auto;
+    margin-bottom: 1rem;
+    padding: .6rem;
+    background-color: darken($bg-color, 2%);
+    border: 1px solid darken($bg-color, 10%);
+    border-radius: $global-radius;
+    pre {
+      border: 0;
+      margin-bottom: 0;
+    }
+  }
   .gutter {
     border-right: 1px solid #ccc;
     padding-right: 0.6rem;
