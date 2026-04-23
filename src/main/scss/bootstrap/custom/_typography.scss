@@ -109,7 +109,7 @@ figcaption {
     }
   }
   .gutter {
-    border-right: 1px solid #ccc;
+    border-right: 1px solid darken($bg-color, 10%);
     padding-right: 0.6rem;
     text-align: right;
     .lineno {
@@ -126,7 +126,7 @@ figcaption {
     }
   }
   .code {
-    padding-left: 0.6rem;
+    padding-left: .6rem;
     pre {
       padding: 0;
       overflow-x: auto;
