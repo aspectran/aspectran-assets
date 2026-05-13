@@ -1,17 +1,17 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" session="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://aspectran.com/tags" prefix="aspectran" %>
-<%--<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aspectran/aspectow-appmon@main/assets/appmon@3.2/css/appmon.css"/>--%>
-<%--<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aspectran/aspectow-appmon@main/assets/appmon@3.2/css/appmon-dark.css"/>--%>
-<link rel="stylesheet" href="http://localhost:8083/appmon/assets/css/appmon.css"/>
-<link rel="stylesheet" href="http://localhost:8083/appmon/assets/css/appmon-dark.css"/>
-<script src="https://cdn.jsdelivr.net/gh/aspectran/aspectow-appmon@main/assets/appmon@3.2/js/dashboard-builder.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/aspectran/aspectow-appmon@main/assets/appmon@3.2/js/dashboard-viewer.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/aspectran/aspectow-appmon@main/assets/appmon@3.2/js/dashboard-chart.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/aspectran/aspectow-appmon@main/assets/appmon@3.2/js/traffic-painter.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/aspectran/aspectow-appmon@main/assets/appmon@3.2/js/base-client.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/aspectran/aspectow-appmon@main/assets/appmon@3.2/js/websocket-client.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/aspectran/aspectow-appmon@main/assets/appmon@3.2/js/polling-client.js"></script>
+<link rel="stylesheet" href="https://aspectow-assets.aspectran.com/appmon@3.2/css/appmon.css"/>
+<link rel="stylesheet" href="https://aspectow-assets.aspectran.com/appmon@3.2/css/appmon-dark.css"/>
+<%--<link rel="stylesheet" href="http://localhost:8083/appmon/assets/css/appmon.css"/>--%>
+<%--<link rel="stylesheet" href="http://localhost:8083/appmon/assets/css/appmon-dark.css"/>--%>
+<script src="https://aspectow-assets.aspectran.com/appmon@3.2/js/dashboard-builder.js"></script>
+<script src="https://aspectow-assets.aspectran.com/appmon@3.2/js/dashboard-viewer.js"></script>
+<script src="https://aspectow-assets.aspectran.com/appmon@3.2/js/dashboard-chart.js"></script>
+<script src="https://aspectow-assets.aspectran.com/appmon@3.2/js/traffic-painter.js"></script>
+<script src="https://aspectow-assets.aspectran.com/appmon@3.2/js/base-client.js"></script>
+<script src="https://aspectow-assets.aspectran.com/appmon@3.2/js/websocket-client.js"></script>
+<script src="https://aspectow-assets.aspectran.com/appmon@3.2/js/polling-client.js"></script>
 <div class="container">
     <ul class="instance tabs nav nav-tabs mt-3">
         <li class="tabs-title nav-item active">
