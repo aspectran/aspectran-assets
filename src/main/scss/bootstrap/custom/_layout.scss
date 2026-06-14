@@ -68,8 +68,6 @@ body.fluid {
     max-width: 100%;
     &.page-content {
       border-radius: 0;
-      -webkit-box-shadow: none;
-      -moz-box-shadow: none;
       box-shadow: none;
     }
   }
@@ -89,7 +87,6 @@ body.fluid {
     margin: 0;
     background: url('../../img/aspectran-site-logo.png') no-repeat;
     background-size: cover;
-    -webkit-transition: width .5s, height .5s, background-color 1s, -webkit-transform 1s;
     transition: width .5s, height .5s, background-color 1s, transform 1s;
   }
   .btn {
@@ -141,7 +138,6 @@ body.fluid {
       &:hover {
         a.logo {
           transform: rotate(360deg);
-          -webkit-transform: rotate(360deg);
         }
       }
     }
@@ -203,7 +199,6 @@ body.fluid {
         }
         &:hover {
           a.logo {
-            -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
           }
         }
@@ -560,10 +555,8 @@ body.fluid #masthead .breadcrumb-bar {
       border-radius: 90px;
       background: url('../../img/aspectran-site-logo.png') no-repeat;
       background-size: cover;
-      -webkit-transition: width .5s, height .5s, background-color 1s, -webkit-transform 1s;
       transition: width .5s, height .5s, background-color 1s, transform 1s;
       &:hover {
-        -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
       }
     }

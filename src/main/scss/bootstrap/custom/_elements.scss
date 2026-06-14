@@ -77,8 +77,6 @@ article {
 .tabs {
   position: relative;
   border: 0;
-  -webkit-box-shadow: 0 8px 10px -10px rgba(50, 50, 50, 0.33);
-  -moz-box-shadow: 0 8px 10px -10px rgba(50, 50, 50, 0.33);
   box-shadow: 0 8px 10px -10px rgba(50, 50, 50, 0.33);
   margin: 0;
   @include media-breakpoint-down(md) {
@@ -133,7 +131,6 @@ article {
     }
     .blink {
       animation: blink .8s steps(4, start) infinite;
-      -webkit-animation: blink .8s steps(4, start) infinite;
     }
     @keyframes blink {
       from {
@@ -143,12 +140,14 @@ article {
         opacity: 1;
       }
     }
-    @-webkit-keyframes blink {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
+  }
+  @include media-breakpoint-up(md) {
+    &.flat {
+      > .tabs-title {
+        > a, button {
+          border-radius: 0;
+          margin-bottom: 1px;
+        }
       }
     }
   }
@@ -156,8 +155,6 @@ article {
 #masthead .tabs {
   background: none;
   border-bottom: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
   box-shadow: none;
   margin-bottom: 0;
   > .tabs-title {
