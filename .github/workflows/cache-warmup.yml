@@ -1,38 +1,52 @@
-name: Aspectran Assets Cache Warmup
+name: Aspectran Assets Cache Purge & Warmup
 
 on:
-  schedule:
-    # Run periodically every 3 hours
-    - cron: '0 */3 * * *'
-  workflow_dispatch: # Allow manual execution if needed
+  push:
+    branches:
+      - main
+    paths:
+      - 'assets/**'
+  workflow_dispatch:
 
 jobs:
-  warmup:
+  purge-and-warmup:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v7
 
-      - name: Run Dynamic Cache Warmup
+      - name: Run jsDelivr Purge & Warmup
         run: |
-          # Define domains
-          CUSTOM_DOMAIN="https://assets.aspectran.com"
+          # Define jsDelivr base URL
           JSDELIVR_BASE="https://cdn.jsdelivr.net/gh/aspectran/aspectran-assets@main"
           
           # Find all css and js files under assets directory to optimize performance
           find assets -type f \( -name "*.css" -o -name "*.js" \) ! -path '*/.*' | while read -r file; do
-            # Extract relative path from assets directory (e.g. js/theme-toggler.js)
-            rel_path="${file#assets/}"
+            # Extract last commit date in YYYYMMDD format to use as version query parameter
+            commit_date=$(git log -1 --format="%cd" --date=format:"%Y%m%d" -- "$file" 2>/dev/null)
+            if [ -z "$commit_date" ]; then
+              commit_date=$(date +%Y%m%d)
+            fi
             
-            # 1. Custom Domain URL (without version query parameters to avoid mismatch)
-            url_custom="${CUSTOM_DOMAIN}/${rel_path}"
-            echo "Warming up (Custom Domain): $url_custom"
-            curl -I -s -o /dev/null -w "Status: %{http_code}\n" "$url_custom"
+            # 1. jsDelivr Purge API call (file includes 'assets/' path, e.g. assets/js/theme-toggler.js)
+            purge_url="https://purge.jsdelivr.net/gh/aspectran/aspectran-assets@main/${file}"
+            echo -n "Purging jsDelivr Cache: $purge_url -> "
+            purge_status=$(curl -s -o /dev/null -w "%{http_code}" "$purge_url")
+            echo "Status: $purge_status"
             
-            # 2. jsDelivr URL (includes assets/ path)
-            url_jsdelivr="${JSDELIVR_BASE}/${file}"
-            echo "Warming up (jsDelivr): $url_jsdelivr"
-            curl -I -s -o /dev/null -w "Status: %{http_code}\n" "$url_jsdelivr"
+            sleep 0.5
+            
+            # 2. jsDelivr Warmup (with version query parameter)
+            jsdelivr_url_v="${JSDELIVR_BASE}/${file}?v=${commit_date}"
+            echo -n "Warming up jsDelivr (with version): $jsdelivr_url_v -> "
+            warmup_status_v=$(curl -I -s -o /dev/null -w "%{http_code}" "$jsdelivr_url_v")
+            echo "Status: $warmup_status_v"
+            
+            # 3. jsDelivr Warmup (without version query parameter)
+            jsdelivr_url_no_v="${JSDELIVR_BASE}/${file}"
+            echo -n "Warming up jsDelivr (without version): $jsdelivr_url_no_v -> "
+            warmup_status_no_v=$(curl -I -s -o /dev/null -w "%{http_code}" "$jsdelivr_url_no_v")
+            echo "Status: $warmup_status_no_v"
             
             echo "------------------------------------------------"
           done
