@@ -173,7 +173,7 @@ body.fluid {
       transition: width .5s;
       &:focus,
       &:not(:placeholder-shown) {
-        width: 120px;
+        width: 140px;
       }
     }
     @include media-breakpoint-up(lg) {
