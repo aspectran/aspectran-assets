@@ -99,7 +99,6 @@ article {
         width: 100%;
         border-radius: 50px;
         text-align: left;
-        padding-right: 1em;
       }
       color: $grey-11 !important;
       background-color: lighten($ci-1, 31%) !important;
@@ -125,6 +124,7 @@ article {
       color: darken($grey-2, 10%);
       @include media-breakpoint-down(md) {
         float: right;
+        margin-right: .4em;
       }
       &.on {
         color: $ci-8;
