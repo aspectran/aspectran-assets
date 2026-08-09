@@ -86,7 +86,8 @@ article {
     margin: 0;
     @include media-breakpoint-down(md) {
       width: 100%;
-      margin-bottom: 3px;
+      margin-top: 2px;
+      margin-bottom: 2px;
     }
     > a, button {
       font-size: .9em;
@@ -185,6 +186,32 @@ article {
   border: 0;
   .tabs-panel {
     padding: 1em 0 0 0;
+  }
+}
+
+// Bootstrap style
+@include media-breakpoint-down(md) {
+  .mobile-btn-tabs {
+    border-bottom: none;
+    flex-direction: column;
+    gap: .5rem;
+    .nav-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      border: 1px solid var(--bs-border-color) !important;
+      border-radius: var(--bs-border-radius) !important;
+      background-color: var(--bs-body-bg);
+    }
+    .nav-link.active {
+      background-color: var(--bs-primary) !important;
+      border: 1px solid var(--bs-primary) !important;
+    }
+    .nav-link:not(.active):hover {
+      border-color: var(--bs-primary-border-subtle);
+      background-color: var(--bs-tertiary-bg);
+    }
   }
 }
 
