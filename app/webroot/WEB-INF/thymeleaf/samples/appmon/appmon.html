@@ -4,34 +4,46 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{templates/default}">
 <head>
-    <link rel="stylesheet" th:href="|https://cdn.jsdelivr.net/gh/aspectran/aspectow@main/assets/appmon@3.2/css/appmon.css|"/>
-    <link rel="stylesheet" th:href="|https://cdn.jsdelivr.net/gh/aspectran/aspectow@main/assets/appmon@3.2/css/appmon-dark.css|"/>
-    <script th:src="|https://cdn.jsdelivr.net/gh/aspectran/aspectow@main/assets/appmon@3.2/js/dashboard-builder.js|"></script>
-    <script th:src="|https://cdn.jsdelivr.net/gh/aspectran/aspectow@main/assets/appmon@3.2/js/dashboard-viewer.js|"></script>
-    <script th:src="|https://cdn.jsdelivr.net/gh/aspectran/aspectow@main/assets/appmon@3.2/js/dashboard-chart.js|"></script>
-    <script th:src="|https://cdn.jsdelivr.net/gh/aspectran/aspectow@main/assets/appmon@3.2/js/traffic-painter.js|"></script>
-    <script th:src="|https://cdn.jsdelivr.net/gh/aspectran/aspectow@main/assets/appmon@3.2/js/base-client.js|"></script>
-    <script th:src="|https://cdn.jsdelivr.net/gh/aspectran/aspectow@main/assets/appmon@3.2/js/websocket-client.js|"></script>
-    <script th:src="|https://cdn.jsdelivr.net/gh/aspectran/aspectow@main/assets/appmon@3.2/js/polling-client.js|"></script>
+    <link rel="stylesheet" th:href="|https://cdn.jsdelivr.net/gh/aspectran/aspectow@main/assets/appmon@4.1/css/appmon.css|"/>
+    <link rel="stylesheet" th:href="|https://cdn.jsdelivr.net/gh/aspectran/aspectow@main/assets/appmon@4.1/css/appmon-dark.css|"/>
+    <script th:src="|https://cdn.jsdelivr.net/gh/aspectran/aspectow@main/assets/appmon@4.1/js/dashboard-builder.js|"></script>
+    <script th:src="|https://cdn.jsdelivr.net/gh/aspectran/aspectow@main/assets/appmon@4.1/js/dashboard-viewer.js|"></script>
+    <script th:src="|https://cdn.jsdelivr.net/gh/aspectran/aspectow@main/assets/appmon@4.1/js/dashboard-chart.js|"></script>
+    <script th:src="|https://cdn.jsdelivr.net/gh/aspectran/aspectow@main/assets/appmon@4.1/js/traffic-painter.js|"></script>
+    <script th:src="|https://cdn.jsdelivr.net/gh/aspectran/aspectow@main/assets/appmon@4.1/js/base-client.js|"></script>
+    <script th:src="|https://cdn.jsdelivr.net/gh/aspectran/aspectow@main/assets/appmon@4.1/js/websocket-client.js|"></script>
+    <script th:src="|https://cdn.jsdelivr.net/gh/aspectran/aspectow@main/assets/appmon@4.1/js/polling-client.js|"></script>
 </head>
 <body>
 <div layout:fragment="content">
     <div class="row">
-        <div class="domain metrics-bar">
-            <div class="title">
-                <i class="bi bi-server"></i><span class="number"></span>
+        <div class="container node metrics-bar no-title">
+            <div class="node-badge">
+                <i class="bi bi-server"></i><span class="number">1</span>
             </div>
-            <div class="metric">
-                <dl>
-                    <dt></dt>
-                    <dd></dd>
-                </dl>
+            <div class="node-metrics">
+                <div class="metric">
+                    <dl>
+                        <dt><span class="name"></span></dt>
+                        <dd><span class="value"></span><small class="unit"></small></dd>
+                        <dd class="sparkline-wrap" title="Click to view metric history"><canvas class="sparkline" width="48" height="16"></canvas></dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="app-metrics">
+                <div class="metric">
+                    <dl>
+                        <dt><span class="name"></span></dt>
+                        <dd><span class="value"></span><small class="unit"></small></dd>
+                        <dd class="sparkline-wrap" title="Click to view metric history"><canvas class="sparkline" width="48" height="16"></canvas></dd>
+                    </dl>
+                </div>
             </div>
         </div>
     </div>
-    <ul class="instance tabs nav nav-tabs mt-3">
+    <ul class="app tabs nav nav-tabs mt-3">
         <li class="tabs-title nav-item">
-            <a class="nav-link"><i class="bi bi-box"></i> <span class="title">Instance</span> <i class="indicator bi bi-lightning-charge-fill"></i></a>
+            <a class="nav-link"><i class="bi bi-box"></i> <span class="title">App</span> <i class="indicator bi bi-lightning-charge-fill"></i></a>
         </li>
     </ul>
     <div class="control-bar">
@@ -72,14 +84,6 @@
                         <div class="sampling-timer-bar"></div>
                         <div class="sampling-timer-status" title="Sampling interval"></div>
                     </div>
-                </div>
-            </div>
-            <div class="instance metrics-bar">
-                <div class="metric">
-                    <dl>
-                        <dt></dt>
-                        <dd></dd>
-                    </dl>
                 </div>
             </div>
             <div class="session-box">

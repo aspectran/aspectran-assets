@@ -33,7 +33,7 @@ public class ThymeleafTemplateActivity {
         return Map.of(
                 "style", "fluid compact",
                 "include", "samples/appmon/appmon",
-                "headinclude", "samples/appmon/_domains"
+                "headinclude", "samples/appmon/_groups"
         );
     }
 
