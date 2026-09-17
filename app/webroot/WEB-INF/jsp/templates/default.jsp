@@ -89,7 +89,7 @@
                             <li><a class="dropdown-item sub-item" href="<aspectran:url value="/thymeleaf/templates/default/fluid compact"/>">Fluid Compact</a></li>
                             <li><a class="dropdown-item" href="<aspectran:url value="/thymeleaf/samples/mastheadimage"/>">MastHeadImage</a></li>
                             <li><hr class="dropdown-divider"/></li>
-                            <li><a class="dropdown-item" href="<aspectran:url value="/thymeleaf/samples/appmon"/>">AppMon</a></li>
+                            <li><a class="dropdown-item" href="<aspectran:url value="/thymeleaf/samples/appmon"/>">AppMon Dashbaord</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -102,7 +102,7 @@
                             <li><a class="dropdown-item sub-item" href="<aspectran:url value="/jsp/templates/default/fluid compact"/>">Fluid Compact</a></li>
                             <li><a class="dropdown-item" href="<aspectran:url value="/jsp/samples/mastheadimage"/>">MastHeadImage</a></li>
                             <li><hr class="dropdown-divider"/></li>
-                            <li><a class="dropdown-item" href="<aspectran:url value="/jsp/samples/appmon"/>">AppMon</a></li>
+                            <li><a class="dropdown-item" href="<aspectran:url value="/jsp/samples/appmon"/>">AppMon Dashbaord</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">

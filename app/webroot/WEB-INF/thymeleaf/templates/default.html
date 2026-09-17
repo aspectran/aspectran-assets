@@ -3,15 +3,13 @@
       xmlns:th="https://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
     <script>
         (() => {
             const getStoredTheme = () => localStorage.getItem('theme');
             const getPreferredTheme = () => {
                 const storedTheme = getStoredTheme();
-                if (storedTheme) {
-                    return storedTheme;
-                }
+                if (storedTheme) return storedTheme;
                 return 'auto';
             };
             const setTheme = theme => {
@@ -87,7 +85,7 @@
                             <li><a class="dropdown-item sub-item" th:href="@{/thymeleaf/templates/default/fluid compact}">Fluid Compact</a></li>
                             <li><hr class="dropdown-divider"/></li>
                             <li><a class="dropdown-item" th:href="@{/thymeleaf/samples/mastheadimage}">MastHeadImage</a></li>
-                            <li><a class="dropdown-item" th:href="@{/thymeleaf/samples/appmon}">AppMon</a></li>
+                            <li><a class="dropdown-item" th:href="@{/thymeleaf/samples/appmon}">AppMon Dashbaord</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -101,7 +99,7 @@
                             <li><a class="dropdown-item sub-item" th:href="@{/jsp/templates/default/fluid compact}">Fluid Compact</a></li>
                             <li><hr class="dropdown-divider"/></li>
                             <li><a class="dropdown-item" th:href="@{/jsp/samples/mastheadimage}">MastHeadImage</a></li>
-                            <li><a class="dropdown-item" th:href="@{/jsp/samples/appmon}">AppMon</a></li>
+                            <li><a class="dropdown-item" th:href="@{/jsp/samples/appmon}">AppMon Dashbaord</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -191,15 +189,16 @@
                 </th:block>
             </div>
         </div>
-        <th:block th:unless="${#strings.isEmpty(page.headinclude)}">
-            <th:block th:insert="~{${page.headinclude}}"/>
+        <th:block th:if="${page.headinclude != null}">
+            <div th:insert="~{${page.headinclude}}"></div>
         </th:block>
-        <th:block th:unless="${#strings.isEmpty(page.headimageinclude)}">
-            <th:block th:insert="~{${page.headimageinclude}}"/>
+        <th:block th:if="${page.headimageinclude != null}">
+            <div th:insert="~{${page.headimageinclude}}"></div>
         </th:block>
         <div class="container breadcrumb-bar">
             <nav role="navigation" aria-label="You are here:">
                 <ol class="breadcrumb" itemprop="breadcrumb">
+                    <li class="breadcrumb-item"><a th:href="@{/}">AppMon</a></li>
                 </ol>
             </nav>
         </div>
