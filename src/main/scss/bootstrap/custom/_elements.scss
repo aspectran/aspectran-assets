@@ -79,28 +79,26 @@ article {
   border: 0;
   box-shadow: 0 8px 10px -10px rgba(50, 50, 50, 0.33);
   margin: 0;
-  @include media-breakpoint-down(md) {
-    border-radius: 50px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
   }
   > .tabs-title {
+    flex-shrink: 0;
+    white-space: nowrap;
     margin: 0;
-    @include media-breakpoint-down(md) {
-      width: 100%;
-      margin-top: 2px;
-      margin-bottom: 2px;
-    }
     > a, button {
       font-size: .9em;
       font-weight: bold;
       margin-right: 1px;
-      margin-bottom: 0;
       padding: .5em .6em .5em .8em;
       border: 0;
-      @include media-breakpoint-down(md) {
-        width: 100%;
-        border-radius: 50px;
-        text-align: left;
-      }
+      border-radius: var(--bs-border-radius) var(--bs-border-radius) 0 0;
       color: $grey-11 !important;
       background-color: lighten($ci-1, 31%) !important;
       cursor: pointer;
@@ -123,10 +121,6 @@ article {
       font-size: 1em;
       padding-left: .3em;
       color: darken($grey-2, 10%);
-      @include media-breakpoint-down(md) {
-        float: right;
-        margin-right: .4em;
-      }
       &.on {
         color: $ci-8;
       }
@@ -143,13 +137,12 @@ article {
       }
     }
   }
-  @include media-breakpoint-up(md) {
-    &.flat {
-      > .tabs-title {
-        > a, button {
-          border-radius: 0;
-          margin-bottom: 1px;
-        }
+  &.flat {
+    box-shadow: none;
+    > .tabs-title {
+      > a, button {
+        border-radius: 0;
+        margin-bottom: 0;
       }
     }
   }
@@ -164,18 +157,6 @@ article {
       font-size: 1em;
       text-shadow: none;
       margin-right: 2px;
-    }
-    @include media-breakpoint-down(md) {
-      clear: both;
-      margin-right: 0;
-      margin-bottom: 3px;
-      width: 100%;
-      .indicator {
-        float: right;
-      }
-      &:last-child {
-        margin-bottom: 0;
-      }
     }
   }
 }

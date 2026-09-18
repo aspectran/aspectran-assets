@@ -22,6 +22,9 @@ $dark-anchor-color: #93d2f1;
   }
   .tabs {
     box-shadow: 0 8px 10px -10px rgba(152, 152, 152, 0.33);
+    &.flat {
+      box-shadow: none;
+    }
     > .tabs-title {
       a, button {
         color: $grey-4;
@@ -34,7 +37,7 @@ $dark-anchor-color: #93d2f1;
     }
   }
   .panel {
-    border-color: lighten($dark-bg-color, 6%);;
+    border-color: lighten($dark-bg-color, 6%);
     background-color: lighten($dark-bg-color, 3%);
   }
   blockquote {

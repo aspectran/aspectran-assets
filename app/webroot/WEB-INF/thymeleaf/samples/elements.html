@@ -236,7 +236,133 @@
 
             <!-- Tabs -->
             <div class="mb-5">
-                <h2 class="mb-4">Navs & Tabs</h2>
+                <h2 class="mb-4">Tabs</h2>
+                <div class="card card-body shadow-sm mb-4">
+                    <h5 class="card-title mb-3">Aspectran Tabs (Horizontal Scrolling)</h5>
+                    <ul class="tabs nav mb-3" role="tablist">
+                        <li class="tabs-title nav-item" role="presentation">
+                            <button type="button" class="nav-link active" id="atab-1" data-bs-toggle="tab" data-bs-target="#atab-pane-1" role="tab" aria-controls="atab-pane-1" aria-selected="true">
+                                <i class="bi bi-box"></i> Application <i class="indicator bi bi-lightning-charge-fill on blink"></i>
+                            </button>
+                        </li>
+                        <li class="tabs-title nav-item" role="presentation">
+                            <button type="button" class="nav-link" id="atab-2" data-bs-toggle="tab" data-bs-target="#atab-pane-2" role="tab" aria-controls="atab-pane-2" aria-selected="false">
+                                <i class="bi bi-server"></i> Server Node <i class="indicator bi bi-lightning-charge-fill on"></i>
+                            </button>
+                        </li>
+                        <li class="tabs-title nav-item" role="presentation">
+                            <button type="button" class="nav-link" id="atab-3" data-bs-toggle="tab" data-bs-target="#atab-pane-3" role="tab" aria-controls="atab-pane-3" aria-selected="false">
+                                <i class="bi bi-cpu"></i> System Metrics <i class="indicator bi bi-lightning-charge-fill"></i>
+                            </button>
+                        </li>
+                        <li class="tabs-title nav-item" role="presentation">
+                            <button type="button" class="nav-link" id="atab-4" data-bs-toggle="tab" data-bs-target="#atab-pane-4" role="tab" aria-controls="atab-pane-4" aria-selected="false">
+                                <i class="bi bi-activity"></i> Session Monitor
+                            </button>
+                        </li>
+                        <li class="tabs-title nav-item" role="presentation">
+                            <button type="button" class="nav-link" id="atab-5" data-bs-toggle="tab" data-bs-target="#atab-pane-5" role="tab" aria-controls="atab-pane-5" aria-selected="false">
+                                <i class="bi bi-database"></i> Database Pool
+                            </button>
+                        </li>
+                        <li class="tabs-title nav-item" role="presentation">
+                            <button type="button" class="nav-link" id="atab-6" data-bs-toggle="tab" data-bs-target="#atab-pane-6" role="tab" aria-controls="atab-pane-6" aria-selected="false">
+                                <i class="bi bi-terminal"></i> Console Logs
+                            </button>
+                        </li>
+                        <li class="tabs-title nav-item" role="presentation">
+                            <button type="button" class="nav-link" id="atab-7" data-bs-toggle="tab" data-bs-target="#atab-pane-7" role="tab" aria-controls="atab-pane-7" aria-selected="false">
+                                <i class="bi bi-gear"></i> Configuration
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="tab-content border-top pt-3">
+                        <div class="tab-pane fade show active" id="atab-pane-1" role="tabpanel" aria-labelledby="atab-1" tabindex="0">
+                            <p class="mb-0">Content for <strong>Application</strong> tab with live indicator and horizontal scroll support on mobile.</p>
+                        </div>
+                        <div class="tab-pane fade" id="atab-pane-2" role="tabpanel" aria-labelledby="atab-2" tabindex="0">
+                            <p class="mb-0">Content for <strong>Server Node</strong> tab.</p>
+                        </div>
+                        <div class="tab-pane fade" id="atab-pane-3" role="tabpanel" aria-labelledby="atab-3" tabindex="0">
+                            <p class="mb-0">Content for <strong>System Metrics</strong> tab.</p>
+                        </div>
+                        <div class="tab-pane fade" id="atab-pane-4" role="tabpanel" aria-labelledby="atab-4" tabindex="0">
+                            <p class="mb-0">Content for <strong>Session Monitor</strong> tab.</p>
+                        </div>
+                        <div class="tab-pane fade" id="atab-pane-5" role="tabpanel" aria-labelledby="atab-5" tabindex="0">
+                            <p class="mb-0">Content for <strong>Database Pool</strong> tab.</p>
+                        </div>
+                        <div class="tab-pane fade" id="atab-pane-6" role="tabpanel" aria-labelledby="atab-6" tabindex="0">
+                            <p class="mb-0">Content for <strong>Console Logs</strong> tab.</p>
+                        </div>
+                        <div class="tab-pane fade" id="atab-pane-7" role="tabpanel" aria-labelledby="atab-7" tabindex="0">
+                            <p class="mb-0">Content for <strong>Configuration</strong> tab.</p>
+                        </div>
+                    </div>
+
+                    <h5 class="card-title mb-3 mt-4">Flat Tabs</h5>
+                    <ul class="tabs flat nav" role="tablist">
+                        <li class="tabs-title nav-item" role="presentation">
+                            <button type="button" class="nav-link active"><i class="bi bi-collection"></i> Group 1 <i class="indicator bi bi-lightning-charge-fill on"></i></button>
+                        </li>
+                        <li class="tabs-title nav-item" role="presentation">
+                            <button type="button" class="nav-link"><i class="bi bi-collection"></i> Group 2 <i class="indicator bi bi-lightning-charge-fill on"></i></button>
+                        </li>
+                        <li class="tabs-title nav-item" role="presentation">
+                            <button type="button" class="nav-link"><i class="bi bi-collection"></i> Group 3 <i class="indicator bi bi-lightning-charge-fill"></i></button>
+                        </li>
+                        <li class="tabs-title nav-item" role="presentation">
+                            <button type="button" class="nav-link"><i class="bi bi-collection"></i> Group 4</button>
+                        </li>
+                        <li class="tabs-title nav-item" role="presentation">
+                            <button type="button" class="nav-link"><i class="bi bi-collection"></i> Group 5</button>
+                        </li>
+                        <li class="tabs-title nav-item" role="presentation">
+                            <button type="button" class="nav-link"><i class="bi bi-collection"></i> Group 6</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card card-body shadow-sm mb-4">
+                    <h5 class="card-title mb-3">Mobile Button Tabs (<code>.mobile-btn-tabs</code>)</h5>
+                    <ul class="nav nav-tabs mobile-btn-tabs mb-3" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="mbtn-tab-1" data-bs-toggle="tab" data-bs-target="#mbtn-pane-1" type="button" role="tab" aria-controls="mbtn-pane-1" aria-selected="true">
+                                <i class="bi bi-person me-2"></i> User Profile
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="mbtn-tab-2" data-bs-toggle="tab" data-bs-target="#mbtn-pane-2" type="button" role="tab" aria-controls="mbtn-pane-2" aria-selected="false">
+                                <i class="bi bi-shield-lock me-2"></i> Security & Privacy
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="mbtn-tab-3" data-bs-toggle="tab" data-bs-target="#mbtn-pane-3" type="button" role="tab" aria-controls="mbtn-pane-3" aria-selected="false">
+                                <i class="bi bi-bell me-2"></i> Notifications
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="mbtn-tab-4" data-bs-toggle="tab" data-bs-target="#mbtn-pane-4" type="button" role="tab" aria-controls="mbtn-pane-4" aria-selected="false">
+                                <i class="bi bi-sliders me-2"></i> Preferences
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="tab-content border-top pt-3">
+                        <div class="tab-pane fade show active" id="mbtn-pane-1" role="tabpanel" aria-labelledby="mbtn-tab-1" tabindex="0">
+                            <p class="mb-0">Content for <strong>User Profile</strong> tab. On mobile screens (&lt; md), the tabs change to a vertical list of full-width buttons.</p>
+                        </div>
+                        <div class="tab-pane fade" id="mbtn-pane-2" role="tabpanel" aria-labelledby="mbtn-tab-2" tabindex="0">
+                            <p class="mb-0">Content for <strong>Security & Privacy</strong> tab.</p>
+                        </div>
+                        <div class="tab-pane fade" id="mbtn-pane-3" role="tabpanel" aria-labelledby="mbtn-tab-3" tabindex="0">
+                            <p class="mb-0">Content for <strong>Notifications</strong> tab.</p>
+                        </div>
+                        <div class="tab-pane fade" id="mbtn-pane-4" role="tabpanel" aria-labelledby="mbtn-tab-4" tabindex="0">
+                            <p class="mb-0">Content for <strong>Preferences</strong> tab.</p>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="card shadow-sm">
                     <div class="card-header">
                         <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
