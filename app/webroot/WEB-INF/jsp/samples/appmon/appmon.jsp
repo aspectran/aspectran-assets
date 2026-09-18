@@ -30,7 +30,7 @@
             </div>
         </div>
     </div>
-    <div class="row g-0">
+    <div class="dashboard-grid row g-0">
         <div class="col-lg-6 event-box">
             <div class="title-bar">
                 <h4 class="ellipses"></h4>
@@ -50,12 +50,12 @@
                     </div>
                 </div>
             </div>
-            <div class="col session-box">
+            <div class="session-box">
                 <div class="row g-0">
                     <div class="col-sm-12 col-md-4">
                         <div class="panel status">
                             <dl class="session-stats">
-                                <dt title="The number of active sessions">Current Active Sessions</dt>
+                                <dt title="The number of active sessions">Active Sessions</dt>
                                 <dd><span class="number numberOfActives">0</span></dd>
                                 <dt title="The highest number of sessions that have been active at a single time">Highest Active Sessions</dt>
                                 <dd><span class="number highestNumberOfActives">0</span></dd>
@@ -80,7 +80,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-6 visual-box">
+        <div class="col-lg-6 charts-box">
             <div class="chart-box">
                 <div class="chart">
                 </div>
