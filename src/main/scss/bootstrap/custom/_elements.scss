@@ -2,8 +2,11 @@
 //--------------------------
 
 #toc {
+  max-width: 360px;
+  text-wrap: balance;
   padding-bottom: 1em;
   @include media-breakpoint-down(lg) {
+    max-width: none;
     padding-left: .5em;
     padding-right: .5em;
     border-top: 2px solid lighten($ci-1, 20%);
@@ -38,6 +41,26 @@
     li {
       font-size: .9em;
       padding: 0 .5em;
+      > a {
+        display: flex;
+        align-items: flex-start;
+        line-height: 1.45;
+        text-decoration: none;
+        .toc-num {
+          flex-shrink: 0;
+          margin-right: .35em;
+        }
+        .toc-bullet {
+          flex-shrink: 0;
+          margin-right: .4em;
+          opacity: .7;
+        }
+        .toc-text {
+          flex: 1 1 auto;
+          min-width: 0;
+          word-break: break-word;
+        }
+      }
       &.toc-h1 {
         font-weight: bold;
         margin: 0 0 .6em 0;
@@ -62,12 +85,19 @@
 }
 
 article {
+  h1, h2, h3, h4, h5, h6 {
+    scroll-margin-top: 30px;
+  }
   a.toc-anchor {
+    display: block;
+    position: relative;
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+    padding: 0;
     border: 0;
     font-size: 1px;
     line-height: 1px;
-    padding: 0;
-    margin: 0;
   }
 }
 
