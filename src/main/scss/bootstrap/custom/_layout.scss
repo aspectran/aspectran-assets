@@ -19,7 +19,7 @@
     padding: 0;
   }
   @include media-breakpoint-up(lg) {
-    > .row {
+    > .row:has(> .page-sidebar) {
       display: flex;
       flex-wrap: nowrap;
     }
@@ -44,7 +44,7 @@
       }
     }
     .page-main {
-      flex: 1 1 0%;
+      flex: 1 1 0;
       width: auto;
       min-width: 0;
       max-width: 100%;
