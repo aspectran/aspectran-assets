@@ -200,27 +200,47 @@ article {
   }
 }
 
-// Bootstrap style
-@include media-breakpoint-down(md) {
-  .mobile-btn-tabs {
-    border-bottom: none;
+// Button & Chip style Tabs (with responsive mobile stacking)
+//------------------------------------------------------------
+
+.nav-btn-tabs {
+  border-bottom: none;
+  gap: .375rem;
+  .nav-item {
+    margin-bottom: 0;
+  }
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    padding: .35rem .75rem;
+    font-size: .9rem;
+    color: var(--bs-secondary-color);
+    background-color: var(--bs-body-bg);
+    border: 1px solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: all .15s ease-in-out;
+    &:hover {
+      color: var(--bs-body-color);
+      border-color: var(--bs-border-color-translucent);
+      background-color: var(--bs-tertiary-bg);
+    }
+    &.active {
+      color: var(--bs-primary-text-emphasis);
+      font-weight: 600;
+      background-color: var(--bs-primary-bg-subtle);
+      border-color: var(--bs-primary-border-subtle);
+    }
+  }
+  @include media-breakpoint-down(md) {
     flex-direction: column;
     gap: .5rem;
+    .nav-item {
+      width: 100%;
+    }
     .nav-link {
       display: flex;
-      align-items: center;
+      justify-content: space-between;
       width: 100%;
-      border: 1px solid var(--bs-border-color);
-      border-radius: var(--bs-border-radius);
-      background-color: var(--bs-body-bg);
-    }
-    .nav-link.active {
-      border-color: var(--bs-primary-border-subtle);
-      background: var(--bs-primary-bg-subtle);
-    }
-    .nav-link:not(.active):hover {
-      border-color: var(--bs-primary-border-subtle);
-      background-color: var(--bs-tertiary-bg);
     }
   }
 }
