@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" deferredSyntaxAllowedAsLiteral="true" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <div class="row">
     <!-- Sidebar TOC -->
@@ -44,7 +44,7 @@
                 <pre class="bg-body-secondary p-3 rounded"><code>&lt;translet name="/user/profile"&gt;
     &lt;action id="user" bean="userService" method="getUserProfile"/&gt;
     &lt;transform type="json"&gt;
-        &lt;property name="user" value="#{user}"/&gt;
+        &lt;property name="user" value="\#{user}"/&gt;
     &lt;/transform&gt;
 &lt;/translet&gt;</code></pre>
 
@@ -72,7 +72,7 @@
                 <p>Complex bean instantiation logic can be encapsulated using factory beans implementing <code>FactoryBean&lt;T&gt;</code>, supporting explicit initialization and destruction hooks.</p>
 
                 <h3>3.3 Dynamic Parameter and Property Injection</h3>
-                <p>Using the Aspectran Expression Language (AsEL), beans and translets dynamically reference environment variables (<code>%{...}</code>), other beans (<code>#{...}</code>), and request parameters.</p>
+                <p>Using the Aspectran Expression Language (AsEL), beans and translets dynamically reference environment variables (<code>%{...}</code>), other beans (<code>\#{...}</code>), and request parameters.</p>
 
                 <h2>4. Aspect-Oriented Programming (AOP)</h2>
                 <p>Aspectran provides a non-invasive AOP engine capable of intercepting requests before, around, and after translet or bean execution.</p>
