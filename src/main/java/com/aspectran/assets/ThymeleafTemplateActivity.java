@@ -61,4 +61,17 @@ public class ThymeleafTemplateActivity {
         );
     }
 
+    @Request("/samples/toc")
+    @Dispatch("samples/toc")
+    @Action("page")
+    public Map<String, String> toc() {
+        return Map.of(
+                "style", "plate solid article margin",
+                "sidebar", "toc",
+                "subheadline", "Table of Contents",
+                "headline", "Aspectran Architecture & Design",
+                "teaser", "A comprehensive guide to understanding Aspectran's modular design, execution pipeline, and component model."
+        );
+    }
+
 }
