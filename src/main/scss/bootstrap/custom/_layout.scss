@@ -52,16 +52,18 @@
   }
 }
 
-#navigation.nav-up ~ * .page-sidebar .sidebar-sticky,
-#navigation.nav-up ~ section .page-sidebar .sidebar-sticky,
-#navigation.nav-up ~ .page-content .page-sidebar .sidebar-sticky {
-  top: 25px;
-  max-height: calc(100vh - 50px);
-}
+@include media-breakpoint-up(lg) {
+  #navigation.nav-up ~ * .page-sidebar .sidebar-sticky,
+  #navigation.nav-up ~ section .page-sidebar .sidebar-sticky,
+  #navigation.nav-up ~ .page-content .page-sidebar .sidebar-sticky {
+    top: 25px;
+    max-height: calc(100vh - 50px);
+  }
 
-#navigation.no-transition ~ * .page-sidebar .sidebar-sticky,
-#navigation.no-transition ~ section .page-sidebar .sidebar-sticky {
-  transition: none !important;
+  #navigation.no-transition ~ * .page-sidebar .sidebar-sticky,
+  #navigation.no-transition ~ section .page-sidebar .sidebar-sticky {
+    transition: none !important;
+  }
 }
 
 // Plate Style
