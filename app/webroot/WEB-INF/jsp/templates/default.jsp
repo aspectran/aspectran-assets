@@ -91,7 +91,7 @@
                             <li><hr class="dropdown-divider"/></li>
                             <li><a class="dropdown-item" href="<aspectran:url value="/thymeleaf/samples/mastheadimage"/>">MastHeadImage</a></li>
                             <li><a class="dropdown-item" href="<aspectran:url value="/thymeleaf/samples/toc"/>">Sidebar TOC</a></li>
-                            <li><a class="dropdown-item" href="<aspectran:url value="/thymeleaf/samples/appmon"/>">AppMon Dashbaord</a></li>
+                            <li><a class="dropdown-item" href="<aspectran:url value="/thymeleaf/samples/appmon"/>">AppMon Dashboard</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -105,7 +105,7 @@
                             <li><hr class="dropdown-divider"/></li>
                             <li><a class="dropdown-item" href="<aspectran:url value="/jsp/samples/mastheadimage"/>">MastHeadImage</a></li>
                             <li><a class="dropdown-item" href="<aspectran:url value="/jsp/samples/toc"/>">Sidebar TOC</a></li>
-                            <li><a class="dropdown-item" href="<aspectran:url value="/jsp/samples/appmon"/>">AppMon Dashbaord</a></li>
+                            <li><a class="dropdown-item" href="<aspectran:url value="/jsp/samples/appmon"/>">AppMon Dashboard</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
