@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" session="false" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://aspectran.com/tags" prefix="aspectran" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="aspectran" uri="aspectran.tags" %>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aspectran/aspectow@main/assets/appmon@4.2/css/appmon-bundle.css"/>
 <script src="https://cdn.jsdelivr.net/gh/aspectran/aspectow@main/assets/appmon@4.2/js/appmon-bundle.js"></script>
 <div class="container">

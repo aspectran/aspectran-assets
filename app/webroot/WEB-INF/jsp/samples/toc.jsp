@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" deferredSyntaxAllowedAsLiteral="true" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <div class="row">
     <!-- Sidebar TOC -->
     <div class="col-lg-3 page-sidebar page-sidebar-sm order-lg-1 py-3 py-lg-4">
