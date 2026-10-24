@@ -1,0 +1,151 @@
+@charset "utf-8";
+
+// --------------------------------------------------
+// SITEMAP STYLESHEET
+// --------------------------------------------------
+// This stylesheet styles the XML Sitemap both when transformed by XSLT
+// and when directly rendered by the browser as an XML document.
+
+@import "custom/colors";
+@import "v5.3.8/bootstrap";
+
+// ==================================================
+// XSLT HTML Output Styles
+// ==================================================
+
+body {
+  background-color: $body-bg;
+  color: $body-color;
+  font-family: $font-family-sans-serif;
+}
+
+header {
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+
+  .lead {
+    color: $text-muted;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  h1 {
+    color: $primary;
+    font-weight: $font-weight-bold;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.table {
+  font-size: $font-size-sm;
+
+  thead th {
+    background-color: var(--bs-tertiary-bg);
+    color: $text-muted;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid $border-color;
+  }
+
+  tbody td {
+    padding: 0.75rem 1rem;
+    vertical-align: middle;
+
+    a {
+      color: $primary;
+
+      &:hover {
+        color: darken($primary, 15%);
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// ==================================================
+// Raw XML Direct Rendering Fallback (No XSLT)
+// ==================================================
+
+:root {
+  margin: 3em auto;
+  max-width: 960px;
+  background: $body-bg;
+  color: $body-color;
+  font-family: $font-family-sans-serif;
+}
+
+urlset {
+  display: block;
+
+  &::before {
+    content: "XML Sitemap";
+    display: block;
+    text-align: center;
+    color: $primary;
+    font-size: 2rem;
+    font-weight: $font-weight-bold;
+    margin-bottom: 0.5rem;
+  }
+
+  &::after {
+    content: "This XML sitemap is meant for search engines and web crawlers.";
+    display: block;
+    margin: 1.5rem 0;
+    padding: 0.75rem 1rem;
+    background-color: rgba($primary, 0.1);
+    border: 1px solid rgba($primary, 0.2);
+    border-radius: $border-radius;
+    color: $primary;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-normal;
+    text-align: center;
+  }
+}
+
+url {
+  display: block;
+  padding: 1rem 0;
+  border-bottom: 1px solid $border-color;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  loc {
+    display: block;
+    font-weight: $font-weight-semibold;
+    color: $link-color;
+    word-break: break-all;
+    margin-bottom: 0.35rem;
+  }
+
+  lastmod,
+  changefreq,
+  priority {
+    display: inline-block;
+    color: $text-muted;
+    font-size: $font-size-sm;
+    margin-right: 1rem;
+
+    &::before {
+      color: var(--bs-secondary-color);
+      margin-right: 0.25rem;
+    }
+  }
+
+  lastmod::before {
+    content: "Modified: ";
+  }
+
+  changefreq::before {
+    content: "Frequency: ";
+  }
+
+  priority::before {
+    content: "Priority: ";
+  }
+}
