@@ -12,6 +12,7 @@
 # Maven and deployment build outputs
 /target
 /.build
+/.sass-cache
 
 # Application runtime directories
 /app/lib/
