@@ -2,7 +2,7 @@
 //-------------------
 
 $dark-bg-color: #212529;
-$dark-text-color: #dae0de;
+$dark-text-color: #ced4da;
 $dark-anchor-color: #93d2f1;
 
 // Overrides for dark mode
@@ -42,8 +42,8 @@ $dark-anchor-color: #93d2f1;
   }
   blockquote {
     border-left: 4px solid $grey-10;
-    color: $grey-5;
-    background-color: darken($dark-bg-color, 2%);
+    color: darken($dark_text-color, 10%);
+    background-color: lighten($dark-bg-color, 4%);
   }
   body.article article {
     h2 {

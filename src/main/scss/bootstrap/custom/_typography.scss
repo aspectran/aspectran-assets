@@ -117,8 +117,7 @@ article dl {
 
 blockquote {
   position: relative;
-  font-style: italic;
-  color: $grey-8;
+  color: lighten($text-color, 13%);
   background-color: $grey-0;
   border-left: 4px solid $grey-7;
   border-radius: $border-radius;
@@ -129,7 +128,6 @@ blockquote {
     padding: 1rem;
   }
   p {
-    font-style: italic;
     margin-bottom: 0.5rem;
     &:last-child {
       margin-bottom: 0;
