@@ -83,12 +83,12 @@ body.article article {
       overflow-x: auto;
     }
   }
-  div.highlighter-rouge {
-    pre.highlight {
-      code {
-        background-color: transparent;
-      }
-    }
+  .highlighter-rouge pre.highlight > code {
+    background-color: transparent;
+  }
+  li > .highlighter-rouge pre.highlight {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
 }

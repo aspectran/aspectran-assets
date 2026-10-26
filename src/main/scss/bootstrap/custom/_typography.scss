@@ -116,13 +116,18 @@ article dl {
 //--------
 
 blockquote {
-  font-style: italic;
   position: relative;
-  padding: .4em .8em;
+  font-style: italic;
   color: $grey-8;
   background-color: $grey-0;
   border-left: 4px solid $grey-7;
   border-radius: $border-radius;
+  @include media-breakpoint-down(md) {
+    padding: .8rem .6rem;
+  }
+  @include media-breakpoint-up(md) {
+    padding: 1rem;
+  }
   p {
     font-style: italic;
     margin-bottom: 0.5rem;
@@ -131,11 +136,14 @@ blockquote {
     }
   }
   ul {
-    margin: .5rem 0;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1.3rem;
   }
 }
 li > blockquote {
-  margin: .5rem 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 // ETC
