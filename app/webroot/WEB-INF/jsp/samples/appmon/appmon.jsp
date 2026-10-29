@@ -55,6 +55,8 @@
                     <div class="col-sm-12 col-md-4">
                         <div class="panel status">
                             <dl class="session-stats">
+                                <dt title="The number of unique active users">Active Users</dt>
+                                <dd><span class="number numberOfUsers">0</span></dd>
                                 <dt title="The number of active sessions">Active Sessions</dt>
                                 <dd><span class="number numberOfActives">0</span></dd>
                                 <dt title="The highest number of sessions that have been active at a single time">Highest Active Sessions</dt>
@@ -63,8 +65,6 @@
                                 <dd><span class="number numberOfCreated">0</span></dd>
                                 <dt title="The number of expired sessions">Expired Sessions</dt>
                                 <dd><span class="number numberOfExpired">0</span></dd>
-                                <dt title="This number of sessions includes sessions that are inactive or have been transferred to a session manager on another clustered server">Unmanaged Sessions</dt>
-                                <dd><span class="number numberOfUnmanaged">0</span></dd>
                                 <dt title="The number of rejected sessions">Rejected Sessions</dt>
                                 <dd><span class="number numberOfRejected">0</span></dd>
                             </dl>
