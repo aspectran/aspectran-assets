@@ -613,7 +613,7 @@ body.fluid #masthead .breadcrumb-bar {
 //--------
 
 #footer {
-  font-size: .9em;
+  font-size: .9rem;
   font-weight: 300;
   padding-top: 30px;
   padding-bottom: 20px;
@@ -621,8 +621,8 @@ body.fluid #masthead .breadcrumb-bar {
   color: $footer-color;
   text-shadow: rgba(0, 0, 0, .498039) 0 1px 2px;
   h4, h5 {
+    color: lighten($ci-9, 3%);
     letter-spacing: 1px;
-    color: #fff;
     text-transform: uppercase;
   }
   a {
