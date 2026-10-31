@@ -5,6 +5,8 @@
   max-width: 360px;
   text-wrap: balance;
   padding-bottom: 1em;
+  overflow-x: auto;
+  scrollbar-width: none;
   @include media-breakpoint-down(lg) {
     max-width: none;
     padding-left: .5em;
@@ -58,7 +60,7 @@
         .toc-text {
           flex: 1 1 auto;
           min-width: 0;
-          word-break: break-word;
+          word-break: keep-all;
         }
       }
       &.toc-h1 {
