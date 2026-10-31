@@ -469,7 +469,7 @@ body.fluid {
       padding: 1.5rem 0 1.5rem 1rem;
     }
     h1, .headline {
-      color: $ci-9;
+      color: lighten($ci-9, 3%);
     }
     .subheadline {
       margin: 0;
@@ -508,9 +508,9 @@ body.fluid {
       border-radius: 10px 10px 0 0;
     }
     .breadcrumb {
-      color: $ci-9;
+      color: darken($ci-1, 3%);
       li::before {
-        color: #353b3e;
+        color: #3c474c;
       }
       a {
         color: $ci-9;
