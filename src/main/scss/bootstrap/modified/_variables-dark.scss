@@ -52,7 +52,7 @@ $border-color-translucent-dark:     rgba($white, .15) !default;
 $headings-color-dark:               inherit !default;
 $link-color-dark:                   tint-color($anchor-color, 40%) !default;
 $link-hover-color-dark:             shift-color($link-color-dark, -$link-shade-percentage) !default;
-$code-color-dark:                   tint-color($code-color, 28%) !default;
+$code-color-dark:                   tint-color($code-color, 32%) !default;
 $mark-color-dark:                   $body-color-dark !default;
 $mark-bg-dark:                      $yellow-800 !default;
 
