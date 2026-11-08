@@ -139,6 +139,16 @@ li > blockquote {
   margin: 0.75rem 0;
 }
 
+// Table
+//-------
+
+.table-responsive {
+  margin-bottom: $spacer;
+  > .table {
+    margin-bottom: 0;
+  }
+}
+
 // ETC
 //-----
 
