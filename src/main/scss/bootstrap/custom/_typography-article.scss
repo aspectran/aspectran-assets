@@ -104,4 +104,14 @@ body.article article {
     margin-bottom: 0.5rem;
   }
 
+  // Table
+  //-------
+
+  .table-responsive {
+    margin-bottom: $spacer;
+    > .table {
+      margin-bottom: 0;
+    }
+  }
+
 }
