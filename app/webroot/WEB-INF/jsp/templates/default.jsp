@@ -11,9 +11,7 @@
             const getStoredTheme = () => localStorage.getItem('theme');
             const getPreferredTheme = () => {
                 const storedTheme = getStoredTheme();
-                if (storedTheme) {
-                    return storedTheme;
-                }
+                if (storedTheme) return storedTheme;
                 return 'auto';
             };
             const setTheme = theme => {
@@ -47,15 +45,15 @@
     <meta name="msapplication-TileColor" content="#4B555A"/>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&amp;display=swap"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/aspectran/aspectran-assets@main/assets/bootstrap@5.3.8/css/aspectran.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap@5.3.8/css/aspectran.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css" integrity="sha256-ecmcGh4Ok3+AilgWVyi37QCADwLvXvz80Q3+cUZOZ10=" crossorigin="anonymous">
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/gh/aspectran/aspectran-assets@main/assets/js/navigation.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/aspectran/aspectran-assets@main/assets/js/sidebar.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/aspectran/aspectran-assets@main/assets/js/theme-toggler.js"></script>
+    <script src="/assets/js/navigation.js"></script>
+    <script src="/assets/js/sidebar.js"></script>
+    <script src="/assets/js/theme-toggler.js"></script>
 </head>
 <body id="top-of-page" class="${page.style}" <c:if test="${not empty page.sidebar}">data-sidebar="${page.sidebar}"</c:if> itemscope itemtype="https://schema.org/WebPage">
 <nav id="navigation" class="navbar navbar-expand-lg" data-bs-theme="dark">
@@ -211,6 +209,7 @@
         <div class="container breadcrumb-bar">
             <nav role="navigation" aria-label="You are here:">
                 <ol class="breadcrumb" itemprop="breadcrumb">
+                    <li class="breadcrumb-item"><a th:href="<aspectran:url value="/"/>">Aspectran Assets</a></li>
                 </ol>
             </nav>
         </div>
