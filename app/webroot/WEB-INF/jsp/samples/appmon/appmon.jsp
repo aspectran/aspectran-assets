@@ -1,8 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" session="false" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="aspectran" uri="aspectran.tags" %>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aspectran/aspectow@main/assets/appmon@4.3/css/appmon-bundle.css"/>
-<script src="https://cdn.jsdelivr.net/gh/aspectran/aspectow@main/assets/appmon@4.3/js/appmon-bundle.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aspectran/aspectow@main/assets/appmon@4.4/css/appmon-bundle.css"/>
+<script src="https://cdn.jsdelivr.net/gh/aspectran/aspectow@main/assets/appmon@4.4/js/appmon-bundle.js"></script>
 <div class="container">
     <div class="node-bar py-1 py-md-0">
         <ul class="node tabs flat nav nav-tabs">
